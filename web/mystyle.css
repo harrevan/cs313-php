@@ -12,3 +12,7 @@
 	font-size: 40px;
 	background-color: yellow;
 }
+
+div:hover {
+   font-weight: bold;
+}
