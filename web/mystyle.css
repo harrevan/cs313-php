@@ -13,6 +13,6 @@
 	background-color: yellow;
 }
 
-div:hover {
-   font-weight: bold;
+#div3:hover {
+	font-weight: bold;
 }
