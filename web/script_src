@@ -1,1 +1,3 @@
-javascript
+function createAlert() {
+   alert("You have clicked me!");
+}
