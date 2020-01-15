@@ -3,5 +3,5 @@ function prob1() {
 }
 
 function changeColor(color){
-	alert(color);
+	document.getElementById('div1').style.backgroundColor = color;
 }
