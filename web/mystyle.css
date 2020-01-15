@@ -8,11 +8,7 @@
 	background-color: coral;
 }
 
-#div3{
+#div3:hover{
 	font-size: 40px;
 	background-color: yellow;
-}
-
-#div3:hover {
-	font-weight: bold;
 }
