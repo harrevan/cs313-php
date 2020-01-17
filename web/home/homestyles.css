@@ -1,0 +1,63 @@
+.outer-bod {
+    background-color:#6D7993	
+}
+
+.inner-bod {
+	background-color:#96858F;
+	margin-top:45px; 
+	margin-bottom:55px; 
+	padding:10px;
+}
+
+.pic-left{
+	padding-left:40px; 
+	padding-right:40px; 
+	padding-top:40px; 
+	padding-bottom:20px; 
+	margin:10px;
+}
+
+.pic-right{
+	padding-left:40px; 
+	padding-right:40px; 
+	padding-top:40px; 
+	padding-bottom:20px; 
+	margin:10px;
+}
+
+.button-style{
+    margin-bottom:10px;
+}
+
+#about-header {
+    margin-top:30px;
+}
+
+#assignments-link{
+	margin-left:200px;
+	color:white;
+	font-size:18px;
+}
+ul{
+    list-style-position:inside;
+    list-style-type:square;
+    text-align:center;
+}
+#assign-bod{
+	background-color:#6D7993; 
+	font-family:helvetica;
+	color:white;
+}
+#assign-head1{
+	text-align:center; 
+	font-size:250%;
+}
+a{
+	color:white;
+}
+#php-date{
+	color:white;
+	text-align-right;
+	font-size:18px;
+}
+

@@ -11,6 +11,8 @@
     
     <!--Include Bootstrap compiled CSS. Most of the CSS in this page consists of built-in Bootstrap classes. -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="homestyles.css">
     
     <!--Include Bootstrap compiled JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -21,14 +23,18 @@
     </script> 
   </head>
   
-  <body style="background-color:#6D7993">
+  <body class="outer-bod">
     <div class="jumbotron text-center">
       <div class="container">
-        <h1>Harrison Family Page</h1>      
-        <p>Are you curious about the Harrison family? Look no further! Here you will learn all about the lovely Harrison family.</p>
+        <h1>Evan Harrison's Home Page</h1>
+        <p>Meet the most precious thing in the world to me... my family.</p>
       </div>
     </div>
-    <div class="container text-white" style="background-color:#96858F; margin-top:55px; margin-bottom:55px; padding:10px;">
+    <a href="assignments.html" id="assignments-link">Assignments Page</a>
+
+    <?php include 'evanhome.php';?>
+
+    <div class="container text-white inner-bod">
       <!--1st row -->
       <div class="row">
         <div class="col-sm-4">
@@ -45,16 +51,16 @@
         </div>
       </div>
       
-      <h3 class="text-center" style="margin-top:30px">About Evan</h3>
-      <button class="btn" data-toggle="collapse" data-target="#evan" style="margin-bottom:10px">See More</button>
-      <div id="evan" class="collapse border border-white rounded" style="padding-left:40px; padding-right:40px; padding-top:40px; padding-bottom:20px; margin:10px;">
+      <h3 class="text-center" id="about-header">About Evan</h3>
+      <button class="btn" data-toggle="collapse" data-target="#evan">See More</button>
+      <div id="evan" class="collapse border border-white rounded pic-left">
         <div class="row">
           <div class="col-sm-4">
             <img src="evan2.jpg" class="rounded img-fluid float-right" alt="Evan and Jennica">
           </div> 
           <div class="col-sm-8">
             <p class="text-justify">
-              I am 25 and alive! I am from Pocatello, Idaho. I have been married to my highschool sweetheart for about 3.5 years. My wife and I met in high school, and 
+              I am from Pocatello, Idaho. I have been married to my highschool sweetheart for almost 5 years. My wife and I met in high school, and 
               were friends for most of those four years. During this time, I played both soccer and tennis. After graduating in 2011, I attended a
               year of college at Idaho State University, where I planned to study biology in hopes of eventually attending medical school.
             </p>  
@@ -85,8 +91,8 @@
       </div>
       
       <h3 class="text-center">About Jennica</h3>
-      <button class="btn" data-toggle="collapse" data-target="#jennica" style="margin-bottom:10px">See More</button>
-      <div id="jennica" class="collapse border border-white rounded" style="padding-left:40px; padding-right:40px; padding-top:40px; padding-bottom:20px; margin:10px;">
+      <button class="btn" data-toggle="collapse" data-target="#jennica">See More</button>
+      <div id="jennica" class="collapse border border-white rounded pic-right">
         <div class="row">
           <div class="col-sm-8">
             <p class="text-justify">
@@ -111,21 +117,15 @@
       </div>
        
       <h3 class="text-center">About Finn</h3>
-      <button class="btn" data-toggle="collapse" data-target="#finn" style="margin-bottom:10px; ">See More</button>
-      <div id="finn" class="collapse border border-white rounded" style="padding-left:40px; padding-right:40px; padding-top:40px; padding-bottom:40px; margin:10px;">
+      <button class="btn" data-toggle="collapse" data-target="#finn">See More</button>
+      <div id="finn" class="collapse border border-white rounded pic-left">
         <div class="row">
           <div class="col-sm-4">
             <img src="finn2.jpg" class="rounded img-fluid float-left" alt="Finn and family">
           </div> 
           <div class="col-sm-8">
             <p class="text-justify">
-              Finn is the newest addition to the Harrison Family. He is the sweetest baby boy you'll ever meet. He was born 
-              December 28, 2017. We are all excited to be celebrating his first birthday in the next couple of weeks. He is very
-              vocal, and loves saying "Dada" when happy, and "Mama" when sad or scared. He has 4 teeth: his bottom 2 front teeth, and 
-              his top 2 canines which are poking through. Soon, he'll look like an adorable little vampire. He loves crawling and 
-              getting into anything as long as it is forbidden. He is starting to learn to stand, and before we know it, will be 
-              walking. He is a tremendous addition to our family, and a pure delight. He loves playing peek-aboo, playing with the 
-              dog, and getting thrown into the air by dad.
+              Finn is the newest addition to the Harrison Family. He is the sweetest baby boy you'll ever meet. He just turned two in December of 2019. He loves running around and getting into anything that is forbidden. He also enjoys playing with his trucks, watching Daddy fly his drone, and playing with the dog. He is a tremendous addition to our family, and a pure delight. My wife and I love him dearly.
             </p>
           </div>
         </div>
@@ -133,12 +133,12 @@
     
       <h3 class="text-center">Honorable Mention...</h3>
       
-      <button class="btn btn-danger" data-toggle="collapse" data-target="#remmy" style="margin-bottom:10px">Click if you dare</button>
-      <div id="remmy" class="collapse border border-white rounded" style="padding-left:40px; padding-right:40px; padding-top:40px; padding-bottom:40px; margin:10px;">
+      <button class="btn" data-toggle="collapse" data-target="#remmy">See More</button>
+      <div id="remmy" class="collapse border border-white rounded pic-right">
         <div class="row">
           <div class="col-sm-8">
             <p class="text-justify">
-              I reckon I would be remiss if I didn't mention Remmy, our dog. He is 2 years old, and full of energy. He loves playing
+              I suppose I would be remiss if I didn't mention Remmy, our dog. He is 4 years old, and full of energy. He loves playing
               with other dogs, getting in the way, digging, chewing his toys to shreds, playing fetch, going on walks, and being with 
               people. He also has been a good sport with the addition of the baby by playing gently (usually) with the baby, letting
               the baby tug on his tail and ears, and behaving well despite a decrease in attention towards him.
