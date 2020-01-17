@@ -18,13 +18,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script> 
   </head>
-  
   <body class="outer-bod">
     <div class="jumbotron text-center">
       <div class="container">
         <h1>Evan Harrison's Home Page</h1>
         <p>Meet the most precious thing in the world to me... my family.</p>
-            <?php echo '<p>Hello World</p>'; ?> 
+        <?php echo "Date: " . date("l, d-m-Y")?>
       </div>
     </div>
     <a href="assignments.html" id="assignments-link">Assignments Page</a>
