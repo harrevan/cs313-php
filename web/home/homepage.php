@@ -23,7 +23,9 @@
       <div class="container">
         <h1>Evan Harrison's Home Page</h1>
         <p>Meet the most precious thing in the world to me... my family.</p>
-        <?php echo "Date: " . date("l, d-m-Y")?>
+         
+         <!-- PHP used to display current date-->
+        <?php echo "Date: " . date("m-d-Y")?>
       </div>
     </div>
     <a href="assignments.html" id="assignments-link">Assignments Page</a>
