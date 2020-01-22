@@ -9,7 +9,7 @@ Continents:
 <?php
 foreach($_POST["continent"] as $selected){
     echo $selected."</br>";
-	}
+	
 }
 ?>
 
