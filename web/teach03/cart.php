@@ -27,12 +27,17 @@ session_start();
       foreach ($_SESSION["cart"] as $disc) {
   	  echo "$disc <br><br>";
   	  echo"<form method='post'>";
-      echo"<button type='submit' id='remove' class='btn btn-info' name= '<?php echo 'button'.$index; ?> '>Remove item</button>";
+      echo"<button type='submit' id='remove' class='btn btn-info' name=$index >Remove item</button>";
       echo"</form>";
       echo'button'.$index;
       echo"<hr>";
       $index++;
       }
+
+      foreach($_POST as $name => $content) { // Most people refer to $key => $value
+   echo "The HTML name: $name <br>";
+   echo "The content of it: $content <br>";
+}
 
       for($i = 0; $i < sizeof($_SESSION["cart"]); $i++){
 
