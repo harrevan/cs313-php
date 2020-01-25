@@ -1,9 +1,5 @@
 <?php
     session_start();
-
-    foreach ($_SESSION["cart"] as $disc) {
-    echo "$disc <br><br>";
-    }
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +25,7 @@
       <?php
           foreach ($_SESSION["cart"] as $disc) {
           echo "$disc <br><br>";
+        }
       ?>
       <hr>
       <h3>Your address information: </h3>
@@ -36,7 +33,6 @@
       <p>Phone: <?php  ?></p>
       <p>Address: <?php  ?></p>
 
-      <?php  ?>
 	
   </body>
 </html>
