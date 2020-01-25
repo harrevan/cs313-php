@@ -29,6 +29,7 @@ session_start();
       </div>
     </div>	
     <a href="browse.php">Back to browse</a>
+    <a href="checkout.php" class="linkRight">Checkout</a>
     <div class="centerAll">
       <h2 class="heading">Shopping Cart</h2>	
       <hr>
