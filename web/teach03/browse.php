@@ -38,7 +38,7 @@
             button2(); 
         } 
         function addToCart() { 
-            echo "Hello World!";
+            $_SESSION["test"] = "HOWDY";
         } 
         function button2() { 
             echo "This is Button2 that is selected"; 
