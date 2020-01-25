@@ -31,7 +31,7 @@
     <div class="row">
       <div class="col">
          <img class="discpic" src="boss.jpg">
-         <p class="pdiscs">Boss- Champion plastic.<br><b>$15.00<b/></p>
+         <p class="pdiscs">Boss- Champion plastic.<br><b>$15.00</b></p>
       </div>
       <div class="col">
         <img class="discpic" src="destroyer.jpg">
