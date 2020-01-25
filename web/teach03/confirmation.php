@@ -27,19 +27,16 @@
     </div>	
     <a href="cart.php">Back to cart</a>
     <div class="centerAll">
-      <h2 class="heading">Purchase Confirmed!</h2>	
-      <h3>You have purchased the following items:</h3>
+      <h3 class="heading">Purchase Confirmed!</h3>	
+      <h2>You have purchased the following items:</h2>
       <?php
           foreach ($_SESSION["cart"] as $disc) {
           echo "$disc <br><br>";
         }
       ?>
       <hr>
-      <h3>Your address information: </h3>
+      <h2>Your address information: </h2>
       <p>Name: <b><?php echo $first_name . ' ' . $last_name?></b></p>
-      <p>Phone: <b><?php echo $phone ?></b></p>
-      <p>Address: <b><?php echo $address . ' ' . $city . ' ,' . $state . ' ' $zip ?></b></p>
 
-	
   </body>
 </html>
