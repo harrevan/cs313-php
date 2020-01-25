@@ -27,6 +27,7 @@
     </div>
 
     <h2>Distance Drivers</h2>
+    <br>
     <div class="row">
       <div class="col">Boss</div>
       <div class="col">Beast</div>
@@ -34,7 +35,23 @@
       <div class="col">Wraith</div>
       <div class="col">Destroyer</div>
     </div>
-
+    <br>
+    <h2>Fairway Drivers</h2>
+    <br>
+    <div class="row">
+      <div class="col">Banshee</div>
+      <div class="col">Eagle</div>
+      <div class="col">Leaopard</div>
+      <div class="col">Teebird</div>
+    </div>
+    <br>
+    <h2>Putters</h2>
+    <br>
+    <div class="row">
+      <div class="col">Aviar</div>
+      <div class="col">Dart</div>
+      <div class="col">Pig</div>
+    </div>        
     <div class="container text-white inner-bod">
       <!--1st row -->   
     </div> <!-- cont largest--> 
