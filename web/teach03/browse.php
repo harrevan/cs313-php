@@ -34,11 +34,11 @@
         if(array_key_exists('boss_disc', $_POST)) { 
             addToCart(); 
         } 
-        else if(array_key_exists('button2', $_POST)) { 
+        else if(array_key_exists('destroyer_disc', $_POST)) { 
             button2(); 
         } 
-        function addToCart() { 
-            $_SESSION["test"] = "HOWDY";
+        function addToCart($value) { 
+            $_SESSION["test"] = "$value";
         } 
         function button2() { 
             echo "This is Button2 that is selected"; 
@@ -52,24 +52,27 @@
          <img class="discpic" src="boss.jpg">
          <p class="pdiscs">Boss- Champion plastic<br><b>$15.00</b></p>
          <form method="post">
-           <button type="submit" id="add" class="btn btn-info" name="boss_disc">Add To Cart</button>
+           <button type="submit" id="add" class="btn btn-info" name="boss_disc" value="Boss-9.99">Add To Cart</button>
          </form>
       </div>
       <div class="col">
         <img class="discpic" src="destroyer.jpg">
-         <p class="pdiscs">Destroyer- Champion plastic<br><b>$15.00</b></p>
+        <p class="pdiscs">Destroyer- Champion plastic<br><b>$15.00</b></p>
+        <form method="post">
+           <button type="submit" id="add" class="btn btn-info" name="destroyer_disc">Add To Cart</button>
+         </form>
       </div>
       <div class="col">
         <img class="discpic" src="beast.jpg">
-         <p class="pdiscs">Beast- DX plastic<br><b>$9.00</b></p>
+        <p class="pdiscs">Beast- DX plastic<br><b>$9.00</b></p>
       </div>
       <div class="col">
         <img class="discpic" src="road_runner.jpg">
-         <p class="pdiscs">Road Runner- Star plastic<br><b>$17.00</b></p>
+        <p class="pdiscs">Road Runner- Star plastic<br><b>$17.00</b></p>
       </div>
       <div class="col">
         <img class="discpic" src="wraith.jpg">
-         <p class="pdiscs">Wraith- Star plastic<br><b>$17.00</b></p>
+        <p class="pdiscs">Wraith- Star plastic<br><b>$17.00</b></p>
        </div>
     </div>
     <br>
