@@ -24,7 +24,7 @@
       <hr>
     </div>
       <div>
-        <form action="confirmation.php" method="post">>
+        <form action="confirmation.php" method="post">
           <label>First Name</label>
           <br>
           <input type="text" id="name" name="firstName" placeholder="William">

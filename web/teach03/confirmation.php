@@ -3,6 +3,7 @@
 
     foreach ($_SESSION["cart"] as $disc) {
     echo "$disc <br><br>";
+    }
 ?>
 
 <!DOCTYPE html>
