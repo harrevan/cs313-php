@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +24,7 @@ session_start();
       <hr>
     </div>
       <div>
-        <form action="confirmation.php" method="POST">>
+        <form action="confirmation.php" method="post">>
           <label>First Name</label>
           <br>
           <input type="text" id="name" name="firstName" placeholder="William">
