@@ -25,10 +25,18 @@ session_start();
       <?php
       $index = 0;
       foreach ($_SESSION["cart"] as $disc) {
-  	  echo "$disc <br> <hr>";
+  	  echo "$disc <br>";
   	  echo"<form method='post'>";
       echo"<button type='submit' id='remove' class='btn btn-info' name='button.$index'>Remove item</button>";
       echo"</form>";
+      echo"<hr>";
+      }
+
+      for($i = 0; $i < sizeof($_SESSION["cart"]); $i++){
+
+      if(array_key_exists('button.$i', $_POST)) { 
+             echo"REMOVED";
+         } 
       }
       ?>  
     </div>	
