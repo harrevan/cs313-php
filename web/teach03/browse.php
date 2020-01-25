@@ -53,7 +53,7 @@
 
         //foreach($discs as $disc) {
           //  if(array_key_exists($disc, $_POST)) { 
-              addToCart($disc); 
+              //addToCart($disc); 
            // }
       //  }
 
