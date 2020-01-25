@@ -3,9 +3,11 @@ session_start();
 ?>
 
 <?php
+$discs = $_SESSION["cart"];
 // Echo session variables that were set on previous page
-echo  $_SESSION["cart"][0];
-echo  $_SESSION["cart"][1];
+  foreach ($discs as $disc) {
+  	  echo $disc;
+  }
 ?>
 
 
