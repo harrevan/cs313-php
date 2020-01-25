@@ -4,7 +4,7 @@ session_start();
 
 <?php
 // Echo session variables that were set on previous page
-echo  $_SESSION["test"]
+echo  $_SESSION["cart"][0]
 ?>
 
 

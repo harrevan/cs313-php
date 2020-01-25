@@ -31,6 +31,8 @@
     </div>
 
     <?php
+         $discs = array();
+         $SESSION["cart"] = $discs;
          $champ = "$15.00";
          $dx = "$9.00";
          $star = "$17.00";
@@ -48,9 +50,9 @@
          $pig = "Pig- DX plastic " . $dx;
          $slammer = "Slammer- Champion plastic " . $champ;
 
-         $discs = array($boss, $destroyer, $beast, $road_runner, $wraith, $banshee, $leopard, $teebird, $aviar, $pig, $slammer);
+         
 
-  
+  //$boss, $destroyer, $beast, $road_runner, $wraith, $banshee, $leopard, $teebird, $aviar, $pig, $slammer
 
 
          if(array_key_exists('boss_disc', $_POST)) { 
@@ -60,7 +62,7 @@
              addToCart($destroyer);
          } 
         function addToCart($value) { 
-             $_SESSION["test"] = $value;
+             array_push($discs, $value);
          } 
          function button2() { 
              echo "This is Button2 that is selected"; 
