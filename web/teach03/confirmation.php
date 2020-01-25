@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $first_name = filter_var($_POST["firstName"], FILTER_SANITIZE_STRING);
 ?>
 
 <!DOCTYPE html>
