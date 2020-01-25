@@ -38,7 +38,7 @@
       <h2>Your address information: </h2>
       <p>Name: <b><?php echo $first_name . ' ' . $last_name?></b></p>
       <p>Phone: <b><?php echo $phone ?></b></p>
-      <p>Address: <b><?php echo $address?></b></p>
+      <p>Address: <b><?php echo $address . ' ' . $city . ', ' . $state . ' ' . $zip?></b></p>
 
   </body>
 </html>
