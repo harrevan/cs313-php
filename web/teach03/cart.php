@@ -34,16 +34,18 @@ session_start();
       $index++;
       }
 
-      foreach($_POST as $name => $content) { // Most people refer to $key => $value
-   echo "The HTML name: $name <br>";
-   echo "The content of it: $content <br>";
+     // foreach($_POST as $name => $content) { // Most people refer to $key => $value
+   //echo "The HTML name: $name <br>";
+  // echo "The content of it: $content <br>";
 }
 
       for($i = 0; $i < sizeof($_SESSION["cart"]); $i++){
 
            //echo "sizeof($_SESSION["cart"])<br>";
           if(array_key_exists("button_".$i, $_POST)) { 
-              echo"REMOVED" . $i;
+              unset($_SESSION["cart"][$i]);
+              $temp_array = array_values($_SESSION["cart"]);
+              $_SESSION["cart"] = $temp_array;
           } 
       }
       ?>  
