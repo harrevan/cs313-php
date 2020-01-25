@@ -2,14 +2,6 @@
 session_start();
 ?>
 
-<?php
-// Echo session variables that were set on previous page
-  foreach ($_SESSION["cart"] as $disc) {
-  	  echo $disc;
-  }
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,6 +17,18 @@ session_start();
       <h1>Disc Golf Distributor</h1>
       <p>Your most trusted disc supplier serving Southeastern Idaho.</p>
       </div>
+    </div>	
+
+    <div>
+      <h2 class="heading">Shopping Cart</h2>
+    </div>	
+    <hr>
+    <div>
+      <?php
+      foreach ($_SESSION["cart"] as $disc) {
+  	  echo "$disc <br> <hr>";
+      }
+      ?>  
     </div>	
   </body>
 </html>

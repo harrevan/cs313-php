@@ -39,19 +39,19 @@
          $champ = "$15.00";
          $dx = "$9.00";
          $star = "$17.00";
-         $boss = "Boss- Champion plastic ". $champ;
-         $destroyer = "Destroyer- Champion plastic " . $champ;
+         $boss = "Boss- Champion plastic ". "Price: " . "<b>$champ</b>";
+         $destroyer = "Destroyer- Champion plastic " . "Price: " .  $champ;
          $beast = "Beast- DX plastic ". $dx;
-         $road_runner = "Road Runner- Star plastic " . $star;
+         $road_runner = "Road Runner- Star plastic " . "Price: " .  $star;
          $wraith = "Wraith- Star plastic " . $star;
-         $banshee = "Banshee- Champion plastic " . $champ;
-         $eagle = "Eagle- DX plastic " . $dx;
-         $leopard = "Leopard- DX plastic " . $dx;
-         $teebird = "Teebird- Star plastic " . $star;
-         $aviar = "Aviar- DX plastic " . $dx;
-         $dart = "Dart- DX plastic " . $dx;
-         $pig = "Pig- DX plastic " . $dx;
-         $slammer = "Slammer- Champion plastic " . $champ;
+         $banshee = "Banshee- Champion plastic " . "Price: " .  $champ;
+         $eagle = "Eagle- DX plastic " . "Price: " .  $dx;
+         $leopard = "Leopard- DX plastic " . "Price: " .  $dx;
+         $teebird = "Teebird- Star plastic " . "Price: " .  $star;
+         $aviar = "Aviar- DX plastic " . "Price: " .  $dx;
+         $dart = "Dart- DX plastic " . "Price: " .  $dx;
+         $pig = "Pig- DX plastic " . "Price: " .  $dx;
+         $slammer = "Slammer- Champion plastic " . "Price: " .  $champ;
 
          
 
