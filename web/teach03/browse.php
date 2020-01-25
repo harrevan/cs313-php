@@ -32,6 +32,7 @@
       <div class="col">
          <img class="discpic" src="boss.jpg">
          <p class="pdiscs">Boss- Champion plastic<br><b>$15.00</b></p>
+         <button type="button" class="btn btn-info">Add To Cart</button>
       </div>
       <div class="col">
         <img class="discpic" src="destroyer.jpg">
@@ -87,28 +88,10 @@
         <img class="discpic" src="pig.jpg">
          <p class="pdiscs">Pig- DX plastic<br><b>$9.00</b></p>
       </div>
+      <div class="col">
+        <img class="discpic" src="slammer.jpg">
+         <p class="pdiscs">Slammer- Champion plastic<br><b>$15.00</b></p>
+      </div>
     </div>      
-    <div class="row">
-      <div class="col">
-         <img class="discpic" src="boss.jpg">
-         <p class="pdiscs">Boss- Champion plastic<br><b>$15.00</b></p>
-      </div>
-      <div class="col">
-        <img class="discpic" src="destroyer.jpg">
-         <p class="pdiscs">Destroyer- Champion plastic<br><b>$15.00</b></p>
-      </div>
-      <div class="col">
-        <img class="discpic" src="beast.jpg">
-         <p class="pdiscs">Beast- DX plastic<br><b>$9.00</b></p>
-      </div>
-      <div class="col">
-        <img class="discpic" src="road_runner.jpg">
-         <p class="pdiscs">Road Runner- Star plastic<br><b>$17.00</b></p>
-      </div>
-      <div class="col">
-        <img class="discpic" src="wraith.jpg">
-         <p class="pdiscs">Wraith- Star plastic<br><b>$17.00</b></p>
-       </div>
-    </div>
   </body>
 </html>
