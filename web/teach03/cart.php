@@ -19,14 +19,16 @@ session_start();
       </div>
     </div>	
 
-    <div>
-      <h2 class="heading">Shopping Cart</h2>
-    </div>	
-    <hr>
-    <div>
+    <div class="centerAll">
+      <h2 class="heading">Shopping Cart</h2>	
+      <hr>
       <?php
+      $index = 0;
       foreach ($_SESSION["cart"] as $disc) {
   	  echo "$disc <br> <hr>";
+  	  echo"<form method='post'>";
+      echo"<button type='submit' id='remove' class='btn btn-info' name='button.$index'>Remove item</button>";
+      echo"</form>";
       }
       ?>  
     </div>	
