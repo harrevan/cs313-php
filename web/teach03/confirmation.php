@@ -29,7 +29,7 @@
       ?>
       <hr>
       <h3>Your address information: </h3>
-      <p>Name: <?php echo $_POST["firstname"] . $_POST["lastname"] ?></p>
+      <p>Name: <?php echo $_POST["firstName"] . $_POST["lastName"] ?></p>
       <p>Phone: <?php  ?></p>
       <p>Address: <?php  ?></p>
 
