@@ -30,13 +30,30 @@
       </div>
     </div>
 
+    <?php
+        if(array_key_exists('boss_disc', $_POST)) { 
+            addToCart(); 
+        } 
+        else if(array_key_exists('button2', $_POST)) { 
+            button2(); 
+        } 
+        function addToCart() { 
+            system.out.println("HELLO WORLD!");
+        } 
+        function button2() { 
+            echo "This is Button2 that is selected"; 
+        } 
+    ?> 
+
     <h2>Distance Drivers</h2>
     <br>
     <div class="row">
       <div class="col">
          <img class="discpic" src="boss.jpg">
          <p class="pdiscs">Boss- Champion plastic<br><b>$15.00</b></p>
-         <button type="button" id="add" class="btn btn-info" action="addToCart()">Add To Cart</button>
+         <form method="post">
+           <button type="submit" id="add" class="btn btn-info" name="boss_disc"action="">Add To Cart</button>
+         </form>
       </div>
       <div class="col">
         <img class="discpic" src="destroyer.jpg">
