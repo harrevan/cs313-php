@@ -31,28 +31,23 @@
     <div class="row">
       <div class="col">
          <img class="discpic" src="boss.jpg">
-         <br>
-         <p class="pdiscs">Boss- Champion plastic.<br>$15.00</p>
+         <p class="pdiscs">Boss- Champion plastic.<br><b>$15.00<b/></p>
       </div>
       <div class="col">
         <img class="discpic" src="destroyer.jpg">
-         <br>
-         <p class="pdiscs">Destroyer- Champion plastic.<br>$15.00</p>
+         <p class="pdiscs">Destroyer- Champion plastic.<br><b>$15.00</b></p>
       </div>
       <div class="col">
         <img class="discpic" src="beast.jpg">
-         <br>
-         <p class="pdiscs">Beast- DX plastic.<br>$9.00</p>
+         <p class="pdiscs">Beast- DX plastic.<br><b>$9.00</b></p>
       </div>
       <div class="col">
         <img class="discpic" src="road_runner.jpg">
-         <br>
-         <p class="pdiscs">Road Runner- Star plastic.<br>$17.00</p>
+         <p class="pdiscs">Road Runner- Star plastic.<br><b>$17.00</b></p>
       </div>
       <div class="col">
         <img class="discpic" src="wraith.jpg">
-         <br>
-         <p class="pdiscs">Wraith- Star plastic.<br>$17.00</p>
+         <p class="pdiscs">Wraith- Star plastic.<br><b>$17.00</b></p>
        </div>
     </div>
     <br>
