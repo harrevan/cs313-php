@@ -1,5 +1,15 @@
 <?php
 session_start();
+
+      for($i = 0; $i < sizeof($_SESSION["cart"]); $i++){
+
+           //echo "sizeof($_SESSION["cart"])<br>";
+          if(array_key_exists("button_".$i, $_POST)) { 
+              unset($_SESSION["cart"][$i]);
+              $temp_array = array_values($_SESSION["cart"]);
+              $_SESSION["cart"] = $temp_array;
+          } 
+      }
 ?>
 
 <!DOCTYPE html>
@@ -37,17 +47,6 @@ session_start();
      // foreach($_POST as $name => $content) { // Most people refer to $key => $value
    //echo "The HTML name: $name <br>";
   // echo "The content of it: $content <br>";}
-
-
-      for($i = 0; $i < sizeof($_SESSION["cart"]); $i++){
-
-           //echo "sizeof($_SESSION["cart"])<br>";
-          if(array_key_exists("button_".$i, $_POST)) { 
-              unset($_SESSION["cart"][$i]);
-              //$temp_array = array_values($_SESSION["cart"]);
-              //$_SESSION["cart"] = $temp_array;
-          } 
-      }
       ?>  
     </div>	
   </body>
