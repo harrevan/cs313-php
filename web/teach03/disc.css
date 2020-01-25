@@ -11,3 +11,8 @@
 #add {
   padding: 20px;
 }
+
+#linkRight{
+	text-align:right;
+	font-size:14px;
+}

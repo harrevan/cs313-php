@@ -103,7 +103,7 @@
              array_push($_SESSION["cart"], $disc);
          } 
     ?> 
-
+    <a href="cart.php" id="linkRight">Shopping Cart</a>
     <h2>Distance Drivers</h2>
     <br>
     <div class="row">
