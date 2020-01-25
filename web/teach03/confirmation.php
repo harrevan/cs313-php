@@ -1,6 +1,12 @@
 <?php
     session_start();
     $first_name = filter_var($_POST["firstName"], FILTER_SANITIZE_STRING);
+    $last_name = filter_var($_POST["lastName"], FILTER_SANITIZE_STRING);
+    $phone = filter_var($_POST["phoneNumber"], FILTER_SANITIZE_NUMBER_INT);
+    $address = filter_var($_POST["address"], FILTER_SANITIZE_STRING);
+    $city = filter_var($_POST["cityName"], FILTER_SANITIZE_STRING);
+    $state = filter_var($_POST["stateName"], FILTER_SANITIZE_STRING);
+    $phone = filter_var($_POST["zipCode"], FILTER_SANITIZE_NUMBER_INT);
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +36,7 @@
       ?>
       <hr>
       <h3>Your address information: </h3>
-      <p>Name: <?php echo $_POST["firstName"] . $_POST["lastName"] ?></p>
+      <p>Name: <?php echo $first_name . ' ' . $last_name ?></p>
       <p>Phone: <?php  ?></p>
       <p>Address: <?php  ?></p>
 
