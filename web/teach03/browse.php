@@ -32,7 +32,7 @@
 
     <?php
          $discs = array();
-         $SESSION["cart"] = $discs;
+         $_SESSION["cart"] = $discs;
          $champ = "$15.00";
          $dx = "$9.00";
          $star = "$17.00";
