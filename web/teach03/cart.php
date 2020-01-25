@@ -34,8 +34,8 @@ session_start();
 
       for($i = 0; $i < sizeof($_SESSION["cart"]); $i++){
 
-           echo"$i<br>";
-           echo "sizeof($_SESSION["cart"])<br>";
+           //echo"$i<br>";
+           //echo "sizeof($_SESSION["cart"])<br>";
           if(array_key_exists('button.$i', $_POST)) { 
               echo"REMOVED";
           } 
