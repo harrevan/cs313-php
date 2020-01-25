@@ -6,7 +6,7 @@
     $address = filter_var($_POST["address"], FILTER_SANITIZE_STRING);
     $city = filter_var($_POST["cityName"], FILTER_SANITIZE_STRING);
     $state = filter_var($_POST["stateName"], FILTER_SANITIZE_STRING);
-    $phone = filter_var($_POST["zipCode"], FILTER_SANITIZE_NUMBER_INT);
+    $zip = filter_var($_POST["zipCode"], FILTER_SANITIZE_NUMBER_INT);
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +25,7 @@
       <p>Your most trusted disc supplier serving Southeastern Idaho.</p>
       </div>
     </div>	
-    <a href="browse.php">Back to cart</a>
+    <a href="cart.php">Back to cart</a>
     <div class="centerAll">
       <h2 class="heading">Purchase Confirmed!</h2>	
       <h3>You have purchased the following items:</h3>
@@ -37,8 +37,8 @@
       <hr>
       <h3>Your address information: </h3>
       <p>Name: <b><?php echo $first_name . ' ' . $last_name?></b></p>
-      <p>Phone: <?php  ?></p>
-      <p>Address: <?php  ?></p>
+      <p>Phone: <b><?php echo $phone ?></b></p>
+      <p>Address: <b><?php echo $address . ' ' . $city . ' ,' . $state . ' ' $zip ?></b></p>
 
 	
   </body>
