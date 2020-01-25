@@ -17,7 +17,11 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script> 
+    <title>Disc Golf Distributor</title>
   </head>
+  <?php
+    session_start();
+  ?>
   <body>
     <div class="jumbotron text-center">
       <div class="container">
@@ -32,7 +36,7 @@
       <div class="col">
          <img class="discpic" src="boss.jpg">
          <p class="pdiscs">Boss- Champion plastic<br><b>$15.00</b></p>
-         <button type="button" class="btn btn-info">Add To Cart</button>
+         <button type="button" id="add" class="btn btn-info" action="addToCart()">Add To Cart</button>
       </div>
       <div class="col">
         <img class="discpic" src="destroyer.jpg">
