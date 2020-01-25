@@ -104,7 +104,7 @@
          } 
     ?> 
     <div id="linkRight">
-      <a href="cart.php" id="linkRight">Shopping Cart</a>
+      <a href="cart.php">Shopping Cart</a>
     </div>  
     <h2>Distance Drivers</h2>
     <br>

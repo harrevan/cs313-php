@@ -28,7 +28,7 @@ session_start();
       <p>Your most trusted disc supplier serving Southeastern Idaho.</p>
       </div>
     </div>	
-    <a href="browse.php">Shopping Cart</a>
+    <a href="browse.php">Back to browse</a>
     <div class="centerAll">
       <h2 class="heading">Shopping Cart</h2>	
       <hr>
