@@ -34,7 +34,6 @@
          $champ = "$15.00";
          $dx = "$9.00";
          $star = "$17.00";
-
          $boss = "Boss- Champion plastic ". $champ;
          $destroyer = "Destroyer- Champion plastic";
          $beast = "Beast- DX plastic ". $dx;
@@ -54,11 +53,11 @@
   
 
 
-         if(array_key_exists($boss, $_POST)) { 
+         if(array_key_exists('boss_disc', $_POST)) { 
              addToCart($boss);
          } 
          else if(array_key_exists('destroyer_disc', $_POST)) { 
-             button2(); 
+             addToCart($destroyer);
          } 
         function addToCart($value) { 
              $_SESSION["test"] = $value;
@@ -75,27 +74,36 @@
          <img class="discpic" src="boss.jpg">
          <p class="pdiscs">Boss- Champion plastic<br><b>$15.00</b></p>
          <form method="post">
-           <button type="submit" id="add" class="btn btn-info" name="<?php $boss ?>">Add To Cart</button>
+           <button type="submit" id="add" class="btn btn-info" name="boss_disc">Add To Cart</button>
          </form>
       </div>
       <div class="col">
         <img class="discpic" src="destroyer.jpg">
         <p class="pdiscs">Destroyer- Champion plastic<br><b>$15.00</b></p>
         <form method="post">
-           <button type="submit" id="add" class="btn btn-info" name="destroyer_disc">Add To Cart</button>
-         </form>
+          <button type="submit" id="add" class="btn btn-info" name="destroyer_disc">Add To Cart</button>
+        </form>
       </div>
       <div class="col">
         <img class="discpic" src="beast.jpg">
         <p class="pdiscs">Beast- DX plastic<br><b>$9.00</b></p>
+        <form method="post">
+          <button type="submit" id="add" class="btn btn-info" name="beast_disc">Add To Cart</button>
+        </form>        
       </div>
       <div class="col">
-        <img class="discpic" src="road_runner.jpg">
+        <img class="discpic" src="road_runner.jpg" >
         <p class="pdiscs">Road Runner- Star plastic<br><b>$17.00</b></p>
+        <form method="post">
+          <button type="submit" id="add" class="btn btn-info" name="road_runner_disc">Add To Cart</button>
+        </form>        
       </div>
       <div class="col">
         <img class="discpic" src="wraith.jpg">
         <p class="pdiscs">Wraith- Star plastic<br><b>$17.00</b></p>
+        <form method="post">
+           <button type="submit" id="add" class="btn btn-info" name="wraith_disc">Add To Cart</button>
+         </form>        
        </div>
     </div>
     <br>
@@ -105,18 +113,30 @@
       <div class="col">
          <img class="discpic" src="banshee.jpg">
          <p class="pdiscs">Banshee- Champion plastic<br><b>$15.00</b></p>
+         <form method="post">
+           <button type="submit" id="add" class="btn btn-info" name="banshee_disc">Add To Cart</button>
+         </form>   
       </div>
       <div class="col">
         <img class="discpic" src="eagle.jpg">
          <p class="pdiscs">Eagle- DX plastic<br><b>$9.00</b></p>
+         <form method="post">
+           <button type="submit" id="add" class="btn btn-info" name="eagle_disc">Add To Cart</button>
+         </form>   
       </div>
       <div class="col">
         <img class="discpic" src="leopard.jpg">
          <p class="pdiscs">Leopard- DX plastic<br><b>$9.00</b></p>
+         <form method="post">
+           <button type="submit" id="add" class="btn btn-info" name="leopard_disc">Add To Cart</button>
+         </form>   
       </div>
       <div class="col">
         <img class="discpic" src="teebird.jpg">
          <p class="pdiscs">Teebird- Star plastic<br><b>$17.00</b></p>
+         <form method="post">
+           <button type="submit" id="add" class="btn btn-info" name="teebird_disc">Add To Cart</button>
+         </form>   
       </div>
     </div>
     <br>
@@ -126,18 +146,30 @@
       <div class="col">
          <img class="discpic" src="aviar.jpg">
          <p class="pdiscs">Aviar- DX plastic<br><b>$9.00</b></p>
+         <form method="post">
+           <button type="submit" id="add" class="btn btn-info" name="aviar_disc">Add To Cart</button>
+         </form>   
       </div>
       <div class="col">
         <img class="discpic" src="dart.jpg">
          <p class="pdiscs">Dart- DX plastic<br><b>$9.00</b></p>
+         <form method="post">
+           <button type="submit" id="add" class="btn btn-info" name="dart_disc">Add To Cart</button>
+         </form>   
       </div>
       <div class="col">
         <img class="discpic" src="pig.jpg">
          <p class="pdiscs">Pig- DX plastic<br><b>$9.00</b></p>
+         <form method="post">
+           <button type="submit" id="add" class="btn btn-info" name="pig_disc">Add To Cart</button>
+         </form>   
       </div>
       <div class="col">
         <img class="discpic" src="slammer.jpg">
          <p class="pdiscs">Slammer- Champion plastic<br><b>$15.00</b></p>
+         <form method="post">
+           <button type="submit" id="add" class="btn btn-info" name="slammer_disc">Add To Cart</button>
+         </form>   
       </div>
     </div>      
   </body>
