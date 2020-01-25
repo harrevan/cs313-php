@@ -36,7 +36,7 @@
       ?>
       <hr>
       <h3>Your address information: </h3>
-      <p>Name: <?php echo $first_name . ' ' . $last_name ?></p>
+      <p>Name: <?php echo "<b>"$first_name . ' ' . $last_name"</b>"?></p>
       <p>Phone: <?php  ?></p>
       <p>Address: <?php  ?></p>
 
