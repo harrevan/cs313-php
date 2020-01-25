@@ -20,7 +20,7 @@
     <title>Disc Golf Distributor</title>
   </head>
   <?php
-    session_start();
+      session_start();
   ?>
   <body>
     <div class="jumbotron text-center">
@@ -31,18 +31,45 @@
     </div>
 
     <?php
-        if(array_key_exists('boss_disc', $_POST)) { 
-            addToCart("Boss-$9.99"); 
-        } 
-        else if(array_key_exists('destroyer_disc', $_POST)) { 
-            button2(); 
-        } 
-        function addToCart($value) { 
-            $_SESSION["test"] = "$value";
-        } 
-        function button2() { 
-            echo "This is Button2 that is selected"; 
-        } 
+        $champ = 15.00;
+        $dx = 9.00;
+        $star = 17.00;
+
+        $boss = "Boss- Champion plastic ". $champ;
+        $destroyer = "Destroyer- Champion plastic";
+        $beast = "Beast- DX plastic ". $dx;
+        $road_runner = "Road Runner- Star plastic " . $star;
+        $wraith = "Wraith- Star plastic " . $star;
+        $banshee = "Banshee- Champion plastic " . $champ;
+        $eagle = "Eagle- DX plastic " . $dx;
+        $leopard = "Leopard- DX plastic " . $dx;
+        $teebird = "Teebird- Star plastic " . $star;
+        $aviar = "Aviar- DX plastic " . $dx;
+        $dart = "Dart- DX plastic " . $dx;
+        $pig = "Pig- DX plastic " . $dx;
+        $slammer = "Slammer- Champion plastic " . $champ;
+
+        $discs = array($boss, $destroyer, $beast, $road_runner, $wraith, $banshee, $leopard, $teebird, $aviar, $pig, $slammer);
+
+        foreach($discs as $disc) {
+            if(array_key_exists($disc, $_POST)) { 
+              addToCart($disc); 
+            }
+        }
+
+
+        // if(array_key_exists('boss_disc', $_POST)) { 
+        //     addToCart("Boss-$9.99"); 
+        // } 
+        // else if(array_key_exists('destroyer_disc', $_POST)) { 
+        //     button2(); 
+        // } 
+         function addToCart($value) { 
+             $_SESSION["test"] = $value;
+        // } 
+        // function button2() { 
+        //     echo "This is Button2 that is selected"; 
+        // } 
     ?> 
 
     <h2>Distance Drivers</h2>
@@ -52,7 +79,7 @@
          <img class="discpic" src="boss.jpg">
          <p class="pdiscs">Boss- Champion plastic<br><b>$15.00</b></p>
          <form method="post">
-           <button type="submit" id="add" class="btn btn-info" name="boss_disc">Add To Cart</button>
+           <button type="submit" id="add" class="btn btn-info" name=<?php $boss ?>>Add To Cart</button>
          </form>
       </div>
       <div class="col">
