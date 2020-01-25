@@ -40,7 +40,7 @@
          $dx = "$9.00";
          $star = "$17.00";
          $boss = "Boss- Champion plastic ". $champ;
-         $destroyer = "Destroyer- Champion plastic";
+         $destroyer = "Destroyer- Champion plastic " . $champ;
          $beast = "Beast- DX plastic ". $dx;
          $road_runner = "Road Runner- Star plastic " . $star;
          $wraith = "Wraith- Star plastic " . $star;
@@ -64,12 +64,43 @@
          else if(array_key_exists('destroyer_disc', $_POST)) { 
              addToCart($destroyer);
          } 
+         else if(array_key_exists('beast_disc', $_POST)) { 
+             addToCart($beast);
+         } 
+         else if(array_key_exists('road_runner_disc', $_POST)) { 
+             addToCart($road_runner);
+         } 
+         else if(array_key_exists('wraith_disc', $_POST)) { 
+             addToCart($wraith);
+         } 
+         else if(array_key_exists('banshee_disc', $_POST)) { 
+             addToCart($banshee);
+         } 
+         else if(array_key_exists('eagle_disc', $_POST)) { 
+             addToCart($eagle);
+         } 
+         else if(array_key_exists('leopard_disc', $_POST)) { 
+             addToCart($leopard);
+         } 
+         else if(array_key_exists('teebird_disc', $_POST)) { 
+             addToCart($teebird);
+         } 
+         else if(array_key_exists('aviar_disc', $_POST)) { 
+             addToCart($aviar);
+         } 
+         else if(array_key_exists('dart_disc', $_POST)) { 
+             addToCart($dart);
+         } 
+         else if(array_key_exists('pig_disc', $_POST)) { 
+             addToCart($pig);
+         } 
+         else if(array_key_exists('slammer_disc', $_POST)) { 
+             addToCart($slammer);
+         } 
+
         function addToCart($value) { 
              $disc = $value;
              array_push($_SESSION["cart"], $disc);
-         } 
-         function button2() { 
-             echo "This is Button2 that is selected"; 
          } 
     ?> 
 
