@@ -38,7 +38,7 @@
             button2(); 
         } 
         function addToCart() { 
-            system.out.println("HELLO WORLD!");
+            echo "Hello World!";
         } 
         function button2() { 
             echo "This is Button2 that is selected"; 
@@ -52,7 +52,7 @@
          <img class="discpic" src="boss.jpg">
          <p class="pdiscs">Boss- Champion plastic<br><b>$15.00</b></p>
          <form method="post">
-           <button type="submit" id="add" class="btn btn-info" name="boss_disc"action="">Add To Cart</button>
+           <button type="submit" id="add" class="btn btn-info" name="boss_disc">Add To Cart</button>
          </form>
       </div>
       <div class="col">
