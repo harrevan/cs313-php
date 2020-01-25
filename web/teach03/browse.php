@@ -21,11 +21,19 @@
   <body>
     <div class="jumbotron text-center">
       <div class="container">
-        <h1>Evan Harrison's Home Page</h1>
-        <p>Meet the most precious thing in the world to me... my family.</p>
+        <h1>Disc Golf Distributor</h1>
+        <p>Your most trusted disc supplier serving Southeastern Idaho.</p>
       </div>
     </div>
 
+    <h2>Distance Drivers</h2>
+    <div class="row">
+      <div class="col">Boss</div>
+      <div class="col">Beast</div>
+      <div class="col">Roadrunner</div>
+      <div class="col">Wraith</div>
+      <div class="col">Destroyer</div>
+    </div>
 
     <div class="container text-white inner-bod">
       <!--1st row -->   
