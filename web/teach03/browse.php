@@ -32,7 +32,7 @@
 
     <?php
         if(array_key_exists('boss_disc', $_POST)) { 
-            addToCart(); 
+            addToCart("Boss-$9.99"); 
         } 
         else if(array_key_exists('destroyer_disc', $_POST)) { 
             button2(); 
@@ -52,7 +52,7 @@
          <img class="discpic" src="boss.jpg">
          <p class="pdiscs">Boss- Champion plastic<br><b>$15.00</b></p>
          <form method="post">
-           <button type="submit" id="add" class="btn btn-info" name="boss_disc" value="Boss-9.99">Add To Cart</button>
+           <button type="submit" id="add" class="btn btn-info" name="boss_disc">Add To Cart</button>
          </form>
       </div>
       <div class="col">
