@@ -29,8 +29,9 @@ session_start();
   	  echo"<form method='post'>";
       echo"<button type='submit' id='remove' class='btn btn-info' name='button.$index'>Remove item</button>";
       echo"</form>";
-      echo'button.$index';
+      echo'button'.$index;
       echo"<hr>";
+      $index++;
       }
 
       for($i = 0; $i < sizeof($_SESSION["cart"]); $i++){
