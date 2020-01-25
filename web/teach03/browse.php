@@ -51,11 +51,11 @@
 
         $discs = array($boss, $destroyer, $beast, $road_runner, $wraith, $banshee, $leopard, $teebird, $aviar, $pig, $slammer);
 
-        foreach($discs as $disc) {
-            if(array_key_exists($disc, $_POST)) { 
+        //foreach($discs as $disc) {
+          //  if(array_key_exists($disc, $_POST)) { 
               addToCart($disc); 
-            }
-        }
+           // }
+      //  }
 
 
         // if(array_key_exists('boss_disc', $_POST)) { 
