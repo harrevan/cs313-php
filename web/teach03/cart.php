@@ -43,9 +43,9 @@ session_start();
 
            //echo "sizeof($_SESSION["cart"])<br>";
           if(array_key_exists("button_".$i, $_POST)) { 
-              unset($_SESSION["cart"][$i]);
-              $temp_array = array_values($_SESSION["cart"]);
-              $_SESSION["cart"] = $temp_array;
+              //unset($_SESSION["cart"][$i]);
+              //$temp_array = array_values($_SESSION["cart"]);
+              //$_SESSION["cart"] = $temp_array;
           } 
       }
       ?>  
