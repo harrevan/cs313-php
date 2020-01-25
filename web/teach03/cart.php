@@ -3,7 +3,7 @@ session_start();
 
 
 function addToCart() {
-    echo "HELLO WORLD";
+    system.out.println("HELLO WORLD!");
 }
 
 ?>
