@@ -19,39 +19,45 @@ session_start();
       </div>
     </div>	
     <a href="browse.php">Back to cart</a>
-    <a href="confirmation.php" class="linkRight">Checkout</a>
+    <div class="linkRight">
+      <a href="confirmation.php" class="linkRight">Complete Purchase</a>
+    </div>
     <div class="centerAll">
       <h2 class="heading">Checkout</h2>	
       <hr>
     </div>
-      <div class="inline">
-        <label>First Name</label>
-        <br>
-        <input type="text" id="name" name="firstName" placeholder="William">
-        <br><br>
-        <label>Last Name</label>
-        <br>
-        <input type="text" id="name" name="lastName" placeholder="Wallace">
-        <br><br>
-         <label>Phone Number</label>
-        <br>
-        <input type="text" id="phone" placeholder="123-123-1234" name="phoneNumber">
-        <br><br>
-        <label>Billing Address</label>
-        <br>
-        <input type="text" id="adress" name="address" placeholder="115 John Adams Street">
-        <br><br>
-        <label>City</label>
-        <br>
-        <input type="text" placeholder="Idaho Falls" name="cityName">
-        <br><br>
-        <label>State</label>
-        <br>
-        <input type="text" id="state" placeholder="ID" name="stateName">
-        <br><br>
-        <label>Zip Code</label>
-        <br>
-        <input type="text" id="zipc" placeholder="83401" name="zipCode">
+      <div>
+        <form action="confirmation.php" method="POST">>
+          <label>First Name</label>
+          <br>
+          <input type="text" id="name" name="firstName" placeholder="William">
+          <br><br>
+          <label>Last Name</label>
+          <br>
+          <input type="text" id="name" name="lastName" placeholder="Wallace">
+          <br><br>
+           <label>Phone Number</label>
+          <br>
+          <input type="text" id="phone" placeholder="123-123-1234" name="phoneNumber">
+          <br><br>
+          <label>Billing Address</label>
+          <br>
+          <input type="text" id="adress" name="address" placeholder="115 John Adams Street">
+          <br><br>
+          <label>City</label>
+          <br>
+          <input type="text" placeholder="Idaho Falls" name="cityName">
+          <br><br>
+          <label>State</label>
+          <br>
+          <input type="text" id="state" placeholder="ID" name="stateName">
+          <br><br>
+          <label>Zip Code</label>
+          <br>
+          <input type="text" id="zipc" placeholder="83401" name="zipCode">
+          <br>
+          <input type="submit" value="Complete Purchase">
+        </form>
       </div>    	
   </body>
 </html>
