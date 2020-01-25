@@ -43,7 +43,7 @@ session_start();
 
            echo"$i<br>";
            //echo "sizeof($_SESSION["cart"])<br>";
-          if(array_key_exists("button".$i, $_POST)) { 
+          if(array_key_exists("button_".$i, $_POST)) { 
               echo"REMOVED";
           } 
       }
