@@ -1,0 +1,109 @@
+h1 {
+  border-bottom-style: solid;
+  border-top-style: solid;
+  text-align: center;
+  margin: 0;
+  background-color: #67CA5B
+	  }
+h2 {
+  border-bottom-style: dashed;
+} 
+h3 {
+  font-size: 140%;
+}
+select {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+table {
+  margin-right: 200px;
+  margin-top: 30px;
+  border-style: solid;
+  border-color: black;
+}
+th, td, table {
+  padding: 10px;
+}
+html {
+    margin:0;
+}
+body {
+  font-size: 120%;
+  margin: 0;
+}
+.discpic {
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  margin-left: 200px;
+}
+#purchaseinfo {
+  background-color:#DEDBDB;
+  overflow: hidden;
+  width: 100%;
+}
+.inline {
+  float: left;
+  margin: 20px;
+  font-size: 20px;
+}
+#basketPic {
+  background-color: white;
+  width: 200px;
+  height: 300px;
+  float: right;
+  margin: 20px;
+}
+.error {
+  font-size: 16px;
+  font-style: italic;
+  color: red;
+}
+
+#pReview {
+  font-family:Helvetica;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+.pPRev{
+  margin-left: 150px;
+}
+#tab{
+  margin-left: 150px;
+}
+
+#tab, .tabH, .tabD {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.tabH, .tabD {
+    padding: 20px;
+    text-align: center;
+}
+#newHead{
+  margin-left: 125px;
+  margin-right: 125px;
+  font-size: 175%;
+  font-family: Helvetica;
+  border-bottom-style: dotted;
+}
+.confirm{
+  margin: 50px;
+  text-align: center;
+  font-family: Helvetica;
+}
+
+#formCSS{
+  margin-left: 40%;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #67CA5B;
+  border: none;
+  color: black;
+  padding: 15px;
+  text-decoration: none;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
