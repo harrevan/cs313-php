@@ -19,9 +19,6 @@ session_start();
       </div>
     </div>	
     <a href="browse.php">Back to cart</a>
-    <div class="linkRight">
-      <a href="confirmation.php" class="linkRight">Complete Purchase</a>
-    </div>
     <div class="centerAll">
       <h2 class="heading">Checkout</h2>	
       <hr>
@@ -55,8 +52,8 @@ session_start();
           <label>Zip Code</label>
           <br>
           <input type="text" id="zipc" placeholder="83401" name="zipCode">
-          <br>
-          <input type="submit" value="Complete Purchase">
+          <br><br>
+          <input type="submit" id="add" class="btn btn-info" value="Complete Purchase">
         </form>
       </div>    	
   </body>
