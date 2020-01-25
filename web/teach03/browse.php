@@ -32,9 +32,9 @@
 
     <?php
          //$discs = array();
-         if(!isset ($_SESSION["cart"]){
-             $_SESSION["cart"] = array();
-         }
+        // if(!isset ($_SESSION["cart"]){
+       //      $_SESSION["cart"] = array();
+      //   }
 
          $champ = "$15.00";
          $dx = "$9.00";
