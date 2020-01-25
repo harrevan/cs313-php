@@ -31,8 +31,8 @@
     </div>
 
     <?php
-         $discs = array();
-         $_SESSION["cart"] = $discs;
+         //$discs = array();
+         $_SESSION["cart"] = array();
          $champ = "$15.00";
          $dx = "$9.00";
          $star = "$17.00";
@@ -62,7 +62,8 @@
              addToCart($destroyer);
          } 
         function addToCart($value) { 
-             array_push($discs, $value);
+             $disc = $value;
+             array_push($_SESSION["cart"], $disc);
          } 
          function button2() { 
              echo "This is Button2 that is selected"; 
