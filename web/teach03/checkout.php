@@ -26,31 +26,31 @@ session_start();
     </div>
       <div class="inline">
         <label>First Name</label>
-        <br><br>
+        <br>
         <input type="text" id="name" name="firstName" placeholder="William">
-        <br>
+        <br><br>
         <label>Last Name</label>
-        <br><br>
+        <br>
         <input type="text" id="name" name="lastName" placeholder="Wallace">
-        <br>
+        <br><br>
          <label>Phone Number</label>
-        <br><br>
-        <input type="text" id="phone" placeholder="123-123-1234" name="phoneNumber">
         <br>
-        <label>Billing Address</label>
+        <input type="text" id="phone" placeholder="123-123-1234" name="phoneNumber">
         <br><br>
+        <label>Billing Address</label>
+        <br>
         <input type="text" id="adress" name="address" placeholder="115 John Adams Street">
         <br><br>
         <label>City</label>
-        <br><br>
+        <br>
         <input type="text" placeholder="Idaho Falls" name="cityName">
         <br><br>
         <label>State</label>
-        <br><br>
+        <br>
         <input type="text" id="state" placeholder="ID" name="stateName">
         <br><br>
         <label>Zip Code</label>
-        <br><br>
+        <br>
         <input type="text" id="zipc" placeholder="83401" name="zipCode">
       </div>    	
   </body>
