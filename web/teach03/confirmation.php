@@ -25,7 +25,6 @@
       <p>Your most trusted disc supplier serving Southeastern Idaho.</p>
       </div>
     </div>	
-    <a href="cart.php">Back to cart</a>
     <div class="centerAll">
       <h2>Purchase Confirmed!</h3>	
       <h2 class="heading">You have purchased the following items:</h2>
