@@ -27,7 +27,7 @@ session_start();
       foreach ($_SESSION["cart"] as $disc) {
   	  echo "$disc <br><br>";
   	  echo"<form method='post'>";
-      echo"<button type='submit' id='remove' class='btn btn-info' name='$index' >Remove item</button>";
+      echo"<button type='submit' id='remove' class='btn btn-info' name='button.$index' >Remove item</button>";
       echo"</form>";
       echo'button'.$index;
       echo"<hr>";
