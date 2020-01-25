@@ -29,7 +29,11 @@
     <h2>Distance Drivers</h2>
     <br>
     <div class="row">
-      <div class="col">Boss</div>
+      <div class="col">
+         <img class src="boss.jpg">
+         <br>
+         Boss
+      </div>
       <div class="col">Beast</div>
       <div class="col">Roadrunner</div>
       <div class="col">Wraith</div>
