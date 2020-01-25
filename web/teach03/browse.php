@@ -31,9 +31,9 @@
     </div>
 
     <?php
-         $champ = 15.00;
-         $dx = 9.00;
-         $star = 17.00;
+         $champ = "$15.00";
+         $dx = "$9.00";
+         $star = "$17.00";
 
          $boss = "Boss- Champion plastic ". $champ;
          $destroyer = "Destroyer- Champion plastic";
@@ -54,7 +54,7 @@
   
 
 
-         if(array_key_exists('boss_disc', $_POST)) { 
+         if(array_key_exists($boss, $_POST)) { 
              addToCart($boss);
          } 
          else if(array_key_exists('destroyer_disc', $_POST)) { 
@@ -75,7 +75,7 @@
          <img class="discpic" src="boss.jpg">
          <p class="pdiscs">Boss- Champion plastic<br><b>$15.00</b></p>
          <form method="post">
-           <button type="submit" id="add" class="btn btn-info" name="boss_disc">Add To Cart</button>
+           <button type="submit" id="add" class="btn btn-info" name="<?php $boss ?>">Add To Cart</button>
          </form>
       </div>
       <div class="col">
