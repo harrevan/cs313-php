@@ -1,8 +1,8 @@
 -- Create Tables
 CREATE TABLE students(
     student_id SERIAL PRIMARY KEY,
-    student_n'AM'e VARCHAR (255) NOT NULL,
-    teacher_n'AM'e VARCHAR (255) NOT NULL,
+    student_name VARCHAR (255) NOT NULL,
+    teacher_name VARCHAR (255) NOT NULL,
     grade_level VARCHAR (255),
     class_time VARCHAR (255) NOT NULL
 );
