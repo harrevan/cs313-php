@@ -1,6 +1,9 @@
 .div_back_color{
 	background_color: #606060;
 }
+.jumbotron{
+	background_color: #606060;
+}
 
 h1{
 	text-align: center;
