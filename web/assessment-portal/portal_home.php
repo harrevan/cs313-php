@@ -22,6 +22,10 @@
       session_start();
   ?>
   <body>
+    <div class="jumbotron text-center">
+      <div class="container">
+      <h1>Kindergarten Assessment Portal</h1>
+      </div>
     <div>
       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <ul class="navbar-nav">
@@ -40,9 +44,7 @@
         </ul>
       </nav>  
     </div>
- 
-    <h1>Kindergarten Assessment portal</h1>
-    <br>
+    
     <div id="demo" class="carousel slide" data-ride="carousel">
 
       <!-- Indicators -->
@@ -58,7 +60,7 @@
           <img src="kids.png">
         </div>
         <div class="carousel-item">
-          <img src="aviar.jpg">
+          <img src="teaching.png">
         </div>
         <div class="carousel-item">
           <img src="coloring.png">
