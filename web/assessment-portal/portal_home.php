@@ -26,6 +26,7 @@
       <div class="container">
       <h1>Kindergarten Assessment Portal</h1>
       </div>
+    </div>  
     <div>
       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <ul class="navbar-nav">
@@ -44,7 +45,7 @@
         </ul>
       </nav>  
     </div>
-    
+
     <div id="demo" class="carousel slide" data-ride="carousel">
 
       <!-- Indicators -->
