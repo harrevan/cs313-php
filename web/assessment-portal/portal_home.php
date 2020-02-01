@@ -55,7 +55,7 @@
           <img src="kids.png">
         </div>
         <div class="carousel-item">
-          <img src="aviar.png">
+          <img src="aviar.jpg">
         </div>
         <div class="carousel-item">
           <img src="coloring.png">
