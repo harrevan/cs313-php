@@ -13,12 +13,12 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script> 
-    <title>Disc Golf Distributor</title>
+    <title>Assessment Portal</title>
   </head>
   <?php
       session_start();
   ?>
-  <body class="m-5 pb-5 bg-info">
+  <body class="m-5 p-5">
     <nav class="navbar navbar-expand-md bg-primary navbar-dark">
       <ul class="navbar-nav">
         <li class="nav-item active">
