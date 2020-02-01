@@ -2,7 +2,7 @@
 	background_color: #606060;
 }
 .jumbotron{
-	background_color: #606060;
+	background_color: red;
 }
 
 h1{
