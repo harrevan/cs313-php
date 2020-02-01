@@ -18,30 +18,27 @@
   <?php
       session_start();
   ?>
-  <body>
+  <body class="m-5 pb-5 bg-info">
     <nav class="navbar navbar-expand-md bg-primary navbar-dark">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Active</a>
+          <a class="nav-link" href="#">Portal Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Class- AM</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Class- PM</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#">Disabled</a>
         </li>
       </ul>
     </nav>  
-
-    <div class="linkRight">
-      <a href="cart.php">Shopping Cart</a>
-    </div>  
+ 
     <h2>Distance Drivers</h2>
     <br>
-    <div class="row">
+   <!-- <div class="row">
       <div class="col">
          <img class="discpic" src="boss.jpg">
          <p class="pdiscs">Boss- Champion plastic<br><b>$15.00</b></p>
@@ -59,6 +56,6 @@
     </div>
     <br>
       </div>
-    </div>      
+    </div>    -->  
   </body>
 </html>
