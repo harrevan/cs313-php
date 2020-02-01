@@ -18,23 +18,25 @@
   <?php
       session_start();
   ?>
-  <body class="m-5 p-5">
-    <nav class="navbar navbar-expand-md bg-primary navbar-dark">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Portal Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Class- AM</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Class- PM</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-    </nav>  
+  <body>
+    <div class="p-5">
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Portal Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Class- AM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Class- PM</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+      </nav>  
+    </div>
  
     <h2>Distance Drivers</h2>
     <br>
