@@ -21,7 +21,7 @@
   <?php
       session_start();
   ?>
-  <body>
+  <body id="home_body">
     <div>
       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <ul class="navbar-nav">
