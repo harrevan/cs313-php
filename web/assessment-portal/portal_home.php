@@ -19,7 +19,7 @@
       session_start();
   ?>
   <body>
-    <div class="p-5">
+    <div>
       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <ul class="navbar-nav">
           <li class="nav-item active">
