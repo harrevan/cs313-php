@@ -22,11 +22,6 @@
       session_start();
   ?>
   <body>
-    <div class="jumbotron text-center">
-      <div class="container">
-      <h1>Kindergarten Assessment Portal</h1>
-      </div>
-    </div>  
     <div>
       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <ul class="navbar-nav">
@@ -39,12 +34,14 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Class- PM</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
         </ul>
       </nav>  
     </div>
+    <div class="jumbotron text-center">
+      <div class="container">
+      <h1>Kindergarten Assessment Portal</h1>
+      </div>
+    </div>      
 
     <div id="demo" class="carousel slide" data-ride="carousel">
 
