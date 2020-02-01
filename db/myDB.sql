@@ -12,7 +12,7 @@ CREATE TABLE master_assessment(
     assessment_title VARCHAR (255) NOT NULL,
     description VARCHAR (255),
     subject VARCHAR (255) NOT NULL,
-    assessment_period INTEGER NOT NULL;
+    assessment_period INTEGER NOT NULL
 );
 
 CREATE TABLE master_question(
