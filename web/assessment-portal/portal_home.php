@@ -38,8 +38,39 @@
       </nav>  
     </div>
  
-    <h2>Distance Drivers</h2>
+    <h1>Kindergarten Assessment portal</h1>
     <br>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+
+      <!-- Indicators -->
+      <ul class="carousel-indicators">
+        <li data-target="#demo" data-slide-to="0" class="active"></li>
+        <li data-target="#demo" data-slide-to="1"></li>
+        <li data-target="#demo" data-slide-to="2"></li>
+      </ul>
+
+      <!-- The slideshow -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="kids.png">
+        </div>
+        <div class="carousel-item">
+          <img src="teaching.png">
+        </div>
+        <div class="carousel-item">
+          <img src="coloring.png">
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </a>
+      <a class="carousel-control-next" href="#demo" data-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </a>
+
+    </div>    
    <!-- <div class="row">
       <div class="col">
          <img class="discpic" src="boss.jpg">
