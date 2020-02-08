@@ -79,6 +79,12 @@
     <br>
     <div id="centerform">
       <form id="assessment_selection" method="post">
+        <label><b>Select Class Time:</b> </label>
+        <select name="time">
+          <option value="">Select</option>
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select>         
         <label><b>Select Assessment Unit:</b> </label>
         <select name="assessments">
           <option value ="">Select</option>
@@ -95,13 +101,7 @@
           <option value="ELA">ELA</option>
           <option value="MATH">Math</option>
         </select> 
-        <label><b>Select Class Time:</b> </label>
-        <select name="time">
-          <option value="">Select</option>
-          <option value="AM">AM</option>
-          <option value="PM">PM</option>
-        </select> 
-        <br>
+        <br><br>
         <input type=submit value="See Assessments">
       </form>
     </div>  
