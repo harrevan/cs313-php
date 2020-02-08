@@ -104,7 +104,7 @@
     <br><br>
     <div class="container">
       <div class="row">
-        <div class="col-2">
+        <div class="col-3">
           <h2><?php echo $_POST['time'] . " ";?>Students</h2>
           <form action="students.php" method="post">
             <?php
@@ -119,7 +119,7 @@
             <input type="submit" value="See Student Data">
           </form>
         </div>
-        <div class="col-10" id="centerform">
+        <div class="col-9" id="centerform">
           <h2><?php echo "Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>  
             <?php
               unset($_SESSION["assessment_array"]);
