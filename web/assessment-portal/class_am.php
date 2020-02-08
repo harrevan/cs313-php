@@ -124,8 +124,10 @@
           </form>
         </div>
         <div class="col-10">
-          <h2 class="centerform">Unit <?php echo " " . $_POST['assessments'] . " ";?>Class Assessment Scores</h2>  
+          <h2 class="centerform"><?php echo "Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>  
             <?php
+              unset($_SESSION["assessment_array"]);
+              $_SESSION["assessment_array"] = array();
               foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}' AND subject='{$_POST["subject"]}'") as $row)
               {
                 array_push($_SESSION["assessment_array"], $row['assessment_title']);
