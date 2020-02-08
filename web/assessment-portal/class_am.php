@@ -110,7 +110,7 @@
                 <br>
             <?php
               }
-              $_SESSION["selected_student"] = $_POST["stud"];
+              //$_SESSION["selected_student"] = $_POST["stud"];
             ?>
             <br>
             <input type="submit" value="See Student Data">

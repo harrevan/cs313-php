@@ -20,7 +20,7 @@
   </head>
   <?php
       session_start();
-      echo $_SESSION["selected_student"];
+      echo $_POST["stud"];
   ?>
    <body id="home_body">
     <div>
