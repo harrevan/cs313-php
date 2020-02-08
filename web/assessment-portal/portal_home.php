@@ -33,7 +33,7 @@
               Class- AM
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="class_am.php">English Assesments</a>
+              <a class="dropdown-item" href="class_am.php">ELA Assesments</a>
               <a class="dropdown-item" href="#">Math Assessments</a>
             </div>
           </li>

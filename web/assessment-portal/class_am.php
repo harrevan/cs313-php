@@ -20,6 +20,7 @@
   </head>
   <?php
       session_start();
+      $_SESSION["selected_student"] = "";
   ?>
   <body>
     <?php
@@ -45,14 +46,32 @@
         die();
       }
     ?>  
-    <?php
-      foreach ($db->query('SELECT student_name, student_id FROM students') as $row)
-      {
-        echo 'student: ' . $row['student_name'];
-        echo ' id: ' . $row['student_id'];
-        echo '<br/>';
-      }
-    ?>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-*3*">
+          <?php
+            foreach ($db->query('SELECT UPPER(student_name) FROM students') as $row)
+            {
+              echo '<a href="students.php"> . $row['student_name']</a>';
+              echo '<br/>';
+            }
+          ?>
+        </div>
+        <div class="col-*9*">
+          
+        </div>
+      </div>
+<!--       <div class="row">
+        <div class="col-*-*"></div>
+        <div class="col-*-*"></div>
+        <div class="col-*-*"></div>
+      </div>
+      <div class="row">
+        ...
+      </div> -->
+    </div>
 
    <!-- <div class="row">
       <div class="col">
