@@ -95,12 +95,20 @@
           <option value="5">Unit 5 Assessments</option>
           <option value="6">Unit 6 Assessments</option>
         </select> 
+        <script type="text/javascript">
+          document.getElementById('assessments').value = "<?php echo $_POST['assessments'];?>";
+        </script>  
+
         <label><b>Select Assessment Type:</b> </label>
         <select id="subject" name="subject">
           <option value="">Select</option>
           <option value="ELA">ELA</option>
           <option value="MATH">Math</option>
         </select> 
+        <script type="text/javascript">
+          document.getElementById('subject').value = "<?php echo $_POST['subject'];?>";
+        </script>  
+
         <br><br>
         <input type=submit value="See Assessments">
       </form>
