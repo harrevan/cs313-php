@@ -81,7 +81,6 @@
 
     <br>
     <div id="centerform">
-      <h1>AM-ELA Assessments</h1>
       <form id="assessment_selection" method="post">
         <label><b>Select Assessment Group:</b> </label>
         <select name="assessments">
@@ -93,6 +92,13 @@
           <option value="5">Unit 5 Assessments</option>
           <option value="6">Unit 6 Assessments</option>
         </select> 
+        <label><b>Select Class Time:</b> </label>
+        <select name="time">
+          <option>Select</option>
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select> 
+
         <br>
         <input type=submit value="See Assessments">
       </form>
@@ -101,10 +107,10 @@
     <div class="container">
       <div class="row">
         <div class="col-2">
-          <h2>Students</h2>
+          <h2><?php echo $_POST['time'] . " ";?>Students</h2>
           <form action="students.php">
             <?php
-              foreach ($db->query("SELECT student_name FROM students WHERE class_time='AM'") as $row)
+              foreach ($db->query("SELECT student_name FROM students WHERE class_time='{$_POST["time"]}'") as $row)
               {?>
                 <input type="radio" name="stud" value="<?php echo $row['student_name']; ?>"> <?php echo $row['student_name'];?>
                 <br>
