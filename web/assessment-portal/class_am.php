@@ -22,7 +22,38 @@
       session_start();
       $_SESSION["selected_student"] = "";
   ?>
-  <body>
+   <body id="home_body">
+    <div>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Portal Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Class- AM
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="class_am.php">ELA Assesments</a>
+              <a class="dropdown-item" href="#">Math Assessments</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Class- PM
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">English Assesments</a>
+              <a class="dropdown-item" href="#">Math Assessments</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Enter Student Scores</a>
+          </li>          
+        </ul>
+      </nav>  
+    </div>
+
     <?php
       try
       {
@@ -48,6 +79,17 @@
     ?>  
 
 
+    <div id="centerform">
+      <form id="assessment_selection" method="post">
+        <select name="assessments">
+          <option value="1">Unit 1 Assessments</option>
+          <option value="2">Unit 2 Assessments</option>
+          <option value="3">Unit 3 Assessments</option>
+          <option value="4">Unit 4 Assessments</option>
+          <option value="5">Unit 5 Assessments</option>
+          <option value="6">Unit 6 Assessments</option>
+      </form>
+    </div>  
     <div class="container">
       <div class="row">
         <div class="col-3">
