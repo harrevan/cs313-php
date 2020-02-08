@@ -20,7 +20,7 @@
   </head>
   <?php
       session_start();
-      $_SESSION["selected_student"] = ""
+      $_SESSION["selected_student"] = "";
   ?>
   <body>
     <?php
@@ -54,7 +54,7 @@
           <?php
             foreach ($db->query('SELECT UPPER(student_name) FROM students') as $row)
             {
-              echo '<a href="students.php">'.$row['student_name'].'</a>';
+              echo '<a href="students.php"> $row['student_name']</a>';
               echo '<br/>';
             }
           ?>
