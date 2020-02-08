@@ -76,13 +76,27 @@
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
-    ?>  
+    ?> 
+
+    <?php
+      function displayAssessmentData(){
+        if(isset($_POST["assessments"]))
+        {
+          $assessment_period = $_POST["assessments"];
+          foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$assessment_period'") as $row)
+          {
+            echo $row['assessment_title'] . '<br>';
+          }
+        }        
+      }
+    ?> 
 
     <br>
     <div id="centerform">
       <form id="assessment_selection" method="post">
         <label><b>Select Assessment Group:</b> </label>
         <select name="assessments">
+          <option>Select</option>
           <option value="1">Unit 1 Assessments</option>
           <option value="2">Unit 2 Assessments</option>
           <option value="3">Unit 3 Assessments</option>
@@ -115,15 +129,9 @@
         <div class="col-10">
           <h2 class="centerform">Class Assessment Scores</h2>  
             <?php
-              echo $POST_["assessments"]; 
-              if(isset($_POST["assessments"]))
-              {
-                foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}'") as $row)
-                {
-                  echo $row['assessment_title'] . '<br>';
-                }
-              }  
-          ?>
+              displayAssessmentData();
+
+            ?>
                 
             <?php
               
