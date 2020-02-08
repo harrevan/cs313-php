@@ -20,7 +20,34 @@
   </head>
   <?php
       session_start();
-  ?>
+
+  try
+  {
+    $dbUrl = getenv('DATABASE_URL');
+
+    $dbOpts = parse_url($dbUrl);
+
+    $dbHost = $dbOpts["host"];
+    $dbPort = $dbOpts["port"];
+    $dbUser = $dbOpts["user"];
+    $dbPassword = $dbOpts["pass"];
+    $dbName = ltrim($dbOpts["path"],'/');
+
+    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  }
+  catch (PDOException $ex)
+  {
+    echo 'Error!: ' . $ex->getMessage();
+    die();
+  }
+?> 
+
+<?php
+  $_SESSION["subject"] = $_POST["subject"];
+  $_SESSION["assessment_unit"] = $_POST["assessments"];
+?> 
    <body id="home_body">
     <div>
       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -59,3 +86,13 @@
 
   </body>
 </html>
+
+          <form action="students.php" method="post">
+            <?php
+              foreach ($db->query("SELECT student_name FROM students WHERE class_time='{$_POST["time"]}'") as $row)
+              {?>
+                <input type="radio" name="stud" value="<?php echo $row['student_name']; ?>"><?php echo $row['student_name'];?>
+                <br>
+            <?php
+              }
+            ?>
