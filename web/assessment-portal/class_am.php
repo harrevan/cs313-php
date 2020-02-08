@@ -69,6 +69,7 @@
 
     <?php
       $_SESSION["subject"] = $_POST["subject"];
+      $_SESSION["assessment_unit"] = $_POST["assessment"];
     ?> 
 
     <br>
