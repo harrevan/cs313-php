@@ -110,7 +110,7 @@
             <?php
               foreach ($db->query("SELECT student_name FROM students WHERE class_time='{$_POST["time"]}'") as $row)
               {?>
-                <input type="radio" name="stud" value="<?php echo $row['student_name']; ?>"> <b><?php echo $row['student_name'];?><b>
+                <input type="radio" name="stud" value="<?php echo $row['student_name']; ?>"><?php echo $row['student_name'];?>
                 <br>
             <?php
               }
@@ -127,7 +127,7 @@
               foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}' AND subject='{$_POST["subject"]}'") as $row)
               {
                 array_push($_SESSION["assessment_array"], $row['assessment_title']);    
-                echo $row['assessment_title'] . "<br>" . "Scores: Coming next week once user can enter data into database" . "<br>";
+                echo "<b>"$row['assessment_title']"</b>" . "<br>" . "Scores: coming next week" . "<br>";
               }
             ?>           
           
