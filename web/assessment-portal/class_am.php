@@ -102,7 +102,7 @@
       <div class="row">
         <div class="col-2">
           <h2><?php echo $_POST['time'] . " ";?>Students</h2>
-          <form action="students.php">
+          <form action="students.php" method="post">
             <?php
               foreach ($db->query("SELECT student_name FROM students WHERE class_time='{$_POST["time"]}'") as $row)
               {?>
