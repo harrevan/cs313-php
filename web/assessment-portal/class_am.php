@@ -97,7 +97,7 @@
       <div class="row">
         <div class="col-3">
           <h2>Students</h2>
-          <form>
+          <form action="students.php">
             <?php
               foreach ($db->query("SELECT student_name FROM students WHERE class_time='AM'") as $row)
               {?>
@@ -107,10 +107,11 @@
             <?php
               }
             ?>
+            <input type="submit" value="See Student Data">
           </form>
           
         </div>
-        <div class="col-9">
+        <div class="col-9 centerform">
           <h2>Class Assessment Scores</h2>  
           
         </div>
