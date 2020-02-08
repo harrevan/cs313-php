@@ -90,6 +90,7 @@
           <option value="5">Unit 5 Assessments</option>
           <option value="6">Unit 6 Assessments</option>
         </select> 
+        <input type=submit>
       </form>
     </div>  
     <br><br>
@@ -112,6 +113,13 @@
         </div>
         <div class="col-10">
           <h2 class="centerform">Class Assessment Scores</h2>  
+            <?php
+              foreach ($db->query("SELECT student_name FROM students WHERE class_time='AM'") as $row)
+              {?>
+                
+            <?php
+              }
+            ?>
           
         </div>
       </div>
