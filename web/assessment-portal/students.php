@@ -42,7 +42,7 @@
 
     <h1>Student:</h1>
   <?php
-      echo $_SESSION["selected_student"]
+      echo $_POST["stud"];
   ?>
 
 

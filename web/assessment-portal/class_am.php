@@ -110,7 +110,6 @@
                 <br>
             <?php
               }
-              $_SESSION["selected_student"] = "howdy";
             ?>
             <br>
             <input type="submit" value="See Student Data">
