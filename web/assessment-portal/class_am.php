@@ -108,7 +108,7 @@
           <h2><?php echo $_POST['time'] . " ";?>Students</h2>
           <form action="students.php" method="post">
             <?php
-              foreach ($db->query("SELECT UPPER('student_name') FROM students WHERE class_time='{$_POST["time"]}'") as $row)
+              foreach ($db->query("SELECT student_name FROM students WHERE class_time='{$_POST["time"]}'") as $row)
               {?>
                 <input type="radio" name="stud" value="<?php echo $row['student_name']; ?>"><?php echo $row['student_name'];?>
                 <br>
