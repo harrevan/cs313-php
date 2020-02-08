@@ -116,13 +116,17 @@
           <h2 class="centerform">Class Assessment Scores</h2>  
             <?php
               echo $POST_["assessments"]; 
-              foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period=1") as $row)
-
-                echo $row['assessment_title'] . '<br>';
-              {?>
+              if(isset($_POST["assessments"]))
+              {
+                foreach ($db->query("SELECT assessment_title FROM master_assessment") as $row)
+                {
+                  echo $row['assessment_title'] . '<br>';
+                }
+              }  
+          ?>
                 
             <?php
-              }
+              
             ?>
           
         </div>
