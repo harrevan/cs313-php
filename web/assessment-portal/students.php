@@ -42,11 +42,13 @@
 
     <h1><?php echo $_POST["stud"] . "'s " . $_SESSION["subject"] . " Unit " . $_SESSION["assessment_unit"] . " Assessments"; ?></h1>
     <h2 style="text-align:center">This page will allow users to enter assessment data for each student into the database. Will be implemented next week.</h2>
-    <?php
-      foreach ($_SESSION["assessment_array"] as $assessment) {
-  	    echo "$assessment<br>";
-      } 
-    ?>
+    <div id="centerform">
+      <?php
+        foreach ($_SESSION["assessment_array"] as $assessment) {
+  	      echo "$assessment<br>";
+        } 
+      ?>
+    </div>
   
 
 
