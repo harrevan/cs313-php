@@ -52,7 +52,7 @@
       <div class="row">
         <div class="col-*3*">
           <?php
-            foreach ($db->query('SELECT student_name FROM students WHERE class_time='AM'') as $row)
+            foreach ($db->query("SELECT student_name FROM students WHERE class_time='AM'") as $row)
             {?>
               <a href="students.php"> <?php echo $row['student_name'];?></a>
               <br/>
