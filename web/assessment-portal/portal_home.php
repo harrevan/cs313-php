@@ -29,11 +29,11 @@
             <a class="nav-link" href="#">Portal Home</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="class_am.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Class- AM
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">English Assesments</a>
+              <a class="dropdown-item" href="class_am.php">English Assesments</a>
               <a class="dropdown-item" href="#">Math Assessments</a>
             </div>
           </li>
