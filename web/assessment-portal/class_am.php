@@ -51,6 +51,7 @@
     <div class="container">
       <div class="row">
         <div class="col-*3*">
+          <h2>Students</h2>
           <?php
             foreach ($db->query("SELECT student_name FROM students WHERE class_time='AM'") as $row)
             {?>
@@ -62,6 +63,7 @@
           
         </div>
         <div class="col-*9*">
+          <h2>Class Assessment Scores</h2>  
           
         </div>
       </div>
