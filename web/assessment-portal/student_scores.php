@@ -22,7 +22,25 @@
       session_start();
   ?>
    <body id="home_body">
-    <h1> This page will allow student data to be entered for assessments and questions. Will be implemented next week.</h1>
+    <div>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="portal_home.php">Portal Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="class_am.php">
+              Classes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="student_scores.php">Enter Student Scores</a>
+          </li>          
+        </ul>
+      </nav>  
+    </div>
+
+    <h1> This page will allow assessment data to be entered for students.  Will be implemented next week.</h1>
 
   </body>
 </html>

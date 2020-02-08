@@ -119,8 +119,8 @@
             <input type="submit" value="See Student Data">
           </form>
         </div>
-        <div class="col-9" id="centerform">
-          <h2><?php echo "Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>  
+        <div class="col-9">
+          <h2 id="centerform"><?php echo "Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>  
             <?php
               unset($_SESSION["assessment_array"]);
               $_SESSION["assessment_array"] = array();
