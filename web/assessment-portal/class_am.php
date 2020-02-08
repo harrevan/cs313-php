@@ -81,9 +81,9 @@
           <option value="AM">AM</option>
           <option value="PM">PM</option>
         </select> 
-        <stript type="text/javascript">
+        <script type="text/javascript">
           document.getElementById('time').value = "<?php echo $_POST['time'];?>";
-        </stript>  
+        </script>  
 
         <label><b>Select Assessment Unit:</b> </label>
         <select id="assessments" name="assessments">
