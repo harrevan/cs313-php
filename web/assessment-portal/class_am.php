@@ -52,10 +52,10 @@
       <div class="row">
         <div class="col-*3*">
           <?php
-            foreach ($db->query('SELECT UPPER(student_name) FROM students') as $row)
+            foreach ($db->query('SELECT student_name FROM students') as $row)
             {?>
-              <a href="students.php"> <?php echo $row['student_name'];?></a>;
-              <br/>;
+              <a href="students.php"> <?php echo $row['student_name'];?></a>
+              <br/>
           <?php
             }
           ?>
