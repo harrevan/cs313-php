@@ -106,7 +106,7 @@
     <br><br>
     <div class="container">
       <div class="row">
-        <div class="col-2">
+        <div class="col-3">
           <h2><?php echo $_POST['time'] . " ";?>Students</h2>
           <form action="students.php">
             <?php
@@ -121,8 +121,8 @@
             <input type="submit" value="See Student Data">
           </form>
         </div>
-        <div class="col-10">
-          <h2 class="centerform">Class Assessment Scores</h2>  
+        <div class="col-9">
+          <h2 class="centerform">Unit <?php echo " " . $_POST['assessments'] . " ";?>Class Assessment Scores</h2>  
             <?php
               foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}'") as $row)
               {
