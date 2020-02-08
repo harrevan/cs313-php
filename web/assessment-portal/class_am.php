@@ -121,7 +121,7 @@
             <input type="submit" value="See Student Data">
           </form>
         </div>
-        <div class="col-9">
+        <div class="col-9" style="margin-left:50px">
           <h2 class="centerform">Unit <?php echo " " . $_POST['assessments'] . " ";?>Class Assessment Scores</h2>  
             <?php
               foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}'") as $row)
