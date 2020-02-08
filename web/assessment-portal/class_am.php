@@ -56,7 +56,7 @@
             <?php
               foreach ($db->query("SELECT student_name FROM students WHERE class_time='AM'") as $row)
               {?>
-                <input type="radio" value="$row['student_name']"> <?php echo $row['student_name'];?>
+                <input type="radio" value="<?php echo $row['student_name']; ?>"> <?php echo $row['student_name'];?>
                 <br>
             <?php
               }
