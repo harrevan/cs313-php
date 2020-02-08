@@ -115,7 +115,7 @@
         <div class="col-10">
           <h2 class="centerform">Class Assessment Scores</h2>  
             <?php
-              foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period=<?php echo $_POST["assessments"]?>") as $row)
+              foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period=1") as $row)
               {?>
                 
             <?php
