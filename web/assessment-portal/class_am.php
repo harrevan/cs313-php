@@ -50,11 +50,11 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-*3*">
+        <div class="col-*3* center">
           <h2>Students</h2>
           <form>
             <?php
-              foreach ($db->query("SELECT UPPER(student_name) FROM students WHERE class_time='AM'") as $row)
+              foreach ($db->query("SELECT student_name FROM students WHERE class_time='AM'") as $row)
               {?>
                 <input type="radio" value="$row['student_name']"> <?php echo $row['student_name'];?>
                 <br>
@@ -64,7 +64,7 @@
           </form>
           
         </div>
-        <div class="col-*9*">
+        <div class="col-*9* center">
           <h2>Class Assessment Scores</h2>  
           
         </div>
