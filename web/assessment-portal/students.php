@@ -45,7 +45,7 @@
     <div id="centerform">
       <?php
         foreach ($_SESSION["assessment_array"] as $assessment) {
-  	      echo $assessment "<br> Score:<br>";
+  	      echo $assessment . "<br> Score:<br>";
         } 
       ?>
     </div>
