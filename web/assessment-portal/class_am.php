@@ -79,12 +79,12 @@
     ?> 
 
     <?php
-      function displayAssessmentData($row) {
-        foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}'") as $row)
-        {
-          echo $row['assessment_title'] . '<br>';
-        }
-      }
+     // function displayAssessmentData() {
+       // foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}'") as $row)
+        //{
+         // echo $row['assessment_title'] . '<br>';
+        //}
+      //}
     ?> 
 
     <br>
@@ -125,32 +125,15 @@
         <div class="col-10">
           <h2 class="centerform">Class Assessment Scores</h2>  
             <?php
-              displayAssessmentData($row);
+              foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}'") as $row)
+              {
+                echo $row['assessment_title'] . '<br>';
+              }
             ?>
                 
           
         </div>
       </div>
-    </div>
-
-   <!-- <div class="row">
-      <div class="col">
-         <img class="discpic" src="boss.jpg">
-         <p class="pdiscs">Boss- Champion plastic<br><b>$15.00</b></p>
-         <form method="post">
-           <button type="submit" id="add" class="btn btn-info" name="boss_disc">Add To Cart</button>
-         </form>
-      </div>
-      <div class="col">
-        <img class="discpic" src="destroyer.jpg">
-        <p class="pdiscs">Destroyer- Champion plastic<br><b>$15.00</b></p>
-        <form method="post">
-          <button type="submit" id="add" class="btn btn-info" name="destroyer_disc">Add To Cart</button>
-        </form>
-      </div>
-    </div>
-    <br>
-      </div>
-    </div>    -->  
+    </div> 
   </body>
 </html>
