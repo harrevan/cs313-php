@@ -80,7 +80,7 @@
 
 
     <div id="centerform">
-      <p>Select assessment group: </p>
+      <h4>Select assessment group:</h4>
       <form id="assessment_selection" method="post">
         <select name="assessments">
           <option value="1">Unit 1 Assessments</option>
@@ -89,6 +89,7 @@
           <option value="4">Unit 4 Assessments</option>
           <option value="5">Unit 5 Assessments</option>
           <option value="6">Unit 6 Assessments</option>
+        </select> 
       </form>
     </div>  
     <br><br>
@@ -114,14 +115,6 @@
           
         </div>
       </div>
-<!--       <div class="row">
-        <div class="col-*-*"></div>
-        <div class="col-*-*"></div>
-        <div class="col-*-*"></div>
-      </div>
-      <div class="row">
-        ...
-      </div> -->
     </div>
 
    <!-- <div class="row">
