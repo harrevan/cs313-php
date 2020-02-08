@@ -20,6 +20,9 @@
   </head>
   <?php
       session_start();
+        if(!isset ($_SESSION["assessment_array"])){
+            $_SESSION["assessment_array"] = array();
+        }      
   ?>
    <body id="home_body">
     <div>
@@ -120,10 +123,10 @@
             <?php
               foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}'") as $row)
               {
+                array_push($_SESSION["assessment_array"], $row['assessment_title']);
                 echo $row['assessment_title'] . "<br>" . "Scores: Coming next week once user can enter data into database" . "<br>";
               }
-            ?>
-                
+            ?>           
           
         </div>
       </div>
