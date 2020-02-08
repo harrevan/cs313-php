@@ -20,7 +20,6 @@
   </head>
   <?php
       session_start();
-      $_SESSION["selected_student"] = "";
   ?>
    <body id="home_body">
     <div>
@@ -31,12 +30,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="class_am.php">
-              Class- AM
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="class_pm.php">
-              Class- PM
+              Classes
             </a>
           </li>
           <li class="nav-item">
@@ -84,7 +78,7 @@
       <form id="assessment_selection" method="post">
         <label><b>Select Assessment Group:</b> </label>
         <select name="assessments">
-          <option>Select</option>
+          <option value ="">Select</option>
           <option value="1">Unit 1 Assessments</option>
           <option value="2">Unit 2 Assessments</option>
           <option value="3">Unit 3 Assessments</option>
@@ -94,7 +88,7 @@
         </select> 
         <label><b>Select Class Time:</b> </label>
         <select name="time">
-          <option>Select</option>
+          <option value="">Select</option>
           <option value="AM">AM</option>
           <option value="PM">PM</option>
         </select> 
@@ -105,7 +99,7 @@
     </div>  
     <br><br>
     <div class="container">
-      <div class="row justify-content-lg-center">
+      <div class="row">
         <div class="col-2">
           <h2><?php echo $_POST['time'] . " ";?>Students</h2>
           <form action="students.php">
@@ -116,6 +110,7 @@
                 <br>
             <?php
               }
+              $_SESSION["selected_student"] = $_POST["stud"];
             ?>
             <br>
             <input type="submit" value="See Student Data">

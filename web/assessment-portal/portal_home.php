@@ -30,12 +30,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="class_am.php">
-              Class- AM
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="class_pm.php">
-              Class- PM
+              Classes
             </a>
           </li>
           <li class="nav-item">
