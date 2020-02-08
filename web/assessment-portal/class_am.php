@@ -78,10 +78,10 @@
       }
     ?>  
 
-
+    <br>
     <div id="centerform">
       <form id="assessment_selection" method="post">
-        <label>Select Assessment Group: </label>
+        <label><b>Select Assessment Group:</b> </label>
         <select name="assessments">
           <option value="1">Unit 1 Assessments</option>
           <option value="2">Unit 2 Assessments</option>
