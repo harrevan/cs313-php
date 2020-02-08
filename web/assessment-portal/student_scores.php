@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" type="text/css" href="assessment.css">
 
-    <title>Class-AM</title>
+    <title>Student Scores</title>
   </head>
   <?php
       session_start();
@@ -39,6 +39,21 @@
         </ul>
       </nav>  
     </div>
+
+    <form method="post">
+      <select id="students" name="students">
+        <?php
+          foreach ($db->query("SELECT student_name FROM students") as $row)
+        {?>
+        <option value="<?php echo $row['student_name']; ?>"><?php echo $row['student_name']; ?>"</option>
+        <?php
+          }
+        ?>
+      </select> 
+      <script type="text/javascript">
+        document.getElementById('assessments').value = "<?php echo $_POST['assessments'];?>";
+      </script>  
+    </form>
 
     <h1> This page will allow assessment data to be entered for students.  Will be implemented next week.</h1>
 

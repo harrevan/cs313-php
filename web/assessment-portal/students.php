@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" type="text/css" href="assessment.css">
 
-    <title>Class-AM</title>
+    <title>Student</title>
   </head>
   <?php
       session_start();
@@ -53,3 +53,4 @@
 
 
   </body>
+</html>
