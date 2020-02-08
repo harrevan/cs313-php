@@ -20,7 +20,6 @@
   </head>
   <?php
       session_start();
-      echo $_POST["stud"];
   ?>
    <body id="home_body">
     <div>
@@ -40,5 +39,11 @@
         </ul>
       </nav>  
     </div>
+
+    <h1>Student:</h1>
+  <?php
+      echo $_SESSION["selected_student"]
+  ?>
+
 
   </body>
