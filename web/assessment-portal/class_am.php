@@ -79,7 +79,7 @@
     ?>  
 
 
-    <div id="centerform">
+    <span id="centerform">
       <h4>Select assessment group:</h4>
       <form id="assessment_selection" method="post">
         <select name="assessments">
@@ -91,7 +91,7 @@
           <option value="6">Unit 6 Assessments</option>
         </select> 
       </form>
-    </div>  
+    </span>  
     <br><br>
     <div class="container">
       <div class="row">
@@ -103,7 +103,7 @@
               {?>
                 <input type="radio" value="<?php echo $row['student_name']; ?>"> <?php echo $row['student_name'];?>
                 <span class="checkmark"></span>
-                <br>
+                <br><br>
             <?php
               }
             ?>
@@ -111,8 +111,8 @@
           </form>
           
         </div>
-        <div class="col-9 centerform">
-          <h2>Class Assessment Scores</h2>  
+        <div class="col-9">
+          <h2 class="centerform">Class Assessment Scores</h2>  
           
         </div>
       </div>
