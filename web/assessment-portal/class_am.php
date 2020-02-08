@@ -27,28 +27,20 @@
       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <ul class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Portal Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Class- AM
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="class_am.php">ELA Assesments</a>
-              <a class="dropdown-item" href="#">Math Assessments</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Class- PM
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">English Assesments</a>
-              <a class="dropdown-item" href="#">Math Assessments</a>
-            </div>
+            <a class="nav-link" href="portal_home.php">Portal Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Enter Student Scores</a>
+            <a class="nav-link" href="class_am.php">
+              Class- AM
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="class_pm.php">
+              Class- PM
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="student_scores.php">Enter Student Scores</a>
           </li>          
         </ul>
       </nav>  
@@ -89,6 +81,7 @@
 
     <br>
     <div id="centerform">
+      <h1>AM-ELA Assessments</h1>
       <form id="assessment_selection" method="post">
         <label><b>Select Assessment Group:</b> </label>
         <select name="assessments">
@@ -127,7 +120,7 @@
             <?php
               foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}'") as $row)
               {
-                echo $row['assessment_title'] . '<br>';
+                echo $row['assessment_title'] . "<br>" . "Scores: Coming next week once user can enter data into database" . "<br>";
               }
             ?>
                 
