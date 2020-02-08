@@ -118,7 +118,7 @@
               echo $POST_["assessments"]; 
               if(isset($_POST["assessments"]))
               {
-                foreach ($db->query("SELECT assessment_title FROM master_assessment") as $row)
+                foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}'") as $row)
                 {
                   echo $row['assessment_title'] . '<br>';
                 }
