@@ -127,7 +127,7 @@
               foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}' AND subject='{$_POST["subject"]}'") as $row)
               {
                 array_push($_SESSION["assessment_array"], $row['assessment_title']);    
-                echo "<b>"$row['assessment_title']"</b>" . "<br>" . "Scores: coming next week" . "<br>";
+                echo $row['assessment_title'] . "<br>" . "Scores: coming next week" . "<br>";
               }
             ?>           
           
