@@ -79,7 +79,7 @@
     ?> 
 
     <?php
-      function displayAssessmentData() {
+      function displayAssessmentData($row) {
         foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}'") as $row)
         {
           echo $row['assessment_title'] . '<br>';
@@ -125,7 +125,7 @@
         <div class="col-10">
           <h2 class="centerform">Class Assessment Scores</h2>  
             <?php
-              displayAssessmentData();
+              displayAssessmentData($row);
             ?>
                 
           
