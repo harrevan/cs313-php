@@ -95,7 +95,7 @@
     <br><br>
     <div class="container">
       <div class="row">
-        <div class="col-3">
+        <div class="col-2">
           <h2>Students</h2>
           <form action="students.php">
             <?php
@@ -103,15 +103,15 @@
               {?>
                 <input type="radio" value="<?php echo $row['student_name']; ?>"> <?php echo $row['student_name'];?>
                 <span class="checkmark"></span>
-                <br><br>
+                <br>
             <?php
               }
             ?>
             <input type="submit" value="See Student Data">
           </form>
-          
+        <br>
         </div>
-        <div class="col-9">
+        <div class="col-10">
           <h2 class="centerform">Class Assessment Scores</h2>  
           
         </div>
