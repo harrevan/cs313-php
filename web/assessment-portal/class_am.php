@@ -81,7 +81,8 @@
 
     <div id="centerform">
       <p>Select assessment group: </p>
-      <form id="assessment_selection" method="post">
+      <form class="form-inline well" id="assessment_selection" method="post">
+        <label class="control-label">Select Assessment Group: </label>
         <select name="assessments">
           <option value="1">Unit 1 Assessments</option>
           <option value="2">Unit 2 Assessments</option>
@@ -110,7 +111,7 @@
             <input type="submit" value="See Student Data">
           </form>
         </div>
-        <div class="col-10 assessment_alignment">
+        <div class="col-10">
           <h2 class="centerform">Class Assessment Scores</h2>  
           
         </div>
