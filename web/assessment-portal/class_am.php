@@ -52,14 +52,16 @@
       <div class="row">
         <div class="col-*3*">
           <h2>Students</h2>
-          <?php
-            foreach ($db->query("SELECT student_name FROM students WHERE class_time='AM'") as $row)
-            {?>
-              <a href="students.php"> <?php echo $row['student_name'];?></a>
-              <br/>
-          <?php
-            }
-          ?>
+          <form>
+            <?php
+              foreach ($db->query("SELECT student_name FROM students WHERE class_time='AM'") as $row)
+              {?>
+                <input type="radio" value="$row['student_name']"> <?php echo $row['student_name'];?>
+                <br>
+            <?php
+              }
+            ?>
+          </form>
           
         </div>
         <div class="col-*9*">
