@@ -80,8 +80,8 @@
 
 
     <div id="centerform">
-      <form class="form-inline well" id="assessment_selection" method="post">
-        <label class="control-label">Select Assessment Group: </label>
+      <form id="assessment_selection" method="post">
+        <label>Select Assessment Group: </label>
         <select name="assessments">
           <option value="1">Unit 1 Assessments</option>
           <option value="2">Unit 2 Assessments</option>
