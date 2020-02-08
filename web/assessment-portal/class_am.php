@@ -53,11 +53,13 @@
         <div class="col-*3*">
           <?php
             foreach ($db->query('SELECT UPPER(student_name) FROM students') as $row)
-            {
-              echo '<a href="students.php">' '$row['student_name']' '</a>';
-              echo '<br/>';
+            {?>
+              <a href="students.php"> <?php echo $row['student_name'];?></a>;
+              <br/>;
+          <?php
             }
           ?>
+          
         </div>
         <div class="col-*9*">
           
