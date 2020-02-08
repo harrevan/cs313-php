@@ -120,7 +120,7 @@
           </form>
         </div>
         <div class="col-10">
-          <h2 class="centerform"><?php echo "Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>  
+          <h2><?php echo "Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>  
             <?php
               unset($_SESSION["assessment_array"]);
               $_SESSION["assessment_array"] = array();
@@ -128,7 +128,7 @@
               {
                 array_push($_SESSION["assessment_array"], $row['assessment_title']);
             ?>    
-            <div class="centerform">
+            <div id="centerform">
               <?php echo $row['assessment_title'] . "<br>" . "Scores: Coming next week once user can enter data into database" . "<br>";?>
             </div>   
             <?php  
