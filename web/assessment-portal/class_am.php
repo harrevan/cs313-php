@@ -68,6 +68,7 @@
     ?> 
 
     <?php
+      $_SESSION["subject"] = $_POST["subject"];
      // function displayAssessmentData() {
        // foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}'") as $row)
         //{
