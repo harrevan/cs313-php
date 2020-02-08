@@ -79,8 +79,8 @@
     ?>  
 
 
-    <span id="centerform">
-      <h4>Select assessment group:</h4>
+    <div id="centerform">
+      <p>Select assessment group: </p>
       <form id="assessment_selection" method="post">
         <select name="assessments">
           <option value="1">Unit 1 Assessments</option>
@@ -91,7 +91,7 @@
           <option value="6">Unit 6 Assessments</option>
         </select> 
       </form>
-    </span>  
+    </div>  
     <br><br>
     <div class="container">
       <div class="row">
@@ -110,7 +110,7 @@
             <input type="submit" value="See Student Data">
           </form>
         </div>
-        <div class="col-10">
+        <div class="col-10 assessment_alignment">
           <h2 class="centerform">Class Assessment Scores</h2>  
           
         </div>
