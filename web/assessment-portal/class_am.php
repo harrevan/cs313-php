@@ -102,14 +102,13 @@
               foreach ($db->query("SELECT student_name FROM students WHERE class_time='AM'") as $row)
               {?>
                 <input type="radio" value="<?php echo $row['student_name']; ?>"> <?php echo $row['student_name'];?>
-                <span class="checkmark"></span>
                 <br>
             <?php
               }
             ?>
             <input type="submit" value="See Student Data">
           </form>
-        <br>
+        <br><br>
         </div>
         <div class="col-10">
           <h2 class="centerform">Class Assessment Scores</h2>  
