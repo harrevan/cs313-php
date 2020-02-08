@@ -50,7 +50,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-*3*">
+        <div class="col-3">
           <h2>Students</h2>
           <form>
             <?php
@@ -65,7 +65,7 @@
           </form>
           
         </div>
-        <div class="col-*9*">
+        <div class="col-9">
           <h2>Class Assessment Scores</h2>  
           
         </div>
