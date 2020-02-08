@@ -76,13 +76,17 @@
     <div id="centerform">
       <form id="assessment_selection" method="post">
         <label><b>Select Class Time:</b> </label>
-        <select name="time">
+        <select id="time" name="time">
           <option value="">Select</option>
           <option value="AM">AM</option>
           <option value="PM">PM</option>
-        </select>         
+        </select> 
+        <stript type="text/javascript">
+          document.getElementById('time').value = "<?php echo $_POST['time'];?>";
+        </stript>  
+
         <label><b>Select Assessment Unit:</b> </label>
-        <select name="assessments">
+        <select id="assessments" name="assessments">
           <option value ="">Select</option>
           <option value="1">Unit 1 Assessments</option>
           <option value="2">Unit 2 Assessments</option>
@@ -92,7 +96,7 @@
           <option value="6">Unit 6 Assessments</option>
         </select> 
         <label><b>Select Assessment Type:</b> </label>
-        <select name="subject">
+        <select id="subject" name="subject">
           <option value="">Select</option>
           <option value="ELA">ELA</option>
           <option value="MATH">Math</option>
