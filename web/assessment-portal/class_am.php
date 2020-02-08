@@ -80,7 +80,6 @@
 
 
     <div id="centerform">
-      <p>Select assessment group: </p>
       <form class="form-inline well" id="assessment_selection" method="post">
         <label class="control-label">Select Assessment Group: </label>
         <select name="assessments">
