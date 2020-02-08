@@ -116,6 +116,8 @@
           <h2 class="centerform">Class Assessment Scores</h2>  
             <?php
               foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period=1") as $row)
+
+                echo $row['assessment_title'] . '<br>';
               {?>
                 
             <?php
