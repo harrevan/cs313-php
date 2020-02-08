@@ -40,7 +40,7 @@
       </nav>  
     </div>
 
-    <h1>Student: <?php echo " " . $_POST["stud"]; ?></h1>
+    <h1><?php echo $_POST["stud"] . "'s" . $_POST["type"] ." Assessments"; ?></h1>
     <h2 style="text-align:center">This page will allow users to enter assessment data for each student into the database. Will be implemented next week.</h2>
     <?php
       foreach ($_SESSION["assessment_array"] as $assessment) {
