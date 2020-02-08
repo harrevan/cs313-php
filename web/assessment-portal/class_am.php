@@ -89,14 +89,12 @@
           <option value="5">Unit 5 Assessments</option>
           <option value="6">Unit 6 Assessments</option>
         </select> 
-        <br>
         <label><b>Select Assessment Type:</b> </label>
-        <select name="type">
+        <select name="subject">
           <option value="">Select</option>
           <option value="ELA">ELA</option>
           <option value="MATH">Math</option>
         </select> 
-        <br>
         <label><b>Select Class Time:</b> </label>
         <select name="time">
           <option value="">Select</option>
@@ -128,7 +126,7 @@
         <div class="col-10">
           <h2 class="centerform">Unit <?php echo " " . $_POST['assessments'] . " ";?>Class Assessment Scores</h2>  
             <?php
-              foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}'") as $row)
+              foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}' AND subject='{$_POST["subject"]}'") as $row)
               {
                 array_push($_SESSION["assessment_array"], $row['assessment_title']);
                 echo $row['assessment_title'] . "<br>" . "Scores: Coming next week once user can enter data into database" . "<br>";
