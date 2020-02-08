@@ -67,20 +67,28 @@
       </nav>  
     </div>
 
-    <form method="post">
+<!--     <form id="inputForm" method="post">
+      <label><b>Select Class Time:</b> </label>
+      <select id="time" name="time">
+        <option value="AM">AM</option>
+        <option value="PM">PM</option>
+      </select> 
+    </form> -->
+<!--     <form id="inputForm">  
+      <label><b>Select Student:</b> </label>
       <select id="students" name="students">
         <?php
-          foreach ($db->query("SELECT student_name FROM students") as $row)
+          //foreach ($db->query("SELECT student_name FROM students") as $row)
         {?>
-        <option value="<?php echo $row['student_name']; ?>"><?php echo $row['student_name']; ?>"</option>
+        <option value="<?php// echo $row['student_name']; ?>"><?php //echo $row['student_name']; ?></option>
         <?php
           }
         ?>
-      </select> 
-      <script type="text/javascript">
-        document.getElementById('assessments').value = "<?php echo $_POST['assessments'];?>";
-      </script>  
-    </form>
+      </select>
+      <br>
+      <label><b>Select </b></label> 
+      
+    </form> -->
 
     <h1> This page will allow assessment data to be entered for students.  Will be implemented next week.</h1>
 
