@@ -105,7 +105,7 @@
     </div>  
     <br><br>
     <div class="container">
-      <div class="row justify-content-md-center">
+      <div class="row justify-content-lg-center">
         <div class="col col-lg-auto">
           <h2><?php echo $_POST['time'] . " ";?>Students</h2>
           <form action="students.php">
