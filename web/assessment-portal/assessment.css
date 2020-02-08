@@ -6,6 +6,7 @@ h1{
 	background-color: #eeeeee;
 }
 
-.center{
-	text-align: center;
+.container{
+	display: block;
+	padding: 10px;
 }
