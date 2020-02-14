@@ -42,6 +42,7 @@
     echo 'Error!: ' . $ex->getMessage();
     die();
   }
+
   $select_students = $db->query('SELECT student_id, student_name FROM students');
   $student_rows = $select_students->fetchAll(PDO::FETCH_ASSOC);
 ?> 
@@ -77,8 +78,8 @@
           <datalist id="student_names">
              <?php
               foreach ($student_rows as $student)
-                $name = $student['student_name']
-                $id = $student['student_id']
+                $name = $student['student_name'];
+                $id = $student['student_id'];
               {?>
                 <option name="student" value="<?php echo $id;?>"><?php echo $name;?></option>
                 <br>
