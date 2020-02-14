@@ -30,7 +30,7 @@
   $stmt->execute();
   $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-  $score_query = "SELECT student_name from students WHERE student_id = '{$_POST["student"]}'";
+  $score_query = "SELECT score from assessment_score WHERE student_id = '{$_POST["student"]}' AND assessment_id IN (SELECT assessment_id FROM assessment_score WHERE assessment_period='{$_POST["unit_number"]}' AND subject='{$_POST["assessment_type"]}')";
   $stmt = $db->prepare($score_query);
   $stmt->execute();
   $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -40,7 +40,7 @@
   $stmt->execute();
   $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-  $assessment_query = "SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["unit_number"]}' AND subject='{$_POST["assessment_type"]}'";
+  $assessment_query = "SELECT assessment_title, assessment_id FROM master_assessment WHERE assessment_period='{$_POST["unit_number"]}' AND subject='{$_POST["assessment_type"]}'";
   $stmt = $db->prepare($assessment_query);
   $stmt->execute();
   $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -120,6 +120,7 @@
   ?>
       <tr>
       <td><?php echo $assessment['assessment_title']?></td>
+      <td><?php echo ?></td>
       </tr>
   <?php    
         } 
