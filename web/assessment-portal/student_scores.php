@@ -126,8 +126,8 @@
     </div>  
     <div class="container">
       <h2>Enter Student Scores</h2>
-      <form action="">
-        <div class="form-group">
+      <form action="submit_scores.php" method="post">
+        <div class="form-group row">
           <label>Student Name:</label>
           <select class="selectpicker" name="student_name">
              <?php
