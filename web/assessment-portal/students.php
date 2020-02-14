@@ -74,7 +74,7 @@
       </nav>  
     </div>
 
-    <h1><?php  "'s " . $_SESSION["subject"] . " Unit " . $_SESSION["assessment_unit"] . " Assessment Scores"; ?></h1>
+    <h1><?php echo $student['student_id'] . "'s " . $_SESSION["subject"] . " Unit " . $_SESSION["assessment_unit"] . " Assessment Scores"; ?></h1>
     <div id="centerform">
 
     </div>
