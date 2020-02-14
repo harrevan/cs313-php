@@ -53,7 +53,7 @@
 
   if(isset($_GET["time"]))
   {
-    $select_students = $db->query('SELECT student_id, student_name FROM students  WHERE class_time='{$_GET["time"]}'');
+    //$select_students = $db->query('SELECT student_id, student_name FROM students  WHERE class_time='{$_GET["time"]}'');
     $student_rows = $select_students->fetchAll(PDO::FETCH_ASSOC);
     $select_assessments = $db->query('SELECT assessment_id, assessment_title FROM master_assessment');
     $assessment_rows = $select_assessments->fetchAll(PDO::FETCH_ASSOC);
@@ -164,24 +164,7 @@
               }
             ?> 
         </div>
-          <div class="form-group">
-          <label for="pwd">Assessment</label>
-          <input type="text" class="form-control" name="assessment" list="assessments">
-          <datalist id="assessments">
-             <?php
-              foreach ($assessment_rows as $assessment)
-              {
-                $title = $assessment['assessment_title'];
-                $id = $assessment['assessment_id'];
-                ?>
-                <option name="student" value="<?php echo $name;?>"><?php echo $name;?></option>
-                <br>
-          </datalist>
-          <input type="hidden" name="assessment_id" value="<?php echo $id;?>">      
-            <?php
-              }
-            ?> 
-        </div>
+
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
     </div>
@@ -189,13 +172,3 @@
 
   </body>
 </html>
-
-          <form action="students.php" method="post">
-            <?php
-              foreach ($db->query("SELECT student_name FROM students WHERE class_time='{$_POST["time"]}'") as $row)
-              {?>
-                <input type="radio" name="stud" value="<?php echo $row['student_name']; ?>"><?php echo $row['student_name'];?>
-                <br>
-            <?php
-              }
-            ?>
