@@ -40,17 +40,31 @@
       </nav>  
     </div>
 
-    <h1><?php echo $_POST["stud"] . "'s " . $_SESSION["subject"] . " Unit " . $_SESSION["assessment_unit"] . " Assessments"; ?></h1>
-    <h2 style="text-align:center">This page will allow user to view assessment score data for each student. Will be fully implemented next week once scores can be entered.</h2>
+    <h1><?php echo $_POST["stud"] . "'s " . $_SESSION["subject"] . " Unit " . $_SESSION["assessment_unit"] . " Assessment Scores"; ?></h1>
     <div id="centerform">
-      <?php
-        foreach ($_SESSION["assessment_array"] as $assessment) {
-  	      echo $assessment . "<br> Score:<br>";
-        } 
-      ?>
+
     </div>
-  
 
+  <table class="table table-bordered table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Assessment</th>
+      <th scope="col">Score</th>
+      <th scope="col">Correct Answers</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php
+    foreach ($_SESSION["assessment_array"] as $assessment) {
+  ?>
+      <tr>
+      <td><?php echo $assessment?></td>
+      </tr>
+  <?php    
+        } 
+  ?>
 
+  </tbody>
+</table>
   </body>
 </html>
