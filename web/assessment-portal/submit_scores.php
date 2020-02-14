@@ -28,7 +28,7 @@ $correct_answers = htmlspecialchars($_POST['answers']);
   }
 
 
-$stmt = $db->prepare('INSERT INTO assessment_score(student_id, assessment_id, score, correct_answers) VALUES(:student_id, :assessment_id, :score, :correct_answers) WHERE NOT EXISTS (SELECT temp.student_id, temp.assessment_id FROM assessment_score temp WHERE temp.student_id = student_id AND temp.assessment_id = assessment_id)');
+$stmt = $db->prepare('INSERT INTO assessment_score(student_id, assessment_id, score, correct_answers) VALUES(:student_id, :assessment_id, :score, :correct_answers) WHERE NOT EXISTS (SELECT temp.student_id, temp.assessment_id FROM assessment_score AS temp WHERE temp.student_id = student_id AND temp.assessment_id = assessment_id)');
 $stmt->bindValue(':student_id', $student_id, PDO::PARAM_INT);
 $stmt->bindValue(':assessment_id', $assessment_id, PDO::PARAM_INT);
 $stmt->bindValue(':score', $score, PDO::PARAM_STR);
