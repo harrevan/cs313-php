@@ -71,8 +71,8 @@
       <form action="">
         <div class="form-group">
           <label for="students">Student Name</label>
-          <input type="text" class="form-control" id="students" placeholder="Enter email" name="stud">
-          <datalist name="student_names">
+          <input type="text" class="form-control" id="students" name="stud" list="student_names">
+          <datalist id="student_names">
              <?php
               foreach ($db->query("SELECT student_name FROM students") as $row)
               {?>
