@@ -120,9 +120,9 @@
           <h2><?php echo $_POST['time'] . " ";?>Students</h2>
           <form action="students.php" method="post">
             <?php
-              foreach ($db->query("SELECT student_name FROM students WHERE class_time='{$_POST["time"]}'") as $row)
+              foreach ($db->query("SELECT student_id, student_name FROM students WHERE class_time='{$_POST["time"]}'") as $row)
               {?>
-                <input type="radio" name="stud" value="<?php echo $row['student_name']; ?>"><?php echo $row['student_name'];?>
+                <input type="radio" name="student" value="<?php echo $row['student_id']; ?>"><?php echo $row['student_name'];?>
                 <br>
             <?php
               }
@@ -136,9 +136,9 @@
             <?php
               unset($_SESSION["assessment_array"]);
               $_SESSION["assessment_array"] = array();
-              foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}' AND subject='{$_POST["subject"]}'") as $row)
+              foreach ($db->query("SELECT assessment_id FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}' AND subject='{$_POST["subject"]}'") as $row)
               {
-                array_push($_SESSION["assessment_array"], $row['assessment_title']);    
+                array_push($_SESSION["assessment_array"], $row['assessment_id']);    
                 echo $row['assessment_title'] . "<br>" . "  Scores: coming next week" . "<br>";
               }
             ?>           
