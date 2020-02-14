@@ -25,7 +25,7 @@
     die();
   }
 
-  $query = "SELECT student_name from students WHERE student_id = '{$_POST["assessments"]}'";
+  $query = "SELECT student_name from students WHERE student_id = '{$_POST["student"]}'";
   $stmt = $db->prepare($query);
   $stmt->execute();
   $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
