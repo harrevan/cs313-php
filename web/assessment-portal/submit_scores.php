@@ -28,7 +28,7 @@ $correct_answers = htmlspecialchars($_POST['answers']);
   }
 
 
-$stmt = $db->prepare('INSERT INTO assessment_score(student_id, assessment_id, score, correct_answers) SELECT :student_id, :assessment_id, :score, :correct_answers WHERE NOT EXISTS (SELECT student_id, assessment_id FROM assessment_score WHERE student_id = :student_id AND assessment_id = :assessment_id)');
+$stmt = $db->prepare('INSERT INTO assessment_score(student_id, assessment_id, score, correct_answers) SELECT :student_id, :assessment_id, :score, :correct_answers ON CONFLICT (student_id, assessment_id) DO UPDATE SET score = excluded.score, correct_answers = excluded.correct_answers');
 $stmt->bindValue(':student_id', $student_id, PDO::PARAM_INT);
 $stmt->bindValue(':assessment_id', $assessment_id, PDO::PARAM_INT);
 $stmt->bindValue(':score', $score, PDO::PARAM_STR);
