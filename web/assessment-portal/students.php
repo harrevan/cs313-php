@@ -40,6 +40,11 @@
   $stmt->execute();
   $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+  $assessment_query = "SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["unit_number"]}' AND subject='{$_POST["assessment_type"]}'";
+  $stmt = $db->prepare($answer_query);
+  $stmt->execute();
+  $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 
@@ -111,10 +116,10 @@
   </thead>
   <tbody>
   <?php
-    foreach ($_SESSION["assessment_array"] as $assessment) {
+    foreach ($assessments as $assessment) {
   ?>
       <tr>
-      <td><?php echo $assessment?></td>
+      <td><?php echo $assessment['assessment_title']?></td>
       </tr>
   <?php    
         } 
