@@ -119,7 +119,7 @@
     for($i = 0; $i < sizeof($assessments); i++) {
   ?>
       <tr>
-      <td><?php echo $assessments[$i];?></td>
+      <td><?php ?></td>
       <td></td>
       </tr>
   <?php    
