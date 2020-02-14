@@ -90,7 +90,7 @@
         {
           $name = $stud['student_name'];
 
-           echo $name . "'s " . $_SESSION["subject"] . " Unit " . $_SESSION["assessment_unit"] . " Assessment Scores"; 
+           echo $name . "'s " . $_POST["assessment_type"] . " Unit " . $_POST["unit_number"] . " Assessment Scores"; 
 
         }
       ?>
