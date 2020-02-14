@@ -55,7 +55,7 @@
   {
     $select_students = $db->query("SELECT student_id, student_name FROM students  WHERE class_time='{$_GET["time"]}'");
     $student_rows = $select_students->fetchAll(PDO::FETCH_ASSOC);
-    $select_assessments = $db->query('SELECT assessment_id, assessment_title FROM master_assessment');
+    $select_assessments = $db->query("SELECT assessment_id, assessment_title FROM master_assessment");
     $assessment_rows = $select_assessments->fetchAll(PDO::FETCH_ASSOC);
 
   }
@@ -121,7 +121,7 @@
           document.getElementById('subject').value = "<?php echo $_GET['subject'];?>";
         </script>  
         <br><br>
-        <input type=submit value="See Assessments">
+        <input type=submit value="See Assessments" onsubmit="reveal()">
       </form>
     </div>  
     <div class="container" id="hidden">
