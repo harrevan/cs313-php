@@ -25,6 +25,11 @@
     die();
   }
 
+  $query = "SELECT student_name from students WHERE student_id = '{$_POST["student"]}'";
+  $stmt = $db->prepare($query);
+  $stmt->execute();
+  $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 
@@ -71,16 +76,11 @@
 
     <h1>
       <?php 
-        $query = "SELECT student_name from students WHERE student_id = '{$_POST["student"]}'";
-         $stmt = $db->prepare($query);
-        $stmt->execute();
-        $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
         foreach($student as $stud)
         {
           $name = $stud['student_name'];
 
-           echo $student['student_name'] . "'s " . $_SESSION["subject"] . " Unit " . $_SESSION["assessment_unit"] . " Assessment Scores"; 
+           echo $name . "'s " . $_SESSION["subject"] . " Unit " . $_SESSION["assessment_unit"] . " Assessment Scores"; 
 
         }
       ?>
