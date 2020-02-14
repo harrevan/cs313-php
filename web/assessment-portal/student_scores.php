@@ -129,15 +129,14 @@
       <form action="">
         <div class="form-group">
           <label for="students">Student Name</label>
-          <input type="text" class="form-control" name="student_name" list="student_names">
-          <datalist id="student_names">
+          <select class="selectpicker show-tick" name="student_name">
              <?php
               foreach ($student_rows as $student)
               {
                 $name = $student['student_name'];
                 $id = $student['student_id'];
                 ?>
-                <option name="student" value="<?php echo $id;?>"><?php echo $name;?></option>
+                <option value="<?php echo $id;?>"><?php echo $name;?></option>
             <?php
               }    
             ?> 
