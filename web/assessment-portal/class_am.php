@@ -128,6 +128,8 @@
               }
             ?>
             <br>
+            <input type="hidden" name="assessment_type" value="<?php echo $_POST["subject"]?>">
+            <input type="hidden" name="unit_number" value="<?php echo $_POST["assessments"]?>">
             <input type="submit" value="See Student Data">
           </form>
         </div>

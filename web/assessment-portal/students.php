@@ -30,6 +30,16 @@
   $stmt->execute();
   $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+  $score_query = "SELECT student_name from students WHERE student_id = '{$_POST["student"]}'";
+  $stmt = $db->prepare($score_query);
+  $stmt->execute();
+  $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+  $answer_query = "SELECT student_name from students WHERE student_id = '{$_POST["student"]}'";
+  $stmt = $db->prepare($answer_query);
+  $stmt->execute();
+  $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 
