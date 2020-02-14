@@ -78,7 +78,7 @@
       <?php 
         foreach($student as $stud)
         {
-          $name = $stud['student_name']
+          $name = $stud['student_name'];
 
            echo $student['student_name'] . "'s " . $_SESSION["subject"] . " Unit " . $_SESSION["assessment_unit"] . " Assessment Scores"; 
 
