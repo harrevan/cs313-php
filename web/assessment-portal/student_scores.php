@@ -66,31 +66,34 @@
         </ul>
       </nav>  
     </div>
+    <div class="container">
+      <h2>Enter Student Scores</h2>
+      <form action="">
+        <div class="form-group">
+          <label for="students">Student Name</label>
+          <input type="text" class="form-control" id="students" placeholder="Enter email" name="stud">
+          <datalist name="student_names">
+             <?php
+              foreach ($db->query("SELECT student_name FROM students") as $row)
+              {?>
+                <option name="student" value="<?php echo $row['student_name'];?>"><?php echo $row['student_name'];?></option>
+                <br>
+            <?php
+              }
+            ?>  
+          </datalist>
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+        </div>
+        <div class="checkbox">
+          <label><input type="checkbox" name="remember"> Remember me</label>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
 
-<!--     <form id="inputForm" method="post">
-      <label><b>Select Class Time:</b> </label>
-      <select id="time" name="time">
-        <option value="AM">AM</option>
-        <option value="PM">PM</option>
-      </select> 
-    </form> -->
-<!--     <form id="inputForm">  
-      <label><b>Select Student:</b> </label>
-      <select id="students" name="students">
-        <?php
-          //foreach ($db->query("SELECT student_name FROM students") as $row)
-        {?>
-        <option value="<?php// echo $row['student_name']; ?>"><?php //echo $row['student_name']; ?></option>
-        <?php
-          }
-        ?>
-      </select>
-      <br>
-      <label><b>Select </b></label> 
-      
-    </form> -->
-
-    <h1> This page will allow assessment data to be entered for students.  Will be implemented next week.</h1>
 
   </body>
 </html>
