@@ -1,3 +1,40 @@
+<?php
+  session_start();
+
+  //$student_id = $_POST['student'];
+
+  try
+  {
+    $dbUrl = getenv('DATABASE_URL');
+
+    $dbOpts = parse_url($dbUrl);
+
+    $dbHost = $dbOpts["host"];
+    $dbPort = $dbOpts["port"];
+    $dbUser = $dbOpts["user"];
+    $dbPassword = $dbOpts["pass"];
+    $dbName = ltrim($dbOpts["path"],'/');
+
+    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  }
+  catch (PDOException $ex)
+  {
+    echo 'Error!: ' . $ex->getMessage();
+    die();
+  }
+
+  $query = "SELECT student_name from students WHERE student_id = '{$_POST["assessments"]}'";
+  $stmt = $db->prepare($query);
+  $stmt->execute();
+  $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,39 +55,6 @@
 
     <title>Student</title>
   </head>
-  <?php
-      session_start();
-
-      //$student_id = $_POST['student'];
-
-      try
-      {
-        $dbUrl = getenv('DATABASE_URL');
-
-        $dbOpts = parse_url($dbUrl);
-
-        $dbHost = $dbOpts["host"];
-        $dbPort = $dbOpts["port"];
-        $dbUser = $dbOpts["user"];
-        $dbPassword = $dbOpts["pass"];
-        $dbName = ltrim($dbOpts["path"],'/');
-
-        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      }
-      catch (PDOException $ex)
-      {
-        echo 'Error!: ' . $ex->getMessage();
-        die();
-      }
-
-      $query = "SELECT student_name from students WHERE student_id = '{$_POST["assessments"]}'";
-      $stmt = $db->prepare($query);
-      $stmt->execute();
-      $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-  ?>
    <body id="home_body">
     <div>
       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
@@ -70,7 +74,7 @@
       </nav>  
     </div>
 
-    <h1><?php echo $student['student_name'] . "'s " . $_SESSION["subject"] . " Unit " . $_SESSION["assessment_unit"] . " Assessment Scores"; ?></h1>
+    <h1><?php  "'s " . $_SESSION["subject"] . " Unit " . $_SESSION["assessment_unit"] . " Assessment Scores"; ?></h1>
     <div id="centerform">
 
     </div>
