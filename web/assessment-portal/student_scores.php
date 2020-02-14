@@ -14,6 +14,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script> 
 
+    <script type="text/javascript">
+      function reveal(){
+        if(document.getElementById("hidden") == 'none'){
+          document.getElementById("hidden").style.display = 'block';
+        }
+      }
+    </script>
+
     <link rel="stylesheet" type="text/css" href="assessment.css">
 
     <title>Student Scores</title>
@@ -43,13 +51,21 @@
     die();
   }
 
-  $select_students = $db->query('SELECT student_id, student_name FROM students');
-  $student_rows = $select_students->fetchAll(PDO::FETCH_ASSOC);
+  if(isset($_GET["time"]))
+  {
+    $select_students = $db->query('SELECT student_id, student_name FROM students  WHERE class_time='{$_GET["time"]}'');
+    $student_rows = $select_students->fetchAll(PDO::FETCH_ASSOC);
+    $select_assessments = $db->query('SELECT assessment_id, assessment_title FROM master_assessment');
+    $assessment_rows = $select_assessments->fetchAll(PDO::FETCH_ASSOC);
+
+  }
+
 ?> 
 
 <?php
   $_SESSION["subject"] = $_POST["subject"];
   $_SESSION["assessment_unit"] = $_POST["assessments"];
+
 ?> 
    <body id="home_body">
     <div>
@@ -69,7 +85,46 @@
         </ul>
       </nav>  
     </div>
-    <div class="container">
+    <div id="centerform">
+      <form id="assessment_selection" method="get">
+        <label><b>Select Class Time:</b> </label>
+        <select id="time" name="time">
+          <option value="">Select</option>
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select> 
+        <script type="text/javascript">
+          document.getElementById('time').value = "<?php echo $_GET['time'];?>";
+        </script>  
+
+        <label><b>Select Assessment Unit:</b> </label>
+        <select id="assessments" name="assessments">
+          <option value ="">Select</option>
+          <option value="1">Unit 1 Assessments</option>
+          <option value="2">Unit 2 Assessments</option>
+          <option value="3">Unit 3 Assessments</option>
+          <option value="4">Unit 4 Assessments</option>
+          <option value="5">Unit 5 Assessments</option>
+          <option value="6">Unit 6 Assessments</option>
+        </select> 
+        <script type="text/javascript">
+          document.getElementById('assessments').value = "<?php echo $_GET['assessments'];?>";
+        </script>  
+
+        <label><b>Select Assessment Type:</b> </label>
+        <select id="subject" name="subject">
+          <option value="">Select</option>
+          <option value="ELA">ELA</option>
+          <option value="MATH">Math</option>
+        </select> 
+        <script type="text/javascript">
+          document.getElementById('subject').value = "<?php echo $_GET['subject'];?>";
+        </script>  
+        <br><br>
+        <input type=submit value="See Assessments">
+      </form>
+    </div>  
+    <div class="container" id="hidden">
       <h2>Enter Student Scores</h2>
       <form action="">
         <div class="form-group">
@@ -82,19 +137,50 @@
                 $name = $student['student_name'];
                 $id = $student['student_id'];
                 ?>
-                <option name="student" value="<?php echo $id;?>"><?php echo $name;?></option>
+                <option name="student" value="<?php echo $name;?>"><?php echo $name;?></option>
                 <br>
+          </datalist>
+          <input type="hidden" name="student_id" value="<?php echo $id;?>">      
             <?php
               }
             ?>  
-          </datalist>
+          
         </div>
         <div class="form-group">
-          <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+          <label for="pwd">Assessment</label>
+          <input type="text" class="form-control" name="assessment" list="assessments">
+          <datalist id="assessments">
+             <?php
+              foreach ($assessment_rows as $assessment)
+              {
+                $title = $assessment['assessment_title'];
+                $id = $assessment['assessment_id'];
+                ?>
+                <option name="student" value="<?php echo $name;?>"><?php echo $name;?></option>
+                <br>
+          </datalist>
+          <input type="hidden" name="assessment_id" value="<?php echo $id;?>">      
+            <?php
+              }
+            ?> 
         </div>
-        <div class="checkbox">
-          <label><input type="checkbox" name="remember"> Remember me</label>
+          <div class="form-group">
+          <label for="pwd">Assessment</label>
+          <input type="text" class="form-control" name="assessment" list="assessments">
+          <datalist id="assessments">
+             <?php
+              foreach ($assessment_rows as $assessment)
+              {
+                $title = $assessment['assessment_title'];
+                $id = $assessment['assessment_id'];
+                ?>
+                <option name="student" value="<?php echo $name;?>"><?php echo $name;?></option>
+                <br>
+          </datalist>
+          <input type="hidden" name="assessment_id" value="<?php echo $id;?>">      
+            <?php
+              }
+            ?> 
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
       </form>

@@ -12,3 +12,7 @@ h1{
 #inputForm{
 	margin: 50px;
 }
+
+#hidden{
+	display: none;
+}
