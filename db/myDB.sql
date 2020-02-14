@@ -179,3 +179,8 @@ VALUES
     (DEFAULT, 'I can add to a number (1-9), to make 10','MATH', 6),
     (DEFAULT, 'I can count to 100 by tens','MATH', 6);
 
+SELECT students.student_id, master_assessment.assessment_title, score, correct_answers
+FROM master_assessment INNER JOIN assessment_score
+ON master_assessment.assessment_id = assessment_score.assessment_id
+INNER JOIN students ON students.student_id = assessment_score.student_id
+WHERE assessment_score.student_id = 1; 
