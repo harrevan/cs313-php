@@ -116,10 +116,10 @@
   </thead>
   <tbody>
   <?php
-    for($i = 0; $i < sizeof($assessments); i++) {
+    for($i = 0; $i < sizeof($assessments); $i++) {
   ?>
       <tr>
-      <td><?php ?></td>
+      <td><?php echo $assessments[$i]?></td>
       <td></td>
       </tr>
   <?php    
