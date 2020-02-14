@@ -74,7 +74,19 @@
       </nav>  
     </div>
 
-    <h1><?php echo $student['student_name'] . "'s " . $_SESSION["subject"] . " Unit " . $_SESSION["assessment_unit"] . " Assessment Scores"; ?></h1>
+    <h1>
+      <?php 
+        foreach($student as $stud)
+        {
+          $name = $stud['student_name']
+
+           echo $student['student_name'] . "'s " . $_SESSION["subject"] . " Unit " . $_SESSION["assessment_unit"] . " Assessment Scores"; 
+
+        }
+      ?>
+
+        
+    </h1>
     <div id="centerform">
 
     </div>
