@@ -42,11 +42,8 @@
     echo 'Error!: ' . $ex->getMessage();
     die();
   }
-
-  $select_students = $db->prepare('SELECT student_id, student_name FROM students');
-  $stmt->execute();
+  $select_students = $db->query('SELECT student_id, student_name FROM students');
   $student_rows = $select_students->fetchAll(PDO::FETCH_ASSOC);
-
 ?> 
 
 <?php
