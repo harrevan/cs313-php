@@ -86,7 +86,7 @@
       </nav>  
     </div>
     <div id="centerform">
-      <form id="assessment_selection" method="get" onsubmit="reveal(); return false;">
+      <form id="assessment_selection" method="get" onsubmit="reveal();">
         <label><b>Select Class Time:</b> </label>
         <select id="time" name="time">
           <option value="">Select</option>
@@ -124,7 +124,7 @@
         <input type=submit value="See Assessments">
       </form>
     </div>  
-    <div class="container" id="hidden">
+    <div class="container">
       <h2>Enter Student Scores</h2>
       <form action="">
         <div class="form-group">
