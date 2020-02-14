@@ -138,13 +138,12 @@
                 $id = $student['student_id'];
                 ?>
                 <option name="student" value="<?php echo $name;?>"><?php echo $name;?></option>
-                <br>
-          </datalist>
-          <input type="hidden" name="student_id" value="<?php echo $id;?>">      
+                <input type="hidden" name="student_id" value="<?php echo $id;?>">   
+               
             <?php
-              }
-            ?>  
-          
+              }    
+            ?> 
+          </datalist>
         </div>
         <div class="form-group">
           <label for="pwd">Assessment</label>
