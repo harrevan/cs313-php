@@ -137,9 +137,7 @@
                 $name = $student['student_name'];
                 $id = $student['student_id'];
                 ?>
-                <option name="student" value="<?php echo $name;?>"><?php echo $name;?></option>
-                <input type="hidden" name="student_id" value="<?php echo $id;?>">   
-               
+                <option name="student" value="<?php echo $id;?>"><?php echo $name;?></option>
             <?php
               }    
             ?> 
@@ -156,15 +154,14 @@
                 $id = $assessment['assessment_id'];
                 ?>
                 <option name="student" value="<?php echo $name;?>"><?php echo $name;?></option>
-                <br>
-          </datalist>
-          <input type="hidden" name="assessment_id" value="<?php echo $id;?>">      
+                <input type="hidden" name="assessment_id" value="<?php echo $id;?>">      
             <?php
               }
             ?> 
+          </datalist>
         </div>
 
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit">Enter Score</button>
       </form>
     </div>
 
