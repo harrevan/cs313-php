@@ -116,7 +116,7 @@
   </thead>
   <tbody>
   <?php
-    for($i = 0; $i < sizeof($assessments) i++) {
+    for($i = 0; $i < sizeof($assessments); i++) {
   ?>
       <tr>
       <td><?php echo $assessment['assessment_title'][$i]?></td>
