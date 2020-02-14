@@ -42,6 +42,13 @@
     echo 'Error!: ' . $ex->getMessage();
     die();
   }
+
+  $select_students = $db->prepare('SELECT student_id, student_name FROM students');
+  $select_students->bindValue(':student_id', $student_id, PDO::PARAM_INT);
+  $select_students->bindValue(':student_name', $student_name, PDO::PARAM_STR);
+  $stmt->execute();
+  $student_rows = $select_students->fetchAll(PDO::FETCH_ASSOC);
+
 ?> 
 
 <?php
@@ -74,9 +81,11 @@
           <input type="text" class="form-control" id="students" name="stud" list="student_names">
           <datalist id="student_names">
              <?php
-              foreach ($db->query("SELECT student_name FROM students") as $row)
+              foreach ($student_rows as $student)
+                $name = $student['student_name']
+                $id = $student['student_id']
               {?>
-                <option name="student" value="<?php echo $row['student_name'];?>"><?php echo $row['student_name'];?></option>
+                <option name="student" value="<?php echo $id;?>"><?php echo $name;?></option>
                 <br>
             <?php
               }
