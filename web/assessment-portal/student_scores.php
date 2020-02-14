@@ -128,8 +128,8 @@
       <h2>Enter Student Scores</h2>
       <form action="">
         <div class="form-group">
-          <label for="students">Student Name</label>
-          <select class="selectpicker show-tick" name="student_name">
+          <label>Student Name:</label>
+          <select class="selectpicker" name="student_name">
              <?php
               foreach ($student_rows as $student)
               {
@@ -143,21 +143,31 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="pwd">Assessment</label>
-          <input type="text" class="form-control" name="assessment" list="assessments">
-          <datalist id="assessments">
+          <label>Assessment:</label>
+          <select class="selectpicker" name="assessment">
              <?php
               foreach ($assessment_rows as $assessment)
               {
                 $title = $assessment['assessment_title'];
-                $id = $assessment['assessment_id'];
+                $a_id = $assessment['assessment_id'];
                 ?>
-                <option name="student" value="<?php echo $name;?>"><?php echo $name;?></option>
-                <input type="hidden" name="assessment_id" value="<?php echo $id;?>">      
+                <option value="<?php echo $a_id; ?>"><?php echo $title;?></option>     
             <?php
               }
             ?> 
-          </datalist>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Assessment Score:</label>
+          <select class="selectpicker" name="score">
+            <option value="MT">Met Target</option>
+            <option value="NT">Near Target</option> 
+            <option value="BT">Below Target</option>      
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Correct Answers:</label>
+          <input class="form-control" type="number" value="0" name="answers">     
         </div>
 
         <button type="submit">Enter Score</button>
