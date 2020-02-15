@@ -118,10 +118,11 @@
   <?php
     for($i = 0; $i < sizeof($assessment_query); $i++) {
   ?>
-      <tr>
+    <tr>
       <td><?php echo $assessment_query[$i]['assessment_title']; ?></td>
-      <td></td>
-      </tr>
+      <td><?php echo $assessment_query[$i]['score']; ?></td>
+      <td><?php echo $assessment_query[$i]['correct_answers']; ?></td>
+    </tr>
   <?php    
         } 
   ?>
