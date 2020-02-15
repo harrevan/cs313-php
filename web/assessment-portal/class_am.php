@@ -65,23 +65,53 @@
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
-
         $assessments = "SELECT assessment_title FROM master_assessment  --WHERE subject = '{$_POST["subject"]}' --AND assessment_period = '{$_POST["assessments"]}'";
         $stmt = $db->prepare($assessments);
         $stmt->execute();
         $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+        // Find total # of students by class and assessment with MT score
         if(isset($_POST['assessments']))
         {
-        $assessments_mt = "SELECT count(score), assessment_title 
+        $scores = "SELECT count(score), score, assessment_title 
                             FROM assessment_score 
                             INNER JOIN students ON students.student_id = assessment_score.student_id 
                             INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
-                            WHERE class_time = '{$_POST["time"]}' AND subject = '{$_POST["subject"]}' AND score = 'MT' AND assessment_period = '{$_POST["assessments"]}' 
-                            GROUP BY assessment_title";
-        $stmt = $db->prepare($assessments_mt);
+                            WHERE class_time = '{$_POST["time"]}' AND subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' 
+                            GROUP BY assessment_title, score";
+        $stmt = $db->prepare($scores);
         $stmt->execute();
-        $assessments_mt = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Find total # of students by class and assessment with MT score
+        if(isset($_POST['assessments']))
+        {
+        $assessments_nt = "SELECT count(score), assessment_title 
+                            FROM assessment_score 
+                            INNER JOIN students ON students.student_id = assessment_score.student_id 
+                            INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
+                            WHERE class_time = '{$_POST["time"]}' AND subject = '{$_POST["subject"]}' AND score = 'NT' AND assessment_period = '{$_POST["assessments"]}' 
+                            GROUP BY assessment_title";
+        $stmt = $db->prepare($assessments_nt);
+        $stmt->execute();
+        $assessments_nt = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Find total # of students by class and assessment with MT score
+        if(isset($_POST['assessments']))
+        {
+        $assessments_bt = "SELECT count(score), assessment_title 
+                            FROM assessment_score 
+                            INNER JOIN students ON students.student_id = assessment_score.student_id 
+                            INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
+                            WHERE class_time = '{$_POST["time"]}' AND subject = '{$_POST["subject"]}' AND score = 'BT' AND assessment_period = '{$_POST["assessments"]}' 
+                            GROUP BY assessment_title";
+        $stmt = $db->prepare($assessments_bt);
+        $stmt->execute();
+        $assessments_bt = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+
+
 
         }
 
@@ -148,16 +178,60 @@
           </form>
         </div>
         <div class="col-9">
-          <h2 id="centerform"><?php echo "Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>  
+          <h2 id="centerform"><?php echo "Class " . $_POST['time'] . " Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>
+           <table class="table table-sm table-bordered table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Assessment Title</th>
+                  <th scope="col">MT Total</th>
+                  <th scope="col">NT Total</th>
+                  <th scope="col">BT Total</th>
+                </tr>
+              </thead>
+              <tbody>  
             <?php
-              for($i = 0; $i < sizeof($assessments); $i++){
-                echo $assessments_mt[$i]['assessment_title'] . "<br>"; 
-                echo $assessments_mt[$i]['count'] . "<br>";
-
+              for($i = 0; $i < sizeof($scores); $i++)
+              {
+            ?>   
+              <tr>
+                <td><?php echo $assessments_mt[$i]['assessment_title']; ?></td>
+                <td>
+                  <?php
+                    if($assessment_query[$i]['score'] == 'MT')
+                    {
+                      if($_POST['time'] == 'AM')
+                      {
+                        echo $assessment_query[$i]['count'] . "/25"; 
+                      }
+                      else
+                      {
+                        echo $assessment_query[$i]['count'] . "/26"; 
+                      }
+                    } 
+                  ?>                  
+                </td>
+                <td>
+                  <?php
+                    if($assessment_query[$i]['score'] == 'NT')
+                    {
+                      echo $assessment_query[$i]['count']; 
+                    } 
+                  ?>                  
+                </td>
+                <td>
+                  <?php
+                    if($assessment_query[$i]['score'] == 'BT')
+                    {
+                      echo $assessment_query[$i]['count']; 
+                    } 
+                  ?>                  
+                </td> 
+              </tr>                                 
+            <?php        
               }
-
             ?>           
-          
+            </tbody>
+          </table>
         </div>
       </div>
     </div> 
