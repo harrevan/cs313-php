@@ -73,7 +73,7 @@
         // Find total # of students by class and assessment with MT score
         if(isset($_POST['assessments']))
         {
-        $scores = "SELECT count(score), score, assessment_title 
+        $scores = "SELECT count(score), assessment_title, score 
                             FROM assessment_score 
                             INNER JOIN students ON students.student_id = assessment_score.student_id 
                             INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
@@ -82,36 +82,6 @@
         $stmt = $db->prepare($scores);
         $stmt->execute();
         $scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        // Find total # of students by class and assessment with MT score
-        if(isset($_POST['assessments']))
-        {
-        $assessments_nt = "SELECT count(score), assessment_title 
-                            FROM assessment_score 
-                            INNER JOIN students ON students.student_id = assessment_score.student_id 
-                            INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
-                            WHERE class_time = '{$_POST["time"]}' AND subject = '{$_POST["subject"]}' AND score = 'NT' AND assessment_period = '{$_POST["assessments"]}' 
-                            GROUP BY assessment_title";
-        $stmt = $db->prepare($assessments_nt);
-        $stmt->execute();
-        $assessments_nt = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        // Find total # of students by class and assessment with MT score
-        if(isset($_POST['assessments']))
-        {
-        $assessments_bt = "SELECT count(score), assessment_title 
-                            FROM assessment_score 
-                            INNER JOIN students ON students.student_id = assessment_score.student_id 
-                            INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
-                            WHERE class_time = '{$_POST["time"]}' AND subject = '{$_POST["subject"]}' AND score = 'BT' AND assessment_period = '{$_POST["assessments"]}' 
-                            GROUP BY assessment_title";
-        $stmt = $db->prepare($assessments_bt);
-        $stmt->execute();
-        $assessments_bt = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-
-
-
 
         }
 
