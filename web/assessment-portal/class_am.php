@@ -147,7 +147,7 @@
             <?php
               for($i = 0; $i < sizeof($assessments); $i++){
                 echo $assessments_mt[$i]['assessment_title'] . "<br>"; 
-                echo $assessments_mt[$i]['score'] . "<br>";
+                echo $assessments_mt[$i]['count'] . "<br>";
 
               }
 
