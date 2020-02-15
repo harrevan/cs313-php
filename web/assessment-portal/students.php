@@ -40,7 +40,7 @@
   $stmt->execute();
   $student = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-  $assessment_query = "SELECT student_id, assessment_title, score, correct_answers FROM master_assessment INNER JOIN assessment_score ON master_assessment.assessment_id = assessment_score.assessment_id WHERE student_id = '$_POST["student"]}' AND subject = '{$_POST["assessment_type"]}'";
+  $assessment_query = "SELECT student_id, assessment_title, score, correct_answers FROM master_assessment INNER JOIN assessment_score ON master_assessment.assessment_id = assessment_score.assessment_id";
   $stmt = $db->prepare($assessment_query);
   $stmt->execute();
   $assessment_query = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -119,7 +119,7 @@
     for($i = 0; $i < sizeof($assessment_query); $i++) {
   ?>
       <tr>
-      <td></td>
+      <td><?php echo $assessment_query[$i]['assessment_title']; ?></td>
       <td></td>
       </tr>
   <?php    
