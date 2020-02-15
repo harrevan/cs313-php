@@ -66,10 +66,10 @@
         die();
       }
 
-        //$assessments = "SELECT assessment_title FROM master_assessment  --WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}'";
-        //$stmt = $db->prepare($assessments);
-        //$stmt->execute();
-        //$assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $assessments = "SELECT assessment_title FROM master_assessment  --WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}'";
+        $stmt = $db->prepare($assessments);
+        $stmt->execute();
+        $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         $assessments_mt = "SELECT count(score), assessment_title 
                             FROM assessment_score 
