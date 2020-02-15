@@ -177,6 +177,10 @@
                         {
                           echo $scores[$i]['count'] . "/26"; 
                         }
+                      }
+                      else
+                      {
+                        echo "-";
                       } 
                     ?>                  
                   </td>
@@ -184,16 +188,38 @@
                     <?php
                       if($scores[$i]['score'] == 'NT')
                       {
-                        echo $scores[$i]['count']; 
-                      } 
+                        if($_POST['time'] == 'AM')
+                        {
+                          echo $scores[$i]['count'] . "/25"; 
+                        }
+                        else
+                        {
+                          echo $scores[$i]['count'] . "/26"; 
+                        }
+                      }
+                      else
+                      {
+                        echo "-";
+                      }                        
                     ?>                  
                   </td>
                   <td>
                     <?php
                       if($scores[$i]['score'] == 'BT')
                       {
-                        echo $scores[$i]['count']; 
-                      } 
+                        if($_POST['time'] == 'AM')
+                        {
+                          echo $scores[$i]['count'] . "/25"; 
+                        }
+                        else
+                        {
+                          echo $scores[$i]['count'] . "/26"; 
+                        }
+                      }
+                      else
+                      {
+                        echo "-";
+                      }                        
                     ?>                  
                   </td> 
                 </tr>                                 
