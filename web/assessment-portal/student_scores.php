@@ -51,11 +51,11 @@
     die();
   }
 
-  if(isset($_POST["time"]))
+  if(isset($_GET["time"]))
   {
-    $select_students = $db->query("SELECT student_id, student_name FROM students  WHERE class_time='{$_POST["time"]}'");
+    $select_students = $db->query("SELECT student_id, student_name FROM students  WHERE class_time='{$_GET["time"]}'");
     $student_rows = $select_students->fetchAll(PDO::FETCH_ASSOC);
-    $select_assessments = $db->query("SELECT assessment_id, assessment_title FROM master_assessment WHERE assessment_period = '{$_POST["assessments"]}' AND subject = '{$_POST["subject"]}'");
+    $select_assessments = $db->query("SELECT assessment_id, assessment_title FROM master_assessment WHERE assessment_period = '{$_GET["assessments"]}' AND subject = '{$_GET["subject"]}'");
     $assessment_rows = $select_assessments->fetchAll(PDO::FETCH_ASSOC);
 
   }
@@ -80,48 +80,48 @@
       </nav>  
     </div>
     <br>
+    <div id="centerform">
+      <form id="assessment_selection" method="get" onsubmit="reveal();">
+        <label><b>Select Class Time:</b> </label>
+        <select id="time" name="time">
+          <option value="">Select</option>
+          <option value="AM">AM</option>
+          <option value="PM">PM</option>
+        </select> 
+        <script type="text/javascript">
+          document.getElementById('time').value = "<?php echo $_GET['time'];?>";
+        </script>  
+
+        <label><b>Select Assessment Unit:</b> </label>
+        <select id="assessments" name="assessments">
+          <option value ="">Select</option>
+          <option value="1">Unit 1 Assessments</option>
+          <option value="2">Unit 2 Assessments</option>
+          <option value="3">Unit 3 Assessments</option>
+          <option value="4">Unit 4 Assessments</option>
+          <option value="5">Unit 5 Assessments</option>
+          <option value="6">Unit 6 Assessments</option>
+        </select> 
+        <script type="text/javascript">
+          document.getElementById('assessments').value = "<?php echo $_GET['assessments'];?>";
+        </script>  
+
+        <label><b>Select Assessment Type:</b> </label>
+        <select id="subject" name="subject">
+          <option value="">Select</option>
+          <option value="ELA">ELA</option>
+          <option value="MATH">Math</option>
+        </select> 
+        <script type="text/javascript">
+          document.getElementById('subject').value = "<?php echo $_GET['subject'];?>";
+        </script>  
+        <br><br>
+        <input type=submit value="Edit Scores">
+      </form>
+    </div>  
     <div class="container">
       <h2>Enter Student Scores</h2>
       <form action="submit_scores.php" method="post">
-        <div id="centerform">
-          <form id="assessment_selection" method="post" onsubmit="reveal();">
-            <label><b>Select Class Time:</b> </label>
-            <select id="time" name="time">
-              <option value="">Select</option>
-              <option value="AM">AM</option>
-              <option value="PM">PM</option>
-            </select> 
-            <script type="text/javascript">
-              document.getElementById('time').value = "<?php echo $_POST['time'];?>";
-            </script>  
-
-            <label><b>Select Assessment Unit:</b> </label>
-            <select id="assessments" name="assessments">
-              <option value ="">Select</option>
-              <option value="1">Unit 1 Assessments</option>
-              <option value="2">Unit 2 Assessments</option>
-              <option value="3">Unit 3 Assessments</option>
-              <option value="4">Unit 4 Assessments</option>
-              <option value="5">Unit 5 Assessments</option>
-              <option value="6">Unit 6 Assessments</option>
-            </select> 
-            <script type="text/javascript">
-              document.getElementById('assessments').value = "<?php echo $_POST['assessments'];?>";
-            </script>  
-
-            <label><b>Select Assessment Type:</b> </label>
-            <select id="subject" name="subject">
-              <option value="">Select</option>
-              <option value="ELA">ELA</option>
-              <option value="MATH">Math</option>
-            </select> 
-            <script type="text/javascript">
-              document.getElementById('subject').value = "<?php echo $_POST['subject'];?>";
-            </script>  
-            <br><br>
-            <input type=submit value="Edit Scores">
-          </form>
-        </div>          
         <div class="form-group row">
           <label>Student Name:</label>
           <select class="selectpicker" name="student_name" id="stud_name">
