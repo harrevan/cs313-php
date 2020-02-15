@@ -119,7 +119,7 @@
     for($i = 0; $i < sizeof($assessment_query); $i++) {
   ?>
       <tr>
-      <td><?php echo $assessment_query[$i]['assessment_title']; ?></td>
+      <td></td>
       <td></td>
       </tr>
   <?php    
