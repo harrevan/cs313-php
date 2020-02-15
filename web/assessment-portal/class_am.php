@@ -75,7 +75,7 @@
                             FROM assessment_score 
                             INNER JOIN students ON students.student_id = assessment_score.student_id 
                             INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
-                            WHERE class_time = '{$_POST["time"]}' AND assessment_period = '{$_POST["assessments"]}' --AND subject = '{$_POST["subject"]}' AND score = 'MT' 
+                            WHERE class_time = '{$_POST["time"]}' AND subject = '{$_POST["subject"]}' AND score = 'MT' 
                             GROUP BY assessment_title";
         $stmt = $db->prepare($assessments_mt);
         $stmt->execute();
