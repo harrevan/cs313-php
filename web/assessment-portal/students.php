@@ -78,46 +78,36 @@
         </ul>
       </nav>  
     </div>
-
     <h1>
       <?php 
         foreach($student as $stud)
         {
           $name = $stud['student_name'];
-
            echo $name . "'s " . $_POST["assessment_type"] . " Unit " . $_POST["unit_number"] . " Assessment Scores"; 
-
         }
-      ?>
-
-        
+      ?>      
     </h1>
-    <div id="centerform">
-
-    </div>
-
-  <table class="table table-sm table-bordered table-dark">
-  <thead>
-    <tr>
-      <th scope="col">Assessment</th>
-      <th scope="col">Score</th>
-      <th scope="col">Correct Answers</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php
-    for($i = 0; $i < sizeof($assessment_query); $i++) {
-  ?>
-    <tr>
-      <td><?php echo $assessment_query[$i]['assessment_title']; ?></td>
-      <td><?php echo $assessment_query[$i]['score']; ?></td>
-      <td><?php echo $assessment_query[$i]['correct_answers']; ?></td>
-    </tr>
-  <?php    
-        } 
-  ?>
-
-  </tbody>
-</table>
+    <table class="table table-sm table-bordered table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Assessment</th>
+          <th scope="col">Score</th>
+          <th scope="col">Correct Answers</th>
+        </tr>
+      </thead>
+      <tbody>
+      <?php
+        for($i = 0; $i < sizeof($assessment_query); $i++) {
+      ?>
+        <tr>
+          <td><?php echo $assessment_query[$i]['assessment_title']; ?></td>
+          <td><?php echo $assessment_query[$i]['score']; ?></td>
+          <td><?php echo $assessment_query[$i]['correct_answers']; ?></td>
+        </tr>
+      <?php    
+            } 
+      ?>
+      </tbody>
+    </table>
   </body>
 </html>

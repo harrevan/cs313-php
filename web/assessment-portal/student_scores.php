@@ -55,7 +55,7 @@
   {
     $select_students = $db->query("SELECT student_id, student_name FROM students  WHERE class_time='{$_GET["time"]}'");
     $student_rows = $select_students->fetchAll(PDO::FETCH_ASSOC);
-    $select_assessments = $db->query("SELECT assessment_id, assessment_title FROM master_assessment");
+    $select_assessments = $db->query("SELECT assessment_id, assessment_title FROM master_assessment WHERE assessment_period = '{$_GET["assessments"]}'");
     $assessment_rows = $select_assessments->fetchAll(PDO::FETCH_ASSOC);
 
   }

@@ -101,7 +101,7 @@
 
         <label><b>Select Assessment Unit:</b> </label>
         <select id="assessments" name="assessments">
-          <option value ="0">Select</option>
+          <option value ="">Select</option>
           <option value="1">Unit 1 Assessments</option>
           <option value="2">Unit 2 Assessments</option>
           <option value="3">Unit 3 Assessments</option>
