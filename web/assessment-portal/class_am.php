@@ -71,6 +71,8 @@
         $stmt->execute();
         $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+        if(isset($_POST['assessments']))
+        {
         $assessments_mt = "SELECT count(score), assessment_title 
                             FROM assessment_score 
                             INNER JOIN students ON students.student_id = assessment_score.student_id 
@@ -80,6 +82,9 @@
         $stmt = $db->prepare($assessments_mt);
         $stmt->execute();
         $assessments_mt = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        }
+
     ?> 
     <br>
     <div id="centerform">
