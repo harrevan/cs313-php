@@ -65,7 +65,7 @@
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
-        $assessments_mt = "SELECT count(score), assessment_title 
+        $assessments_mt = "SELECT assessment_title 
                             FROM assessment_score 
                             INNER JOIN students ON students.student_id = assessment_score.student_id 
                             INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
