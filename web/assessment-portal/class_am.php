@@ -146,7 +146,7 @@
           <h2 id="centerform"><?php echo "Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>  
             <?php
               for($i = 0; $i < sizeof($assessments); $i++){
-                echo $assessments[$i]['assesment_title'] . "<br>";
+                echo sizeof($assessments);
 
               }
 
