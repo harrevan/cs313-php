@@ -75,7 +75,7 @@
                             FROM assessment_score 
                             INNER JOIN students ON students.student_id = assessment_score.student_id 
                             INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
-                            WHERE class_time = 'PM' AND score = 'MT' 
+                            WHERE class_time = '{$_POST["time"]}' AND score = 'MT' 
                             GROUP BY assessment_title";
         $stmt = $db->prepare($assessments_mt);
         $stmt->execute();
@@ -146,7 +146,7 @@
           <h2 id="centerform"><?php echo "Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>  
             <?php
               for($i = 0; $i < sizeof($assessments); $i++){
-                echo $assessments_mt[$i]['assessment_title']; 
+                echo $assessments_mt[$i]['assessment_title'] . "<br>"; 
 
               }
 
