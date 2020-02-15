@@ -51,11 +51,11 @@
     die();
   }
 
-  if(isset($_GET["time"]))
+  if(isset($_POST["time"]))
   {
-    $select_students = $db->query("SELECT student_id, student_name FROM students  WHERE class_time='{$_GET["time"]}'");
+    $select_students = $db->query("SELECT student_id, student_name FROM students  WHERE class_time='{$_POST["time"]}'");
     $student_rows = $select_students->fetchAll(PDO::FETCH_ASSOC);
-    $select_assessments = $db->query("SELECT assessment_id, assessment_title FROM master_assessment WHERE assessment_period = '{$_GET["assessments"]}' AND subject = '{$_GET["subject"]}'");
+    $select_assessments = $db->query("SELECT assessment_id, assessment_title FROM master_assessment WHERE assessment_period = '{$_POST["assessments"]}' AND subject = '{$_POST["subject"]}'");
     $assessment_rows = $select_assessments->fetchAll(PDO::FETCH_ASSOC);
 
   }
@@ -84,7 +84,7 @@
       <h2>Enter Student Scores</h2>
       <form action="submit_scores.php" method="post">
         <div id="centerform">
-          <form id="assessment_selection" method="get" onsubmit="reveal();">
+          <form id="assessment_selection" method="post" onsubmit="reveal();">
             <label><b>Select Class Time:</b> </label>
             <select id="time" name="time">
               <option value="">Select</option>
