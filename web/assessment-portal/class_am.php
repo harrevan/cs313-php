@@ -190,46 +190,7 @@
               </thead>
               <tbody>  
             <?php
-              for($i = 0; $i < sizeof($scores); $i++)
-              {
-            ?>   
-              <tr>
-                <td><?php echo $scores[$i]['assessment_title']; ?></td>
-                <td>
-                  <?php
-                    if($scores[$i]['score'] == 'MT')
-                    {
-                      if($_POST['time'] == 'AM')
-                      {
-                        echo $scores[$i]['count'] . "/25"; 
-                      }
-                      else
-                      {
-                        echo $scores[$i]['count'] . "/26"; 
-                      }
-                    } 
-                  ?>                  
-                </td>
-                <td>
-                  <?php
-                    if($scores[$i]['score'] == 'NT')
-                    {
-                      echo $scores[$i]['count']; 
-                    } 
-                  ?>                  
-                </td>
-                <td>
-                  <?php
-                    if($scores[$i]['score'] == 'BT')
-                    {
-                      echo $scores[$i]['count']; 
-                    } 
-                  ?>                  
-                </td> 
-              </tr>                                 
-            <?php        
-              }
-            ?>           
+          
             </tbody>
           </table>
         </div>
