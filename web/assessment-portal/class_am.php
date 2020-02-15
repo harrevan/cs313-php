@@ -194,35 +194,35 @@
               {
             ?>   
               <tr>
-                <td><?php echo $assessments_mt[$i]['assessment_title']; ?></td>
+                <td><?php echo $scores[$i]['assessment_title']; ?></td>
                 <td>
                   <?php
-                    if($assessment_query[$i]['score'] == 'MT')
+                    if($scores[$i]['score'] == 'MT')
                     {
                       if($_POST['time'] == 'AM')
                       {
-                        echo $assessment_query[$i]['count'] . "/25"; 
+                        echo $scores[$i]['count'] . "/25"; 
                       }
                       else
                       {
-                        echo $assessment_query[$i]['count'] . "/26"; 
+                        echo $scores[$i]['count'] . "/26"; 
                       }
                     } 
                   ?>                  
                 </td>
                 <td>
                   <?php
-                    if($assessment_query[$i]['score'] == 'NT')
+                    if($scores[$i]['score'] == 'NT')
                     {
-                      echo $assessment_query[$i]['count']; 
+                      echo $scores[$i]['count']; 
                     } 
                   ?>                  
                 </td>
                 <td>
                   <?php
-                    if($assessment_query[$i]['score'] == 'BT')
+                    if($scores[$i]['score'] == 'BT')
                     {
-                      echo $assessment_query[$i]['count']; 
+                      echo $scores[$i]['count']; 
                     } 
                   ?>                  
                 </td> 
