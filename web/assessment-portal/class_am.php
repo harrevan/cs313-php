@@ -16,7 +16,7 @@
 
     <link rel="stylesheet" type="text/css" href="assessment.css">
 
-    <title>Class-AM</title>
+    <title>Class</title>
   </head>
   <?php
       session_start();
@@ -65,6 +65,12 @@
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
+
+        $assessments = "SELECT assessment_title FROM master_assessment  WHERE subject = '{$_POST["assessment_subject"]}' AND assessment_period = '{$_POST["assessments"]}'";
+        $stmt = $db->prepare($assessments);
+        $stmt->execute();
+        $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
         $assessments_mt = "SELECT count(score), assessment_title 
                             FROM assessment_score 
                             INNER JOIN students ON students.student_id = assessment_score.student_id 
@@ -74,14 +80,7 @@
         $stmt = $db->prepare($assessments_mt);
         $stmt->execute();
         $assessments_mt = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
     ?> 
-
-    <?php
-      $_SESSION["subject"] = $_POST["subject"];
-      $_SESSION["assessment_unit"] = $_POST["assessments"];
-    ?> 
-
     <br>
     <div id="centerform">
       <form id="assessment_selection" method="post">
@@ -146,13 +145,10 @@
         <div class="col-9">
           <h2 id="centerform"><?php echo "Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>  
             <?php
-              unset($_SESSION["assessment_array"]);
-              $_SESSION["assessment_array"] = array();
-              foreach ($db->query("SELECT assessment_id FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}' AND subject='{$_POST["subject"]}'") as $row)
-              {
-                array_push($_SESSION["assessment_array"], $row['assessment_id']);    
-                echo $row['assessment_title'] . "<br>" . "  Scores: coming next week" . "<br>";
+              for($i = 0; $i < sizeof($assessments); $i++){
+                echo $assessments[$i]['assesment_title'] . "<br>";
               }
+
             ?>           
           
         </div>

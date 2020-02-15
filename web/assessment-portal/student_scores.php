@@ -61,12 +61,6 @@
   }
 
 ?> 
-
-<?php
-  $_SESSION["subject"] = $_POST["subject"];
-  $_SESSION["assessment_unit"] = $_POST["assessments"];
-
-?> 
    <body id="home_body">
     <div>
       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
