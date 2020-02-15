@@ -65,10 +65,7 @@
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
-        $assessments_mt = "SELECT count(score) FROM assessment_score INNER JOIN students ON students.student_id = assessment_score.student_id INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id WHERE class_time = '{$_POST["time"]}' AND score = 'BT'";
-        $stmt = $db->prepare($class_assessments);
-        $stmt->execute();
-        $assessments_mt = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
     ?> 
 
