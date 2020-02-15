@@ -65,6 +65,11 @@
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
+        $assessments_mt = "SELECT count(score) FROM assessment_score INNER JOIN students ON students.student_id = assessment_score.student_id INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id WHERE class_time = '{$_POST["time"]}' AND score = 'MT'";
+        $stmt = $db->prepare($class_assessments);
+        $stmt->execute();
+        $assessments_mt = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     ?> 
 
     <?php
@@ -130,7 +135,7 @@
             <br>
             <input type="hidden" name="assessment_type" value="<?php echo $_POST["subject"]?>">
             <input type="hidden" name="unit_number" value="<?php echo $_POST["assessments"]?>">
-            <input type="submit" value="See Student Data">
+            <input type="submit" value="See Student Data"><br>
           </form>
         </div>
         <div class="col-9">
@@ -138,9 +143,9 @@
             <?php
               unset($_SESSION["assessment_array"]);
               $_SESSION["assessment_array"] = array();
-              foreach ($db->query("SELECT assessment_id FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}' AND subject='{$_POST["subject"]}'") as $row)
+              foreach ($db->query("SELECT assessment_title FROM master_assessment WHERE assessment_period='{$_POST["assessments"]}' AND subject='{$_POST["subject"]}'") as $row)
               {
-                array_push($_SESSION["assessment_array"], $row['assessment_id']);    
+                array_push($_SESSION["assessment_array"], $row['assessment_title']);    
                 echo $row['assessment_title'] . "<br>" . "  Scores: coming next week" . "<br>";
               }
             ?>           

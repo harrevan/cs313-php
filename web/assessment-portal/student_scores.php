@@ -85,6 +85,7 @@
         </ul>
       </nav>  
     </div>
+    <br>
     <div id="centerform">
       <form id="assessment_selection" method="get" onsubmit="reveal();">
         <label><b>Select Class Time:</b> </label>
@@ -121,7 +122,7 @@
           document.getElementById('subject').value = "<?php echo $_GET['subject'];?>";
         </script>  
         <br><br>
-        <input type=submit value="See Assessments">
+        <input type=submit value="Edit Scores">
       </form>
     </div>  
     <div class="container">
