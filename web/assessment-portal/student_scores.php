@@ -135,10 +135,7 @@
             <?php
               }    
             ?> 
-          </select>
-          <script type="text/javascript">
-            document.getElementById('stud_name').value = "<?php echo $_POST['student_name'];?>";
-          </script>  
+          </select> 
         </div>
         <div class="form-group">
           <label>Assessment:</label>
@@ -153,10 +150,7 @@
             <?php
               }
             ?> 
-          </select>
-          <script type="text/javascript">
-            document.getElementById('assess_id').value = "<?php echo $_POST['assessment'];?>";
-          </script>           
+          </select>           
         </div>
         <div class="form-group">
           <label>Assessment Score:</label>
