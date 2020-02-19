@@ -65,8 +65,7 @@
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
-      
-        $assessments = "SELECT assessment_title FROM master_assessment  WHERE class_time = '{$_POST["time"]}' AND subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}'";
+        $assessments = "SELECT assessment_title FROM master_assessment  --WHERE subject = '{$_POST["subject"]}' --AND assessment_period = '{$_POST["assessments"]}'";
         $stmt = $db->prepare($assessments);
         $stmt->execute();
         $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -161,7 +160,7 @@
               </thead>
               <tbody>  
              <?php
-              for($i = 0; $i < sizeof($assessments); $i++)
+              for($i = 0; $i < sizeof($scores / 2); $i++)
               {
               ?>   
                 <tr>
