@@ -80,10 +80,9 @@
         $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
           
         $scores = "SELECT count(score), assessment_title, score 
-                            FROM assessment_score 
-                            --INNER JOIN students ON students.student_id = assessment_score.student_id 
+                            FROM assessment_score --INNER JOIN students ON students.student_id = assessment_score.student_id >>> class_time = '{$_POST["time"]}' AND 
                             INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
-                            WHERE class_time = '{$_POST["time"]}' AND subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' 
+                            WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' 
                             GROUP BY assessment_title, score";
         $stmt = $db->prepare($scores);
         $stmt->execute();
