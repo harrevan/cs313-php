@@ -160,7 +160,7 @@
               </thead>
               <tbody>  
              <?php
-              for($i = 0; $i < 4; $i++)
+              for($i = 0; $i < sizeof($scores); $i++)
               {
               ?>   
                 <tr>
