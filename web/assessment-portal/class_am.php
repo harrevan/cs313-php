@@ -65,8 +65,8 @@
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
-        //$assessments = "SELECT assessment_title FROM master_assessment  --WHERE subject = '{$_POST["subject"]}' --AND assessment_period = '{$_POST["assessments"]}'";
-        //$stmt = $db->prepare($assessments);
+       // $assessments = "SELECT assessment_title FROM master_assessment  --WHERE subject = '{$_POST["subject"]}' --AND assessment_period = '{$_POST["assessments"]}'";
+       // $stmt = $db->prepare($assessments);
         //$stmt->execute();
         //$assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -80,9 +80,10 @@
         $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
           
         $scores = "SELECT count(score), assessment_title, score 
-                            FROM assessment_score --INNER JOIN students ON students.student_id = assessment_score.student_id >>> class_time = '{$_POST["time"]}' AND 
+                            FROM assessment_score 
+                            INNER JOIN students ON students.student_id = assessment_score.student_id 
                             INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
-                            WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' 
+                            WHERE class_time = '{$_POST["time"]}' AND subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' 
                             GROUP BY assessment_title, score";
         $stmt = $db->prepare($scores);
         $stmt->execute();
@@ -165,7 +166,7 @@
               </thead>
               <tbody>  
              <?php
-              for($i = 0; $i < sizeof($assessments); $i++)
+              for($i = 0; $i < sizeof($scores); $i++)
               {
               ?>   
                 <tr>
