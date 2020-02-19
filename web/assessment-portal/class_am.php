@@ -66,14 +66,17 @@
         die();
       }
 
-        // Find total # of students by class and assessment with MT score
-        if(isset($_POST['assessments']))
-        {
+      if(isset($_POST['assessments']))
+      {
         $assessments = "SELECT assessment_title FROM master_assessment  WHERE class_time = '{$_POST["time"]}' AND subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}'";
         $stmt = $db->prepare($assessments);
         $stmt->execute();
         $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
-          
+      }
+
+        // Find total # of students by class and assessment with MT score
+        if(isset($_POST['assessments']))
+        {
         $scores = "SELECT count(score), assessment_title, score 
                             FROM assessment_score 
                             INNER JOIN students ON students.student_id = assessment_score.student_id 
