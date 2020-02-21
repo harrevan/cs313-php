@@ -74,11 +74,13 @@
         if(isset($_POST['assessments']))
         {
 
-        $assessments = "SELECT assessment_title FROM master_assessment  WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}'";
+        $assessments = "SELECT assessment_title FROM master_assessment  WHERE subject = '{$_POST["subject"]}' --AND assessment_period = '{$_POST["assessments"]}'";
         $stmt = $db->prepare($assessments);
         $stmt->execute();
         $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
-          
+
+
+        // this will need to be modified to correctly display class data. Exclude student and assessment_title, group by score only to get scores. Maybe where score= x  
         $scores = "SELECT count(score), assessment_title, score 
                             FROM assessment_score 
                             INNER JOIN students ON students.student_id = assessment_score.student_id 

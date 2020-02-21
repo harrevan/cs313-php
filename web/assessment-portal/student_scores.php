@@ -51,7 +51,7 @@
     die();
   }
 
-  if(isset($_GET["time"]))
+  if(isset($_GET["time"]) & isset($_GET["assessments"]) & isset($_GET["subject"]))
   {
     $select_students = $db->query("SELECT student_id, student_name FROM students  WHERE class_time='{$_GET["time"]}'");
     $student_rows = $select_students->fetchAll(PDO::FETCH_ASSOC);
