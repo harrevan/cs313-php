@@ -92,7 +92,7 @@
             <option value="PM">PM</option>
           </select> 
           <script type="text/javascript">
-            document.getElementById('time').value = "<?php echo $_POST['time'];?>";
+            document.getElementById('time').value = "<?php echo $_SESSION['time'];?>";
           </script>  
         </div>
         <div class="form-group">
@@ -107,7 +107,7 @@
             <option value="6">Unit 6 Assessments</option>
           </select> 
           <script type="text/javascript">
-            document.getElementById('assessments').value = "<?php echo $_POST['assessments'];?>";
+            document.getElementById('assessments').value = "<?php echo $_SESSION['assessments'];?>";
           </script>  
         </div>
         <div class="form-group">
@@ -118,7 +118,7 @@
             <option value="MATH">Math</option>
           </select> 
           <script type="text/javascript">
-            document.getElementById('subject').value = "<?php echo $_POST['subject'];?>";
+            document.getElementById('subject').value = "<?php echo $_SESSION['subject'];?>";
           </script>  
         </div>
         <div class="form-group row">

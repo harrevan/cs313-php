@@ -4,7 +4,10 @@
 	{
 
 
-
+		$_SESSION['time'] = $_POST['time'];
+		$_SESSION['assessments'] = $_POST['assessments'];
+		$_SESSION['subject'] = $_POST['subject'];
+		
 		$student_id = htmlspecialchars($_POST['student_name']);
 		$assessment_id = htmlspecialchars($_POST['assessment']);
 		$score = htmlspecialchars($_POST['score']);
