@@ -40,10 +40,9 @@
 		$stmt->bindValue(':correct_answers', $correct_answers, PDO::PARAM_INT);
 		$stmt->execute();
 
-		$new_page = "student_scores.php";
-
 	}
 
+	$new_page = "student_scores.php";
 	header("Location: $new_page");
 	die();
 
