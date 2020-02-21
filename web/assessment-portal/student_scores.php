@@ -120,8 +120,6 @@
             document.getElementById('subject').value = "<?php echo $_POST['subject'];?>";
           </script>  
         </div>
-        <br><br>
-        <input type=submit value="Edit Scores">
         <div class="form-group row">
           <label>Student Name:</label>
           <select class="selectpicker" name="student_name" id="stud_name">
