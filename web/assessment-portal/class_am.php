@@ -188,14 +188,23 @@
         </div>
         <div class="col-9">
           <h2 id="centerform"><?php echo "Class " . $_POST['time'] . " Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>
-
+           <table class="table table-sm table-bordered table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Assessment Title</th>
+                  <th scope="col">MT Total</th>
+                  <th scope="col">NT Total</th>
+                  <th scope="col">BT Total</th>
+                </tr>
+              </thead>
+              <tbody>  
             <?php
               $mt_total = 0;
               $nt_total = 0;
               $bt_total = 0;
               for($i = 0; $i < sizeof($assessments); $i++)
               {
-                echo $assessments[$i]['assessment_title'] . " - ";
+                echo "<tr><td>" . $assessments[$i]['assessment_title'] . "<td>";
                 $mt_temp =0;
                 $nt_temp =0;
                 $bt_temp =0;
@@ -218,7 +227,7 @@
                   }
 
                 }
-
+                echo "</tr>";
                 echo "MT Total: - " . $mt_temp . "<br>";
                 echo "NT Total: - " . $nt_temp . "<br>";
                 echo "BT Total: - " . $bt_temp . "<br>";
