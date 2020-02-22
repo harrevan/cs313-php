@@ -146,10 +146,10 @@
                 // Load google charts
                 google.charts.setOnLoadCallback(drawChart);
 
-
+                var data = "";
                 // Draw the chart and set the chart values
                 function drawChart() {
-                  var data = google.visualization.arrayToDataTable([
+                  data = google.visualization.arrayToDataTable([
                   ["Score", "Count"],
                   ["MT", mt],
                   ["NT", nt],
