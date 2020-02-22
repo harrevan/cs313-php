@@ -94,49 +94,28 @@
           $stmt->execute();
           $bt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
       }
+
+      $num_assessments = sizeof($assessments);
    ?> 
   
-    <?php 
-      $index = 0; 
-      for($i = 0; $i < sizeof($assessments); $i++)
-      {   
-          $assess_title = $assessments[$i]['assessment_title'];
-          if(!empty($mt_scores[$i]['count']))
-          {
-            $mt = $mt_scores[$i]['count'];
-          }
-          else
-          {
-            $mt = 0;
-          }
-          if(!empty($nt_scores[$i]['count']))
-          {
-            $nt = $nt_scores[$i]['count'];   
-          }
-          else
-          {
-            $nt = 0;
-          }
-          if(!empty($bt_scores[$i]['count']))
-          {     
-            $bt = $bt_scores[$i]['count']; 
-          }
-          else
-          {
-            $bt = 0;
-          }
-    ?>               
-      
 
     
     <script type="text/javascript">
+        var i;
+        for (i = 0; i <'<?php echo $num_assessments ?>'; i++ ){
 
+                var mtArray = <?php echo $mt_scores['count']; ?>;
+                var ntArray = <?php echo $nt_scores['count']; ?>;
+                var btArray = <?php echo $bt_scores['count']; ?>;
 
-                var id =  <?php echo $index; ?> 
+                var id =  <?php echo $index; ?>; 
                 var assessment_title = '<?php echo $assess_title; ?>';
-                var mt = <?php echo $mt; ?>;
-                var nt = <?php echo $nt; ?>;
-                var bt = <?php echo $bt; ?>;
+                var mt = mtArray[i];
+                console.log(mt);
+                var nt = ntArray[i];
+                console.log(nt);
+                var bt = btArray[i];
+                console.log(bt);
 
                 console.log('piechart' + (id-1));
                 console.log('piechart' + id);
@@ -146,10 +125,10 @@
                 // Load google charts
                 google.charts.setOnLoadCallback(drawChart);
 
-                var data = "";
+
                 // Draw the chart and set the chart values
                 function drawChart() {
-                  data = google.visualization.arrayToDataTable([
+                  var data = google.visualization.arrayToDataTable([
                   ["Score", "Count"],
                   ["MT", mt],
                   ["NT", nt],
@@ -162,8 +141,8 @@
                   // Display the chart inside the <div> element with id="piechart"
                  // if(id == 0)
                   //{
-                   // var chart = new google.visualization.PieChart(document.getElementById("piechart0"));
-                   //chart.draw(data, options);
+                    var chart = new google.visualization.PieChart(document.getElementById("piechart0"));
+                   chart.draw(data, options);
                   //}
                   // else
                   // {
@@ -172,16 +151,9 @@
                   // }
                   
                 }
+      }
 </script>
 
-<script>
-  var chart = new google.visualization.PieChart(document.getElementById("piechart0"));
-                   chart.draw(data, options);
-</script>  
-  <?php
-      $index++;
-    }
-  ?>
   <body id="home_body">
     <div>
       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
