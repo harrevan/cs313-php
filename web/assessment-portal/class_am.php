@@ -201,21 +201,21 @@
                 $bt_temp =0;
                 for($j = 0; $j < sizeof($scores); $i++)
                 {
-                  if($scores[$j]['title'] == $assessments[$i]['title'])
-                  {
-                    if($scores[$j]['score'] == 'MT')
-                    {
-                      $mt_temp += $scores[$j]['score'];
-                    }
-                    if($scores[$j]['score'] == 'NT')
-                    {
-                      $nt_temp += $scores[$j]['score']; 
-                    }
-                    if($scores[$j]['score'] == 'BT')
-                    {
-                      $bt_temp += $scores[$j]['score']; 
-                    }
-                  }
+                  // if($scores[$j]['title'] == $assessments[$i]['title'])
+                  // {
+                  //   if($scores[$j]['score'] == 'MT')
+                  //   {
+                  //     $mt_temp += $scores[$j]['score'];
+                  //   }
+                  //   if($scores[$j]['score'] == 'NT')
+                  //   {
+                  //     $nt_temp += $scores[$j]['score']; 
+                  //   }
+                  //   if($scores[$j]['score'] == 'BT')
+                  //   {
+                  //     $bt_temp += $scores[$j]['score']; 
+                  //   }
+                  // }
 
                 }
 
