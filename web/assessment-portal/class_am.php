@@ -86,7 +86,9 @@
           $stmt->execute();
           $bt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+          // Display charts using Google Charts
           echo '<script type="text/javascript">
+
                 // Load google charts
                 google.charts.load("current", {"packages":["corechart"]});
                 google.charts.setOnLoadCallback(drawChart);
@@ -103,7 +105,7 @@
                   ["Sleep", 8]
                 ]);
 
-                  // Optional; add a title and set the width and height of the chart
+                  // Title and set the width and height of the chart
                   var options = {"title":"My Average Day", "width":550, "height":400};
 
                   // Display the chart inside the <div> element with id="piechart"
@@ -111,7 +113,9 @@
                   chart.draw(data, options);
                 }
                 </script>'
-          ;      
+          ; 
+
+          echo $mt_scores[0]['score'];     
       }
   ?> 
    <body id="home_body">
