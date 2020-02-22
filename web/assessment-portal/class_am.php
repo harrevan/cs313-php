@@ -95,8 +95,9 @@
 
                   
 
-                var count = "<?php echo $val ?>";
-                console.log(count);
+                var num = "<?php echo $val ?>";
+                console.log(num);
+                console.log(45);
 
                 // Load google charts
                 google.charts.load("current", {"packages":["corechart"]});
@@ -106,7 +107,7 @@
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
                   ["Score", "Count"],
-                  ["MT", count],
+                  ["MT", num],
                   ["NT", 1],
                   ["BT", 1]
                 ]);
