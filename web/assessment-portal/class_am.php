@@ -205,15 +205,15 @@
                   {
                     if($scores[$j]['score'] == 'MT')
                     {
-                      $mt_temp += $scores[$j]['score'];
+                      $mt_temp += $scores[$j]['count'];
                     }
                     if($scores[$j]['score'] == 'NT')
                     {
-                      $nt_temp += $scores[$j]['score']; 
+                      $nt_temp += $scores[$j]['count']; 
                     }
                     if($scores[$j]['score'] == 'BT')
                     {
-                      $bt_temp += $scores[$j]['score']; 
+                      $bt_temp += $scores[$j]['count']; 
                     }
                   }
 
