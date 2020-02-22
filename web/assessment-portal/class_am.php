@@ -196,7 +196,7 @@
                   <td><?php echo $assessments[$i]['assessment_title']; ?></td>
                   <td>
                     <?php
-                      if($mt_scores[$i]['count'])
+                      if($mt_scores[$i]['assessment_title'] = $assessments[$i]['assessment_title'])
                       {
                       if($_POST['time'] == 'AM')
                       {
@@ -216,7 +216,7 @@
                   </td>
                   <td>
                     <?php
-                      if($nt_scores[$i]['count'])
+                      if($nt_scores[$i]['assessment_title'] = $assessments[$i]['assessment_title'])
                       {
                         if($_POST['time'] == 'AM')
                         {
@@ -235,7 +235,7 @@
                   </td>
                   <td>
                     <?php
-                      if($bt_scores[$i]['count'])
+                      if($bt_scores[$i]['assessment_title'] = $assessments[$i]['assessment_title'])
                       {
                         if($_POST['time'] == 'AM')
                         {
