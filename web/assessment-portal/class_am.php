@@ -102,7 +102,7 @@
     
     <script type="text/javascript">
       // Load google charts
-        var assess_array = <?php echo json_encode($assessments)?>
+        var assess_array = <?php echo json_encode($assessments); ?>;
         var i;
         for (i = 0; i < ; i++ ){
           console.log(assess_array[i]["assessment_title"]);
