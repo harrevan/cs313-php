@@ -167,7 +167,7 @@
         </div>
         <div class="input-group mb-3">
           <label>Correct Answers:</label>
-          <input class="form-control" type="number" value="0" name="answers">  
+          <input class="input-group-text" type="number" value="0" name="answers">  
         </div>
         <button type="submit">Enter Score</button>
       </form>
