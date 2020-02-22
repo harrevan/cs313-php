@@ -91,13 +91,12 @@
               
 
           // Display charts using Google Charts
-          echo '<script type="text/javascript">
+          echo '<script>
 
                   
 
-                var num = <?php echo json_encode($val); ?>;
+                var num = "<?php echo $val; ?>";
                 console.log(num);
-                console.log(<?php echo json_encode($val); ?>);
 
                 // Load google charts
                 google.charts.load("current", {"packages":["corechart"]});
