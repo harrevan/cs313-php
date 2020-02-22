@@ -143,6 +143,7 @@
                 google.charts.setOnLoadCallback(drawChart);
 
                 // Draw the chart and set the chart values
+                var funct = 
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
                   ["Score", "Count"],
@@ -155,16 +156,16 @@
                   var options = {"title":assessment_title, "width":400, "height":400};
 
                   // Display the chart inside the <div> element with id="piechart"
-                  //if(id == 0)
-                 // {
-                  var chart = new google.visualization.PieChart(document.getElementById("piechart0"));
+                  if(id === 0)
+                  {
+                    var chart = new google.visualization.PieChart(document.getElementById("piechart0"));
                    chart.draw(data, options);
-                 // }
-               //   else
-                //  {
-                   // var chart = new google.visualization.PieChart(document.getElementById("piechart" + (id-1)).appendChild("piechart" + id));
-                   //chart.draw(data, options);
-                  //}
+                  }
+                  else
+                  {
+                    var chart = new google.visualization.PieChart(document.getElementById("piechart" + (id-1)).appendChild("piechart" + id));
+                   chart.draw(data, options);
+                  }
                   
                 }
 </script>
