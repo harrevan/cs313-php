@@ -61,7 +61,6 @@
           $stmt->execute();
           $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $
                //Select MT scores 
          $scores = "SELECT count(score), assessment_title, score
                              FROM assessment_score
