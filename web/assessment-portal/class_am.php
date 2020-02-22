@@ -94,89 +94,8 @@
           $stmt->execute();
           $bt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
       }
-
-      $num_assessments = sizeof($assessments);
    ?> 
   
-
-    
-    <script type="text/javascript">
-      // Load google charts
-        var assess_array = <?php echo json_encode($assessments); ?>;
-        var i;
-        for (i = 0; i < 4; i++ ){
-          console.log(assess_array[i]["assessment_title"]);
-                //var assess_title = <?php //echo json_encode($assessments); ?>;
-        var mtArray = <?php echo json_encode($mt_scores); ?>;
-        //console.log(mtArray[3]["count"]);
-        //console.log(mtArray.length);
-        var ntArray = <?php echo json_encode($nt_scores); ?>;
-        //console.log(ntArray.length);
-        var btArray = <?php echo json_encode($bt_scores); ?>;
-        //console.log(btArray.length);
-                //var mt = 0;
-                //var nt = 0;
-                //var bt = 0;
-       // mt = mtArray[i]["count"];
-        //nt = ntArray[i]["count"];
-        //bt = btArray[i]["count"];
-
-                //var id =  <?php //echo $index; ?>; 
-                //var assessment_title = assess_title[i]['assessment_title'];
-              //  if(Array.isArray(mtArray) && mtArray.length)
-              //  {
-                  
-              //  }
-                
-              //  console.log(mt);
-               // if(Array.isArray(ntArray) && ntArray.length)
-               // {
-                  //var nt = ntArray[i]['count'];
-               // }
-                
-              //  console.log(nt);
-              //  if(Array.isArray(btArray) && btArray.length)
-               // {
-                    //var bt = btArray[i]['count'];
-               // }
-                
-               // console.log(bt);
-
-                //console.log('piechart' + (id-1));
-                //console.log('piechart' + id);
-                
-                google.charts.setOnLoadCallback(drawChart);
-
-                
-
-
-                // Draw the chart and set the chart values
-                function drawChart() {
-                  var data = google.visualization.arrayToDataTable([
-                  ["Score", "Count"],
-                  ["MT", mtArray[i]["count"]],
-                  ["NT", ntArray[i]["count"]],
-                  ["BT", btArray[i]["count"]]
-                ]);
-
-                  // Title and set the width and height of the chart
-                  //var options = {"title":assessment_title, "width":400, "height":400};
-
-                  // Display the chart inside the <div> element with id="piechart"
-                 // if(id == 0)
-                  //{
-                    var chart = new google.visualization.PieChart(document.getElementById("piechart0"));
-                   chart.draw(data, options);
-                  //}
-                  // else
-                  // {
-                  //   var chart = new google.visualization.PieChart(document.getElementById("piechart" + (id-1)).appendChild("piechart" + id));
-                  //  chart.draw(data, options);
-                  // }
-                  
-                }
-      }
-</script>
 
   <body id="home_body">
     <div>
@@ -259,17 +178,85 @@
         </div>
         <div class="col-9">
           <h2 id="centerform"><?php echo "Class " . $_POST['time'] . " Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>
-          <div id="piechart0"></div>
-        </div>
-       <?php 
-         $val = $mt_scores[0]['count'];
-       echo $val . ' ' . $mt_scores[0][assessment_title];?>
-       <br>
-       <?php echo $mt_scores['count'] . ' ' . $mt_scores[1][assessment_title];?>  
-       <br>
-       <?php echo $mt_scores[2]['count'] . ' ' . $mt_scores[2][assessment_title];?>  
-       <br>
-       <?php echo $mt_scores[3]['count'] . ' ' . $mt_scores[3][assessment_title];?>       
+           <table class="table table-sm table-bordered table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Assessment Title</th>
+                  <th scope="col">MT Total</th>
+                  <th scope="col">NT Total</th>
+                  <th scope="col">BT Total</th>
+                </tr>
+              </thead>
+              <tbody>  
+             <?php
+              for($i = 0; $i < sizeof($assessments); $i++)
+              {
+              ?>   
+                <tr>
+                  <td><?php echo $assessments[$i]['assessment_title']; ?></td>
+                  <td>
+                    <?php
+                      if($mt_scores[$i]['count'])
+                      {
+                      if($_POST['time'] == 'AM')
+                      {
+                        echo $mt_scores[$i]['count'] . "/25"; 
+                      }
+                      else
+                      {
+                        echo $mt_scores[$i]['count'] . "/26"; 
+                      }
+                      else
+                      {
+                        echo "-";
+                      } 
+                    }
+                    ?>                  
+                  </td>
+                  <td>
+                    <?php
+                      if($nt_scores[$i]['count'])
+                      {
+                        if($_POST['time'] == 'AM')
+                        {
+                          echo $nt_scores[$i]['count'] . "/25"; 
+                        }
+                        else
+                        {
+                          echo $nt_scores[$i]['count'] . "/26"; 
+                        }
+                      }
+                      else
+                      {
+                        echo "-";
+                      }                        
+                    ?>                  
+                  </td>
+                  <td>
+                    <?php
+                      if($bt_scores[$i]['count'])
+                      {
+                        if($_POST['time'] == 'AM')
+                        {
+                          echo $bt_scores[$i]['count'] . "/25"; 
+                        }
+                        else
+                        {
+                          echo $bt_scores[$i]['count'] . "/26"; 
+                        }
+                      }
+                      else
+                      {
+                        echo "-";
+                      }                        
+                    ?>                  
+                  </td> 
+                </tr>                                 
+              <?php        
+                }
+              ?>         
+            </tbody>
+          </table>     
       </div>
     </div> 
   </body>
