@@ -93,6 +93,7 @@
    ?> 
    <body id="home_body">
     <?php 
+      $index = 0; 
       for($i = 0; $i < sizeof($assessments); $i++)
       {   
           $assess_title = $assessments[$i]['assessment_title'];
@@ -126,7 +127,7 @@
     
     <script>
 
-                  
+                var id =  <?php echo $index; ?> 
                 var assessment_title = '<?php echo $assess_title; ?>';
                 var mt = <?php echo $mt; ?>;
                 var nt = <?php echo $nt; ?>;
@@ -151,11 +152,21 @@
                   var options = {"title":assessment_title, "width":400, "height":400};
 
                   // Display the chart inside the <div> element with id="piechart"
-                  var chart = new google.visualization.PieChart(document.body.appendChild(document.getElementById("piechart")));
-                  chart.draw(data, options);
+                  if(id == 0)
+                  {
+                    var chart = new google.visualization.PieChart(document.getElementById("piechart0"));
+                   chart.draw(data, options);
+                  }
+                  else
+                  {
+                    var chart = new google.visualization.PieChart(document.getElementById("piechart" + id-1).appendChild("piechart" + id));
+                   chart.draw(data, options);
+                  }
+                  
                 }
 </script>
   <?php
+      $index++;
     }
   ?>
     <div>
@@ -238,7 +249,7 @@
         </div>
         <div class="col-9">
           <h2 id="centerform"><?php echo "Class " . $_POST['time'] . " Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>
-          <div id="piechart"></div>
+          <div id="piechart0"></div>
         </div>
        <?php 
          $val = $mt_scores[0]['count'];
