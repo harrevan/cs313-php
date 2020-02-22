@@ -51,12 +51,12 @@
     die();
   }
 
-  if(isset($_POST["time"]) && isset($_POST["assessments"]) && isset($_POST["subject"]))
+  if(isset($_POST["time"]) && !empty($_SESSION['time']))//&& isset($_POST["assessments"]) && isset($_POST["subject"]))
   {
     $select_students = $db->query("SELECT student_id, student_name FROM students  WHERE class_time='{$_SESSION["time"]}'");
     $student_rows = $select_students->fetchAll(PDO::FETCH_ASSOC);
-    $select_assessments = $db->query("SELECT assessment_id, assessment_title FROM master_assessment WHERE assessment_period = '{$_SESSION["assessments"]}' AND subject = '{$_SESSION["subject"]}'");
-    $assessment_rows = $select_assessments->fetchAll(PDO::FETCH_ASSOC);
+    //$select_assessments = $db->query("SELECT assessment_id, assessment_title FROM master_assessment WHERE assessment_period = '{$_SESSION["assessments"]}' AND subject = '{$_SESSION["subject"]}'");
+    //$assessment_rows = $select_assessments->fetchAll(PDO::FETCH_ASSOC);
 
 
   }
