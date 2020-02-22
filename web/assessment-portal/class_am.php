@@ -206,11 +206,12 @@
                       {
                         echo $mt_scores[$i]['count'] . "/26"; 
                       }
+                    }
                       else
                       {
                         echo "-";
                       } 
-                    }
+                    
                     ?>                  
                   </td>
                   <td>
