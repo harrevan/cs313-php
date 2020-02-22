@@ -162,8 +162,8 @@
                   }
                   else
                   {
-                    var chart = new google.visualization.PieChart(document.getElementById("piechart" + (id-1)).appendChild("piechart" + id));
-                   chart.draw(data, options);
+                   // var chart = new google.visualization.PieChart(document.getElementById("piechart" + (id-1)).appendChild("piechart" + id));
+                   //chart.draw(data, options);
                   }
                   
                 }
