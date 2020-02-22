@@ -102,13 +102,7 @@
     
     <script type="text/javascript">
       // Load google charts
-               
-        var mtArray = <?php echo json_encode($mt_scores); ?>;
-        //console.log(mtArray.length);
-        var ntArray = <?php echo json_encode($nt_scores); ?>;
-        //console.log(ntArray.length);
-        var btArray = <?php echo json_encode($bt_scores); ?>;
-        //console.log(btArray.length);
+
         var i;
         for (i = 0; i < 1; i++ ){
                 //var assess_title = <?php //echo json_encode($assessments); ?>;
@@ -118,9 +112,9 @@
         //console.log(ntArray.length);
         var btArray = <?php echo json_encode($bt_scores); ?>;
         //console.log(btArray.length);
-                var mt = 0;
-                var nt = 0;
-                var bt = 0;
+                //var mt = 0;
+                //var nt = 0;
+                //var bt = 0;
 
 
                 //var id =  <?php //echo $index; ?>; 
@@ -136,13 +130,13 @@
                   nt = ntArray[i]['count'];
                // }
                 
-                console.log(nt);
+              //  console.log(nt);
               //  if(Array.isArray(btArray) && btArray.length)
                // {
                     bt = btArray[i]['count'];
                // }
                 
-                console.log(bt);
+               // console.log(bt);
 
                 //console.log('piechart' + (id-1));
                 //console.log('piechart' + id);
