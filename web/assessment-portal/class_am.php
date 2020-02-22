@@ -112,7 +112,7 @@
           {
             $nt = 0;
           }
-          if(!empty($bt_scores[$i]['count'];))
+          if(!empty($bt_scores[$i]['count']))
           {     
             $bt = $bt_scores[$i]['count']; 
           }
