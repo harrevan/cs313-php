@@ -125,7 +125,7 @@
           </script>  
         </div>
         <div class="input-group mb-3">
-          <label class="input-group-text" for="stud_name">Student Name:</label>
+          <label class="input-group-text" for="stud_name"><b>Student Name:</b></label>
           <select class="custom-select" class="selectpicker" name="student_name" id="stud_name">
             <option>Select</option>
             <?php
@@ -141,7 +141,7 @@
           </select> 
         </div>
         <div class="input-group mb-3">
-          <label class="input-group-text" for="assess_id">Assessment:</label>
+          <label class="input-group-text" for="assess_id"><b>Assessment:</b></label>
           <select class="custom-select" name="assessment" id="assess_id">
             <option>Select</option>
             <?php
@@ -157,7 +157,7 @@
           </select>           
         </div>
         <div class="input-group mb-3">
-          <label class="input-group-text" for="score_id">Assessment Score:</label>
+          <label class="input-group-text" for="score_id"><b>Assessment Score:</b></label>
           <select class="custom-select" name="score" id="score_id">
             <option>Select</option>
             <option value="MT">Met Target</option>
@@ -166,8 +166,8 @@
           </select>         
         </div>
         <div class="input-group mb-3">
-          <label>Correct Answers:</label>
-          <input class="input-group-text" type="number" value="0" name="answers">  
+          <label class="input-group-text"><b>Correct Answers:</b></label>
+          <input type="number" value="0" name="answers">  
         </div>
         <button type="submit">Enter Score</button>
       </form>
