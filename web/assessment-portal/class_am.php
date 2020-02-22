@@ -102,14 +102,14 @@
     
     <script type="text/javascript">
         var i;
-        for (i = 0; i <'<?php echo $num_assessments ?>'; i++ ){
-
+        for (i = 0; i <1; i++ ){
+                var assess_title = <?php echo json_encode($assessments); ?>;
                 var mtArray = <?php echo json_encode($mt_scores); ?>;
                 var ntArray = <?php echo json_encode($nt_scores); ?>;
                 var btArray = <?php echo json_encode($bt_scores); ?>;
 
                 //var id =  <?php echo $index; ?>; 
-                var assessment_title = '<?php echo $assess_title; ?>';
+                var assessment_title = assess_title[i]['assessment_title'];
                 var mt = mtArray[i]['count'];
                 console.log(mt);
                 var nt = ntArray[i]['count'];
@@ -117,8 +117,8 @@
                 var bt = btArray[i]['count'];
                 console.log(bt);
 
-                console.log('piechart' + (id-1));
-                console.log('piechart' + id);
+                //console.log('piechart' + (id-1));
+                //console.log('piechart' + id);
                 
                
 
