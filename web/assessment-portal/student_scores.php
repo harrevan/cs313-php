@@ -127,21 +127,23 @@
         <div class="form-group row">
           <label>Student Name:</label>
           <select class="selectpicker" name="student_name" id="stud_name">
-             <?php
-              foreach ($student_rows as $student)
-              {
-                $name = $student['student_name'];
-                $id = $student['student_id'];
-                ?>
-                <option value="<?php echo $id;?>"><?php echo $name;?></option>
+            <option>Select</option>  
             <?php
-              }    
-            ?> 
+             foreach ($student_rows as $student)
+             {
+               $name = $student['student_name'];
+               $id = $student['student_id'];
+               ?>
+               <option value="<?php echo $id;?>"><?php echo $name;?></option>
+           <?php
+             }    
+           ?> 
           </select> 
         </div>
         <div class="form-group">
           <label>Assessment:</label>
           <select class="selectpicker" name="assessment" id="assess_id">
+             <option>Select</option> 
              <?php
               foreach ($assessment_rows as $assessment)
               {
