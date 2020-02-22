@@ -89,6 +89,8 @@
           // Display charts using Google Charts
           echo '<script type="text/javascript">
 
+                var count = 3;
+
                 // Load google charts
                 google.charts.load("current", {"packages":["corechart"]});
                 google.charts.setOnLoadCallback(drawChart);
@@ -97,7 +99,7 @@
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
                   ["Score", "Count"],
-                  ["MT", 2],
+                  ["MT", count],
                   ["NT", 1],
                   ["BT", 1]
                 ]);
