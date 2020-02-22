@@ -58,11 +58,11 @@
         
       }
       
-      if(isset($_SESSION['assessments']) && !empty($_SESSION['assessments']) && isset($_SESSION['subject']) && !empty($_SESSION['subject']))
-      {
-        //$select_assessments = $db->query("SELECT assessment_id, assessment_title FROM master_assessment WHERE assessment_period = '{$_SESSION["assessments"]}' AND subject = '{$_SESSION["subject"]}'");
+      //if(isset($_SESSION['assessments']) && !empty($_SESSION['assessments']) && isset($_SESSION['subject']) && !empty($_SESSION['subject']))
+      //{
+       // $select_assessments = $db->query("SELECT assessment_id, assessment_title FROM master_assessment WHERE assessment_period = '{$_SESSION["assessments"]}' AND subject = '{$_SESSION["subject"]}'");
         //$assessment_rows = $select_assessments->fetchAll(PDO::FETCH_ASSOC);
-      }
+      //}
 
 ?> 
    <body id="home_body">
@@ -127,23 +127,21 @@
         <div class="form-group row">
           <label>Student Name:</label>
           <select class="selectpicker" name="student_name" id="stud_name">
-            <option value="">Select</option>  
+             <?php
+              foreach ($student_rows as $student)
+              {
+                $name = $student['student_name'];
+                $id = $student['student_id'];
+                ?>
+                <option value="<?php echo $id;?>"><?php echo $name;?></option>
             <?php
-             foreach ($student_rows as $student)
-             {
-               $name = $student['student_name'];
-               $id = $student['student_id'];
-               ?>
-               <option value="<?php echo $id;?>"><?php echo $name;?></option>
-           <?php
-             }    
-           ?> 
+              }    
+            ?> 
           </select> 
         </div>
         <div class="form-group">
           <label>Assessment:</label>
           <select class="selectpicker" name="assessment" id="assess_id">
-             <option value="">Select</option> 
              <?php
               foreach ($assessment_rows as $assessment)
               {
