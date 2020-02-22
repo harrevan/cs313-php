@@ -89,7 +89,7 @@
           // Display charts using Google Charts
           echo '<script type="text/javascript">
 
-                var count = <?php echo $mt_scores[0]["count"]; ?>;
+                var count = "<?php echo $mt_scores[0]["count"];?>";
 
                 // Load google charts
                 google.charts.load("current", {"packages":["corechart"]});
@@ -116,7 +116,7 @@
 
 
       }
-  ?> 
+   ?> 
    <body id="home_body">
     <div>
       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
