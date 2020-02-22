@@ -260,7 +260,7 @@
           </table>  
 
           <?php
-              echo $bt_scores[0]['assessment_title'] . ' ' . $assessments[4]['assessment_title'];
+              echo 'bt: ' . $bt_scores[0]['assessment_title'] . ' ' . 'ass: ' .  $assessments[3]['assessment_title'];
           ?>   
       </div>
     </div> 
