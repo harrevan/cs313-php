@@ -96,7 +96,7 @@
       }
    ?> 
    <body id="home_body">
-              
+             
       
 
     
@@ -131,7 +131,8 @@
           {
             $bt = 0;
           }
-    ?> 
+    ?>  
+
 
                 var id =  <?php echo $index; ?> 
                 var assessment_title = '<?php echo $assess_title; ?>';
