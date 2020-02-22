@@ -227,8 +227,7 @@
                   }
 
                 }
-                echo "</tr>";
-                echo "<tr><td>" . $mt_temp . "</td>";
+                echo "<td>" . $mt_temp . "</td>";
                 echo "<td>" . $nt_temp . "</td>";
                 echo "<td>" . $bt_temp . "</td></tr>";
 
