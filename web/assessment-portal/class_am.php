@@ -87,7 +87,7 @@
           $bt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       
-            $val = $mt_scores[0]["count"];
+            $val = 12;
               
 
           // Display charts using Google Charts
