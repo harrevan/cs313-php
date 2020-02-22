@@ -98,7 +98,7 @@
             document.getElementById('time').value = "<?php echo $_SESSION['time'];?>";
           </script>  
         </div>
-        <div class="form-group">
+        <div class="input-group mb-3">
           <label class="input-group-text" for="assessment_list"><b>Select Assessment Unit:</b> </label>
           <select class="custom-select" id="assessment_list" name="assessments" onchange="this.form.submit()">
             <option value ="">Select</option>
