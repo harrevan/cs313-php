@@ -196,16 +196,6 @@
                   <td><?php echo $assessments[$i]['assessment_title']; ?></td>
                   <td>
                     <?php
-                      if($mt_scores[$i]['assessment_title'] != $assessments[$i]['assessment_title'])
-                      {
-                        for($j = 0; $j <sizeof($assessments); $j++)
-                        {
-                          if($mt_scores[$i]['assessment_title'] == $assessments[$j]['assessment_title'])
-                          {
-                            $mt_scores[$j] = $mt_scores[$i];
-                          }
-                        }
-                      }
                       if($mt_scores[$i]['assessment_title'] == $assessments[$i]['assessment_title'])
                       {
                       if($_POST['time'] == 'AM')
@@ -226,16 +216,6 @@
                   </td>
                   <td>
                     <?php
-                      if($nt_scores[$i]['assessment_title'] != $assessments[$i]['assessment_title'])
-                      {
-                        for($j = 0; $j <sizeof($assessments); $j++)
-                        {
-                          if($nt_scores[$i]['assessment_title'] == $assessments[$j]['assessment_title'])
-                          {
-                            $nt_scores[$j] = $nt_scores[$i];
-                          }
-                        }
-                      }
                       if($nt_scores[$i]['assessment_title'] == $assessments[$i]['assessment_title'])
                       {
                         if($_POST['time'] == 'AM')
@@ -257,15 +237,16 @@
                     <?php
                       if($bt_scores[$i]['assessment_title'] != $assessments[$i]['assessment_title'])
                       {
-                        for($j = 0; $j <sizeof($assessments); $j++)
+                        for($j = 0; $j <sizeof($assessments) $j++)
                         {
                           if($bt_scores[$i]['assessment_title'] == $assessments[$j]['assessment_title'])
                           {
                             $bt_scores[$j] = $bt_scores[$i];
                           }
                         }
-                      }
 
+                      }
+                      
                       if($bt_scores[$i]['assessment_title'] == $assessments[$i]['assessment_title'])
                       {
                         if($_POST['time'] == 'AM')
