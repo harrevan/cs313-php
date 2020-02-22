@@ -51,7 +51,7 @@
     die();
   }
 
-  if(isset($_POST["time"]) && !empty($_SESSION['time']))//&& isset($_POST["assessments"]) && isset($_POST["subject"]))
+  if(isset($_SESSION["time"]) && !empty($_SESSION['time']))//&& isset($_POST["assessments"]) && isset($_POST["subject"]))
   {
     $select_students = $db->query("SELECT student_id, student_name FROM students  WHERE class_time='{$_SESSION["time"]}'");
     $student_rows = $select_students->fetchAll(PDO::FETCH_ASSOC);
