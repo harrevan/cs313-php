@@ -126,7 +126,7 @@
 
     
     <script>
-                var funcName = "draw" + 0 
+                var funcName = "draw" + 0; 
                 var id =  <?php echo $index; ?> 
                 var assessment_title = '<?php echo $assess_title; ?>';
                 var mt = <?php echo $mt; ?>;
