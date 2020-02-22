@@ -110,7 +110,7 @@
         var btArray = <?php echo json_encode($bt_scores); ?>;
         //console.log(btArray.length);
         var i;
-        for (i = 0; i <1; i++ ){
+        for (i = 0; i < 1; i++ ){
                 //var assess_title = <?php //echo json_encode($assessments); ?>;
 
                 var mt = 0;
@@ -120,7 +120,7 @@
 
                 //var id =  <?php //echo $index; ?>; 
                 //var assessment_title = assess_title[i]['assessment_title'];
-                if(mtArray.length > 0 && mtArray[i]['count'] != null )
+                if(Array.isArray(mtArray) && mtArray.length)
                 {
                   mt = mtArray[i]['count'];
                 }
