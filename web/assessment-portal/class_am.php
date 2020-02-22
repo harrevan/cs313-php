@@ -48,7 +48,7 @@
 
       if(isset($_POST['assessments']))
       {
-          $assessments = "SELECT assessment_title FROM master_assessment  WHERE subject = '{$_POST["subject"]}' --AND assessment_period = '{$_POST["assessments"]}'";
+          $assessments = "SELECT assessment_title FROM master_assessment  WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}'";
           $stmt = $db->prepare($assessments);
           $stmt->execute();
           $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -89,7 +89,8 @@
    ?> 
    <body id="home_body">
     <?php 
-      $mt = $mt_scores[0]['count'];
+      //for($i = 0; $i < sizeof())
+      $mt = sizeof($assessments);
 
     ?>
     <script>
