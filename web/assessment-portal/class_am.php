@@ -126,7 +126,7 @@
                 }
                 
                 console.log(mt);
-                if(ntArray.length > 0 && ntArray[i]['count'] != null)
+                if(Array.isArray(ntArray) && ntArray.length)
                 {
                   nt = ntArray[i]['count'];
                 }
