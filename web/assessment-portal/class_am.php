@@ -97,7 +97,7 @@
 
                 var num = "<?php echo $val; ?>";
                 console.log(num);
-                console.log(45);
+                console.log(<?php echo $val; ?>);
 
                 // Load google charts
                 google.charts.load("current", {"packages":["corechart"]});
