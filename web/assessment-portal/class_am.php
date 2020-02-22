@@ -46,38 +46,8 @@
         echo 'Error!: ' . $ex->getMessage();
         die();
       }
-               
 
-
-  ?>
-   <body id="home_body">
-    <div>
-      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="portal_home.php">Portal Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="class_am.php">
-              Classes
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="student_scores.php">Enter Student Scores</a>
-          </li>          
-        </ul>
-      </nav>  
-    </div>
-
-    <?php
-      
-       // $assessments = "SELECT assessment_title FROM master_assessment  --WHERE subject = '{$_POST["subject"]}' --AND assessment_period = '{$_POST["assessments"]}'";
-       // $stmt = $db->prepare($assessments);
-        //$stmt->execute();
-        //$assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-        // Find total # of assessments
-        if(isset($_POST['assessments']))
+       if(isset($_POST['assessments']))
         {
 
             $assessments = "SELECT assessment_title FROM master_assessment  WHERE subject = '{$_POST["subject"]}' --AND assessment_period = '{$_POST["assessments"]}'";
@@ -121,6 +91,38 @@
         }
 
     ?> 
+
+
+
+
+   <body id="home_body">
+    <div>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="portal_home.php">Portal Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="class_am.php">
+              Classes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="student_scores.php">Enter Student Scores</a>
+          </li>          
+        </ul>
+      </nav>  
+    </div>
+
+ 
+      
+       // $assessments = "SELECT assessment_title FROM master_assessment  --WHERE subject = '{$_POST["subject"]}' --AND assessment_period = '{$_POST["assessments"]}'";
+       // $stmt = $db->prepare($assessments);
+        //$stmt->execute();
+        //$assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // Find total # of assessments
+       
     <br>
     <div id="centerform">
       <form id="assessment_selection" method="post">
