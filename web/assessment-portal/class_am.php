@@ -203,11 +203,11 @@
         </div>
        <?php echo $mt_scores[0]['count'] . ' ' . $mt_scores[0][assessment_title];?>
        <br>
-       <?php echo $mt_scores[1]['count'] . ' ' . $mt_scores[0][assessment_title];?>  
+       <?php echo $mt_scores[1]['count'] . ' ' . $mt_scores[1][assessment_title];?>  
        <br>
-       <?php echo $mt_scores[2]['count'] . ' ' . $mt_scores[0][assessment_title];?>  
+       <?php echo $mt_scores[2]['count'] . ' ' . $mt_scores[2][assessment_title];?>  
        <br>
-       <?php echo $mt_scores[3]['count'] . ' ' . $mt_scores[0][assessment_title];?>       
+       <?php echo $mt_scores[3]['count'] . ' ' . $mt_scores[3][assessment_title];?>       
       </div>
     </div> 
   </body>
