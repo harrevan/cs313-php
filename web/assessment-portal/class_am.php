@@ -48,7 +48,11 @@
 
       if(isset($_POST['assessments']))
       {
-          $assessments = "SELECT assessment_title FROM master_assessment  WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}'";
+          $assessments = "SELECT assessment_title 
+                          FROM master_assessment  
+                          WHERE subject = '{$_POST["subject"]}' 
+                          AND assessment_period = '{$_POST["assessments"]}'
+                          ORDER BY assessment_id";
           $stmt = $db->prepare($assessments);
           $stmt->execute();
           $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -89,15 +93,23 @@
    ?> 
    <body id="home_body">
     <?php 
-      //for($i = 0; $i < sizeof())
-      $mt = sizeof($assessments);
+      for($i = 0; $i < sizeof($assessments); $i++)
+      {   $assess_title = $assessments[$i]['assessment_title'];
+          $mt = $mt_scores[$i]['count'];
+          $nt = $nt_scores[$i]['count'];    
+          $bt = $bt_scores[$i]['count']; 
+    ?>               
+      
 
-    ?>
+    
     <script>
 
                   
-
-                var num = <?php echo $mt; ?>;
+                var assessment_title = '<?php echo $assess_title; ?>';
+                var mt = <?php echo $mt; ?>;
+                var nt = <?php echo $nt; ?>;
+                var bt = <?php echo $bt; ?>;
+                
                 console.log(num);
 
                 // Load google charts
@@ -108,19 +120,22 @@
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
                   ["Score", "Count"],
-                  ["MT", num],
-                  ["NT", 1],
-                  ["BT", 1]
+                  ["MT", mt],
+                  ["NT", nt],
+                  ["BT", bt]
                 ]);
 
                   // Title and set the width and height of the chart
-                  var options = {"title":"My Average Day", "width":550, "height":400};
+                  var options = {"title":assessment_title, "width":400, "height":400};
 
                   // Display the chart inside the <div> element with id="piechart"
                   var chart = new google.visualization.PieChart(document.getElementById("piechart"));
                   chart.draw(data, options);
                 }
 </script>
+  <?php
+    }
+  ?>
     <div>
       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <ul class="navbar-nav">
