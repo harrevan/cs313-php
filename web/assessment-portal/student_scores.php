@@ -124,7 +124,7 @@
             document.getElementById('subject').value = "<?php echo $_SESSION['subject'];?>";
           </script>  
         </div>
-        <div class="form-group row">
+        <div class="form-group">
           <label>Student Name:</label>
           <select class="selectpicker" name="student_name" id="stud_name">
             <option>Select</option>
