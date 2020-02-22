@@ -165,9 +165,9 @@
             <option value="BT">Below Target</option>      
           </select>         
         </div>
-        <div class="input-group mb-3">
+        <div class="form-group">
           <label class="input-group-text"><b>Correct Answers:</b></label>
-          <input class="form-group" type="number" value="0" name="answers">  
+          <input type="number" value="0" name="answers">  
         </div>
         <button class="btn btn-primary btn-lg btn-block" type="submit">Enter Score</button>
       </form>
