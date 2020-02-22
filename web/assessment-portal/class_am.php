@@ -97,7 +97,7 @@
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
                   ["Score", "Count"],
-                  ["MT", <?php echo $mt_scores[0]["count"] ?>],
+                  ["MT", <?php echo $mt_scores[0]["count"]; ?>],
                   ["NT", 1],
                   ["BT", 1]
                 ]);
