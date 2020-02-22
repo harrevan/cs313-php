@@ -100,7 +100,7 @@
       
 
     
-    <script type="text/javascript">
+    <script>
 
           <?php 
       $index = 0; 
