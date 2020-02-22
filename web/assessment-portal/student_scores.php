@@ -127,7 +127,7 @@
         <div class="form-group row">
           <label>Student Name:</label>
           <select class="selectpicker" name="student_name" id="stud_name">
-            <option>Select</option>  
+            <option value="">Select</option>  
             <?php
              foreach ($student_rows as $student)
              {
@@ -143,7 +143,7 @@
         <div class="form-group">
           <label>Assessment:</label>
           <select class="selectpicker" name="assessment" id="assess_id">
-             <option>Select</option> 
+             <option value="">Select</option> 
              <?php
               foreach ($assessment_rows as $assessment)
               {
