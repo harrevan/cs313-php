@@ -228,9 +228,9 @@
 
                 }
                 echo "</tr>";
-                echo "MT Total: - " . $mt_temp . "<br>";
-                echo "NT Total: - " . $nt_temp . "<br>";
-                echo "BT Total: - " . $bt_temp . "<br>";
+                echo "<tr><td>" . $mt_temp . "</td>";
+                echo "<td>" . $nt_temp . "</td>";
+                echo "<td>" . $bt_temp . "</td></tr>";
 
               }
             ?>
