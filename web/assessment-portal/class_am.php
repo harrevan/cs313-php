@@ -86,12 +86,10 @@
           $stmt->execute();
           $bt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-      
-            $val = 'howdy';
               
 
           // Display charts using Google Charts
-          echo '<script>
+/*          echo '<script>
 
                   
 
@@ -119,12 +117,43 @@
                   chart.draw(data, options);
                 }
                 </script>'
-          ; 
+          ; */
 
 
       }
    ?> 
    <body id="home_body">
+    <?php 
+      $php_var = 12;
+    ?>
+    <script>
+
+                  
+
+                var num = <?php echo $php_var; ?>;
+                console.log(num);
+
+                // Load google charts
+                google.charts.load("current", {"packages":["corechart"]});
+                google.charts.setOnLoadCallback(drawChart);
+
+                // Draw the chart and set the chart values
+                function drawChart() {
+                  var data = google.visualization.arrayToDataTable([
+                  ["Score", "Count"],
+                  ["MT", num],
+                  ["NT", 1],
+                  ["BT", 1]
+                ]);
+
+                  // Title and set the width and height of the chart
+                  var options = {"title":"My Average Day", "width":550, "height":400};
+
+                  // Display the chart inside the <div> element with id="piechart"
+                  var chart = new google.visualization.PieChart(document.getElementById("piechart"));
+                  chart.draw(data, options);
+                }
+</script>
     <div>
       <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <ul class="navbar-nav">
