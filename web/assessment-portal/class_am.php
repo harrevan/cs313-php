@@ -104,17 +104,17 @@
         var i;
         for (i = 0; i <'<?php echo $num_assessments ?>'; i++ ){
 
-                var mtArray = <?php echo $mt_scores['count']; ?>;
-                var ntArray = <?php echo $nt_scores['count']; ?>;
-                var btArray = <?php echo $bt_scores['count']; ?>;
+                var mtArray = <?php echo $mt_scores; ?>;
+                var ntArray = <?php echo $nt_scores; ?>;
+                var btArray = <?php echo $bt_scores; ?>;
 
                 var id =  <?php echo $index; ?>; 
                 var assessment_title = '<?php echo $assess_title; ?>';
-                var mt = mtArray[i];
+                var mt = mtArray[i]['count'];
                 console.log(mt);
-                var nt = ntArray[i];
+                var nt = ntArray[i]['count'];
                 console.log(nt);
-                var bt = btArray[i];
+                var bt = btArray[i]['count'];
                 console.log(bt);
 
                 console.log('piechart' + (id-1));
