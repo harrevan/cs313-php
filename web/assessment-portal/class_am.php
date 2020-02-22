@@ -86,14 +86,16 @@
           $stmt->execute();
           $bt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+      
+            $val = $mt_scores[0]["count"];
+              
+
           // Display charts using Google Charts
           echo '<script type="text/javascript">
 
-                  <?php 
-                    $val = $mt_scores[0]["count"];
-                  ?> 
+                  
 
-                var count = <?php echo $val ?>;
+                var count = <?php echo json_encode($val) ?>;
                 console.log(count);
 
                 // Load google charts
