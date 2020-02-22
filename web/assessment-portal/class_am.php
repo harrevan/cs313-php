@@ -228,9 +228,7 @@
 
 
 
-          <?php
-              echo 'bt: ' . $bt_scores[0]['assessment_title'] . ' ' . 'ass: ' .  $assessments[3]['assessment_title'];
-          ?>   
+     
       </div>
     </div> 
   </body>
