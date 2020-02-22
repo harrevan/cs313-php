@@ -107,6 +107,7 @@
         for (i = 0; i < 1; i++ ){
                 //var assess_title = <?php //echo json_encode($assessments); ?>;
         var mtArray = <?php echo json_encode($mt_scores); ?>;
+        console.log(mtArray[3]['count']);
         //console.log(mtArray.length);
         var ntArray = <?php echo json_encode($nt_scores); ?>;
         //console.log(ntArray.length);
@@ -121,7 +122,7 @@
                 //var assessment_title = assess_title[i]['assessment_title'];
               //  if(Array.isArray(mtArray) && mtArray.length)
               //  {
-                  console.log(mtArray[1]["count"]);
+                  
               //  }
                 
               //  console.log(mt);
