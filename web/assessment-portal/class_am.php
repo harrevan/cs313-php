@@ -115,7 +115,7 @@
                 </script>'
           ; 
 
-          echo $mt_scores[0]['score'];     
+          echo $mt_scores[0]['count'];     
       }
   ?> 
    <body id="home_body">
