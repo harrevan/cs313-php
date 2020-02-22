@@ -145,6 +145,7 @@
                 // Draw the chart and set the chart values
                  var drawChart = new Function(
                   'return function' + funcName + '(){var data = google.visualization.arrayToDataTable([["Score", "Count"],["MT", mt],["NT", nt],["BT", bt]]); var options = {"title":assessment_title, "width":400, "height":400};var chart = new google.visualization.PieChart(document.getElementById("piechart0"));}'
+                  )();
 </script>
   <?php
       $index++;
