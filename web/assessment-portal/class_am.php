@@ -241,7 +241,7 @@
          $val = $mt_scores[0]['count'];
        echo $val . ' ' . $mt_scores[0][assessment_title];?>
        <br>
-       <?php echo $mt_scores[1]['count'] . ' ' . $mt_scores[1][assessment_title];?>  
+       <?php echo $mt_scores['count'] . ' ' . $mt_scores[1][assessment_title];?>  
        <br>
        <?php echo $mt_scores[2]['count'] . ' ' . $mt_scores[2][assessment_title];?>  
        <br>
