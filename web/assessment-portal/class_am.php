@@ -87,7 +87,7 @@
 
 
             // Select MT scores 
-            $mt_scores = "SELECT count(score), assessment_title, assessment_id
+            $mt_scores = "SELECT count(score), assessment_title, assessment_score.assessment_id
                                 FROM assessment_score
                                 INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
                                 WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' AND score = 'MT'
@@ -98,7 +98,7 @@
             $mt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             // Select NT scores 
-            $nt_scores = "SELECT count(score), assessment_title, assessment_id
+            $nt_scores = "SELECT count(score), assessment_title, assessment_score.assessment_id
                                 FROM assessment_score
                                 INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
                                 WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' AND score = 'NT'
@@ -109,7 +109,7 @@
             $nt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC); 
 
             // Select BT scores 
-            $bt_scores = "SELECT count(score), assessment_title, assessment_id
+            $bt_scores = "SELECT count(score), assessment_title, assessment_score.assessment_id
                                 FROM assessment_score
                                 INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
                                 WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' AND score = 'BT'
