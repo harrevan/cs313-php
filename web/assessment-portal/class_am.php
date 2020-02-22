@@ -87,7 +87,7 @@
           $bt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       
-            $val = 12;
+            $val = 'howdy';
               
 
           // Display charts using Google Charts
@@ -97,7 +97,7 @@
 
                 var num = "<?php echo $val; ?>";
                 console.log(num);
-                console.log(<?php echo $val; ?>);
+                console.log("<?php echo $val; ?>");
 
                 // Load google charts
                 google.charts.load("current", {"packages":["corechart"]});
