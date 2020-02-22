@@ -201,7 +201,9 @@
           <h2 id="centerform"><?php echo "Class " . $_POST['time'] . " Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>
           <div id="piechart"></div>
         </div>
-       <?php echo $mt_scores[0]['count'] . ' ' . $mt_scores[0][assessment_title];?>
+       <?php 
+         $val = $mt_scores[0]['count']
+       echo $val . ' ' . $mt_scores[0][assessment_title];?>
        <br>
        <?php echo $mt_scores[1]['count'] . ' ' . $mt_scores[1][assessment_title];?>  
        <br>
