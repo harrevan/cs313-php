@@ -1,5 +1,5 @@
 <?php
-
+	session_start();
 	$_SESSION['time'] = $_POST['time'];
 	$_SESSION['assessments'] = $_POST['assessments'];
 	$_SESSION['subject'] = $_POST['subject'];
