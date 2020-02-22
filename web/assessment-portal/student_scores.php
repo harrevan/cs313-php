@@ -165,7 +165,7 @@
             <option value="BT">Below Target</option>      
           </select>         
         </div>
-        <div class="form-group">
+        <div class="form-group row">
           <label class="input-group-text" for="answ_id"><b>Correct Answers:</b></label>
           <input type="number" id="answ_id" value="0" name="answers">  
         </div>
