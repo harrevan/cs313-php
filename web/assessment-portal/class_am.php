@@ -120,19 +120,19 @@
 
                 //var id =  <?php //echo $index; ?>; 
                 //var assessment_title = assess_title[i]['assessment_title'];
-                if(mtArray.length > 0)
+                if(mtArray.length > 0 && mtArray[i]['count'] != null )
                 {
                   mt = mtArray[i]['count'];
                 }
                 
                 console.log(mt);
-                if(ntArray.length > 0)
+                if(ntArray.length > 0 && ntArray[i]['count'] != null)
                 {
                   nt = ntArray[i]['count'];
                 }
                 
                 console.log(nt);
-                if(btArray.length > 0)
+                if(btArray.length > 0 && btArray[i]['count'] != null)
                 {
                     bt = btArray[i]['count'];
                 }
