@@ -195,27 +195,27 @@
               $bt_total = 0;
               for($i = 0; $i < sizeof($assessments); $i++)
               {
-                echo $assessments[$i]['title'] . " - ";
+                echo $assessments[$i]['assessment_title'] . " - ";
                 $mt_temp =0;
                 $nt_temp =0;
                 $bt_temp =0;
                 for($j = 0; $j < sizeof($scores); $i++)
                 {
-                  // if($scores[$j]['title'] == $assessments[$i]['title'])
-                  // {
-                  //   if($scores[$j]['score'] == 'MT')
-                  //   {
-                  //     $mt_temp += $scores[$j]['score'];
-                  //   }
-                  //   if($scores[$j]['score'] == 'NT')
-                  //   {
-                  //     $nt_temp += $scores[$j]['score']; 
-                  //   }
-                  //   if($scores[$j]['score'] == 'BT')
-                  //   {
-                  //     $bt_temp += $scores[$j]['score']; 
-                  //   }
-                  // }
+                  if($scores[$j]['assessment_title'] == $assessments[$i]['assessment_title'])
+                  {
+                    if($scores[$j]['score'] == 'MT')
+                    {
+                      $mt_temp += $scores[$j]['score'];
+                    }
+                    if($scores[$j]['score'] == 'NT')
+                    {
+                      $nt_temp += $scores[$j]['score']; 
+                    }
+                    if($scores[$j]['score'] == 'BT')
+                    {
+                      $bt_temp += $scores[$j]['score']; 
+                    }
+                  }
 
                 }
 
