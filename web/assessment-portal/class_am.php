@@ -95,7 +95,7 @@
 
                   
 
-                var count = <?php echo json_encode($val) ?>;
+                var count = "<?php echo $val ?>";
                 console.log(count);
 
                 // Load google charts
