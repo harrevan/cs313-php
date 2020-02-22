@@ -86,7 +86,7 @@
       <form action="submit_scores.php" method="post">
         <div class="form-group">
           <label><b>Select Class Time:</b> </label>
-          <select id="time" name="time">
+          <select id="time" name="time" onchange="this.form.submit()">
             <option value="">Select</option>
             <option value="AM">AM</option>
             <option value="PM">PM</option>
@@ -97,7 +97,7 @@
         </div>
         <div class="form-group">
           <label><b>Select Assessment Unit:</b> </label>
-          <select id="assessments" name="assessments">
+          <select id="assessments" name="assessments" onchange="this.form.submit()">
             <option value ="">Select</option>
             <option value="1">Unit 1 Assessments</option>
             <option value="2">Unit 2 Assessments</option>
@@ -112,7 +112,7 @@
         </div>
         <div class="form-group">
           <label><b>Select Assessment Type:</b> </label>
-          <select id="subject" name="subject">
+          <select id="subject" name="subject" onchange="this.form.submit()">
             <option value="">Select</option>
             <option value="ELA">ELA</option>
             <option value="MATH">Math</option>
