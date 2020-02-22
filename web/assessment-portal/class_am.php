@@ -93,7 +93,6 @@
    ?> 
    <body id="home_body">
     <?php 
-      $index
       for($i = 0; $i < sizeof($assessments); $i++)
       {   
           $assess_title = $assessments[$i]['assessment_title'];
