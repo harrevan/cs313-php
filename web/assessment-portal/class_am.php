@@ -101,8 +101,10 @@
 
     
     <script type="text/javascript">
+      // Load google charts
+                google.charts.setOnLoadCallback(drawChart);
         var i;
-        for (i = 0; i <1; i++ ){
+        for (i = 0; i <2; i++ ){
                 var assess_title = <?php echo json_encode($assessments); ?>;
                 var mtArray = <?php echo json_encode($mt_scores); ?>;
                 var ntArray = <?php echo json_encode($nt_scores); ?>;
@@ -122,8 +124,7 @@
                 
                
 
-                // Load google charts
-                google.charts.setOnLoadCallback(drawChart);
+                
 
 
                 // Draw the chart and set the chart values
