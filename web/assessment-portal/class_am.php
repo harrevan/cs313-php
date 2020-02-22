@@ -204,7 +204,7 @@
               $bt_total = 0;
               for($i = 0; $i < sizeof($assessments); $i++)
               {
-                echo "<tr><td>" . $assessments[$i]['assessment_title'] . "<td>";
+                echo "<tr><td>" . $assessments[$i]['assessment_title'] . "</td>";
                 $mt_temp =0;
                 $nt_temp =0;
                 $bt_temp =0;
