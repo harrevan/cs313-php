@@ -113,7 +113,7 @@
             document.getElementById('assessment_list').value = "<?php echo $_SESSION['assessments'];?>";
           </script>  
         </div>
-        <div class="form-group">
+        <div class="input-group mb-3">
           <label class="input-group-text" for="subject_list"><b>Select Assessment Type:</b> </label>
           <select class="custom-select" id="subject_list" name="subject" onchange="this.form.submit()">
             <option value="">Select</option>
@@ -124,7 +124,7 @@
             document.getElementById('subject_list').value = "<?php echo $_SESSION['subject'];?>";
           </script>  
         </div>
-        <div class="form-group">
+        <div class="input-group mb-3">
           <label class="input-group-text" for="stud_name">Student Name:</label>
           <select class="custom-select" class="selectpicker" name="student_name" id="stud_name">
             <option>Select</option>
@@ -140,7 +140,7 @@
            ?> 
           </select> 
         </div>
-        <div class="form-group">
+        <div class="input-group mb-3">
           <label class="input-group-text" for="assess_id">Assessment:</label>
           <select class="custom-select" name="assessment" id="assess_id">
             <option>Select</option>
@@ -156,7 +156,7 @@
             ?> 
           </select>           
         </div>
-        <div class="form-group">
+        <div class="input-group mb-3">
           <label class="input-group-text" for="score_id">Assessment Score:</label>
           <select class="custom-select" name="score" id="score_id">
             <option>Select</option>
@@ -165,7 +165,7 @@
             <option value="BT">Below Target</option>      
           </select>         
         </div>
-        <div class="form-group">
+        <div class="input-group mb-3">
           <label>Correct Answers:</label>
           <input class="form-control" type="number" value="0" name="answers">  
         </div>
