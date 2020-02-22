@@ -88,8 +88,8 @@
       <h2>Enter Student Scores</h2>
       <form action="submit_scores.php" method="post">
         <div class="form-group">
-          <label><b>Select Class Time:</b> </label>
-          <select id="time" name="time" onchange="this.form.submit()">
+          <label class="input-group-text" for="time"><b>Select Class Time:</b> </label>
+          <select class="custom-select" id="time" name="time" onchange="this.form.submit()">
             <option value="">Select</option>
             <option value="AM">AM</option>
             <option value="PM">PM</option>
@@ -99,8 +99,8 @@
           </script>  
         </div>
         <div class="form-group">
-          <label><b>Select Assessment Unit:</b> </label>
-          <select id="assessments" name="assessments" onchange="this.form.submit()">
+          <label class="input-group-text" for="assessment_list"><b>Select Assessment Unit:</b> </label>
+          <select class="custom-select" id="assessment_list" name="assessments" onchange="this.form.submit()">
             <option value ="">Select</option>
             <option value="1">Unit 1 Assessments</option>
             <option value="2">Unit 2 Assessments</option>
@@ -110,23 +110,23 @@
             <option value="6">Unit 6 Assessments</option>
           </select> 
           <script type="text/javascript">
-            document.getElementById('assessments').value = "<?php echo $_SESSION['assessments'];?>";
+            document.getElementById('assessment_list').value = "<?php echo $_SESSION['assessments'];?>";
           </script>  
         </div>
         <div class="form-group">
-          <label><b>Select Assessment Type:</b> </label>
-          <select id="subject" name="subject" onchange="this.form.submit()">
+          <label class="input-group-text" for="subject_list"><b>Select Assessment Type:</b> </label>
+          <select class="custom-select" id="subject_list" name="subject" onchange="this.form.submit()">
             <option value="">Select</option>
             <option value="ELA">ELA</option>
             <option value="MATH">Math</option>
           </select> 
           <script type="text/javascript">
-            document.getElementById('subject').value = "<?php echo $_SESSION['subject'];?>";
+            document.getElementById('subject_list').value = "<?php echo $_SESSION['subject'];?>";
           </script>  
         </div>
         <div class="form-group">
-          <label>Student Name:</label>
-          <select class="selectpicker" name="student_name" id="stud_name">
+          <label class="input-group-text" for="stud_name">Student Name:</label>
+          <select class="custom-select" class="selectpicker" name="student_name" id="stud_name">
             <option>Select</option>
             <?php
              foreach ($student_rows as $student)
@@ -141,8 +141,8 @@
           </select> 
         </div>
         <div class="form-group">
-          <label>Assessment:</label>
-          <select class="selectpicker" name="assessment" id="assess_id">
+          <label class="input-group-text" for="assess_id">Assessment:</label>
+          <select class="custom-select" name="assessment" id="assess_id">
             <option>Select</option>
             <?php
              foreach ($assessment_rows as $assessment)
@@ -157,8 +157,8 @@
           </select>           
         </div>
         <div class="form-group">
-          <label>Assessment Score:</label>
-          <select class="selectpicker" name="score">
+          <label class="input-group-text" for="score_id">Assessment Score:</label>
+          <select class="custom-select" name="score" id="score_id">
             <option>Select</option>
             <option value="MT">Met Target</option>
             <option value="NT">Near Target</option> 
