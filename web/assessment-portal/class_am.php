@@ -14,7 +14,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script> 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript"> 
+
+    <link rel="stylesheet" type="text/css" href="assessment.css">
+
+    <title>Class</title>
+  </head>
+  <?php
+      session_start();
+        if(!isset ($_SESSION["assessment_array"])){
+            $_SESSION["assessment_array"] = array();
+        } 
+
+            echo '<script type="text/javascript"> 
       // Load google charts
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
@@ -36,38 +47,8 @@
       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
       chart.draw(data, options);
       }
-    </script>
+    </script>'     
 
-    <link rel="stylesheet" type="text/css" href="assessment.css">
-
-    <title>Class</title>
-  </head>
-  <?php
-      session_start();
-        if(!isset ($_SESSION["assessment_array"])){
-            $_SESSION["assessment_array"] = array();
-        }      
-  ?>
-   <body id="home_body">
-    <div>
-      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="portal_home.php">Portal Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="class_am.php">
-              Classes
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="student_scores.php">Enter Student Scores</a>
-          </li>          
-        </ul>
-      </nav>  
-    </div>
-
-    <?php
       try
       {
         $dbUrl = getenv('DATABASE_URL');
@@ -139,6 +120,24 @@
         }
 
     ?> 
+   <body id="home_body">
+    <div>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="portal_home.php">Portal Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="class_am.php">
+              Classes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="student_scores.php">Enter Student Scores</a>
+          </li>          
+        </ul>
+      </nav>  
+    </div>
     <br>
     <div id="centerform">
       <form id="assessment_selection" method="post">
