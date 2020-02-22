@@ -132,6 +132,9 @@
                 var mt = <?php echo $mt; ?>;
                 var nt = <?php echo $nt; ?>;
                 var bt = <?php echo $bt; ?>;
+
+                console.log('piechart' + id-1);
+                console.log('piechart' + id);
                 
                
 
