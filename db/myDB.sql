@@ -179,8 +179,160 @@ VALUES
     (DEFAULT, 'I can add to a number (1-9), to make 10','MATH', 6),
     (DEFAULT, 'I can count to 100 by tens','MATH', 6);
 
-SELECT students.student_id, master_assessment.assessment_title, score, correct_answers
+SELECT count(students),  score, assessment_title
 FROM master_assessment INNER JOIN assessment_score
 ON master_assessment.assessment_id = assessment_score.assessment_id
 INNER JOIN students ON students.student_id = assessment_score.student_id
-WHERE assessment_score.student_id = 1; 
+GROUP BY sc;
+
+SELECT count(score),  score
+FROM assessment_score  
+INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
+WHERE subject = 'ELA' AND assessment_period = '1' 
+GROUP BY score
+ORDER BY score
+
+                   if($bt_scores[$i]['assessment_title'] != $assessments[$i]['assessment_title'])
+                    {
+                      for($j = 0; $j <sizeof($assessments) $j++)
+                      {
+                        if($bt_scores[$i]['assessment_title'] == $assessments[$j]['assessment_title'])
+                        {
+                          $bt_scores[$j] = $bt_scores[$i];
+                        }
+                      }
+
+                    }
+
+
+
+
+SELECT assessment_title 
+                          FROM master_assessment  
+                          WHERE subject = 'ELA' 
+                          AND assessment_period = '1'
+                          ORDER BY assessment_id;
+
+
+
+
+
+
+
+
+           <table class="table table-sm table-bordered table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">Assessment Title</th>
+                  <th scope="col">MT Total</th>
+                  <th scope="col">NT Total</th>
+                  <th scope="col">BT Total</th>
+                </tr>
+              </thead>
+              <tbody>  
+             <?php
+              for($i = 0; $i < sizeof($scores); $i++)
+              {
+              ?>   
+                <tr>
+                  <td><?php echo $scores[$i]['assessment_title']; ?></td>
+                  <td>
+                    <?php
+                      if($scores[$i]['score'] == 'MT')
+                      {
+                        if($_POST['time'] == 'AM')
+                        {
+                          echo $scores[$i]['count'] . "/25"; 
+                        }
+                        else
+                        {
+                          echo $scores[$i]['count'] . "/26"; 
+                        }
+                      }
+                      else
+                      {
+                        echo "-";
+                      } 
+                    ?>                  
+                  </td>
+                  <td>
+                    <?php
+                      if($scores[$i]['score'] == 'NT')
+                      {
+                        if($_POST['time'] == 'AM')
+                        {
+                          echo $scores[$i]['count'] . "/25"; 
+                        }
+                        else
+                        {
+                          echo $scores[$i]['count'] . "/26"; 
+                        }
+                      }
+                      else
+                      {
+                        echo "-";
+                      }                        
+                    ?>                  
+                  </td>
+                  <td>
+                    <?php
+                      if($scores[$i]['score'] == 'BT')
+                      {
+                        if($_POST['time'] == 'AM')
+                        {
+                          echo $scores[$i]['count'] . "/25"; 
+                        }
+                        else
+                        {
+                          echo $scores[$i]['count'] . "/26"; 
+                        }
+                      }
+                      else
+                      {
+                        echo "-";
+                      }                        
+                    ?>                  
+                  </td> 
+                </tr>                                 
+              <?php        
+                }
+              ?>         
+            </tbody>
+          </table>
+
+              <?php 
+      $index = 0; 
+      for($i = 0; $i < sizeof($assessments); $i++)
+      {   
+          $assess_title = $assessments[$i]['assessment_title'];
+          if(!empty($mt_scores[$i]['count']))
+          {
+            $mt = $mt_scores[$i]['count'];
+          }
+          else
+          {
+            $mt = 0;
+          }
+          if(!empty($nt_scores[$i]['count']))
+          {
+            $nt = $nt_scores[$i]['count'];   
+          }
+          else
+          {
+            $nt = 0;
+          }
+          if(!empty($bt_scores[$i]['count']))
+          {     
+            $bt = $bt_scores[$i]['count']; 
+          }
+          else
+          {
+            $bt = 0;
+          }
+      }
+  
+    ?> 
+      <?php
+      $index++;
+    
+  ?>

@@ -61,38 +61,49 @@
           $stmt->execute();
           $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-          // Select MT scores 
-          $mt_scores = "SELECT count(score), assessment_title, assessment_score.assessment_id
-                              FROM assessment_score
-                              INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
-                              WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' AND score = 'MT'
-                              GROUP BY assessment_title, assessment_score.assessment_id
-                              ORDER BY assessment_score.assessment_id";
-          $stmt = $db->prepare($mt_scores);
-          $stmt->execute();
-          $mt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $
+               //Select MT scores 
+         $scores = "SELECT count(score), assessment_title, score
+                             FROM assessment_score
+                             INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
+                             WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}'
+                             GROUP BY assessment_title, assessment_score.assessment_id";
+         $stmt = $db->prepare($scores);
+         $stmt->execute();
+         $scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            // Select NT scores 
-          $nt_scores = "SELECT count(score), assessment_title, assessment_score.assessment_id
-                              FROM assessment_score
-                              INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
-                              WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' AND score = 'NT'
-                              GROUP BY assessment_title, assessment_score.assessment_id
-                              ORDER BY assessment_score.assessment_id";
-          $stmt = $db->prepare($nt_scores);
-          $stmt->execute();
-          $nt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+          // // Select MT scores 
+          // $mt_scores = "SELECT count(score), assessment_title, assessment_score.assessment_id
+          //                     FROM assessment_score
+          //                     INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
+          //                     WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' AND score = 'MT'
+          //                     GROUP BY assessment_title, assessment_score.assessment_id
+          //                     ORDER BY assessment_score.assessment_id";
+          // $stmt = $db->prepare($mt_scores);
+          // $stmt->execute();
+          // $mt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-          // Select BT scores 
-          $bt_scores = "SELECT count(score), assessment_title, assessment_score.assessment_id
-                              FROM assessment_score
-                              INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
-                              WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' AND score = 'BT'
-                              GROUP BY assessment_title, assessment_score.assessment_id
-                              ORDER BY assessment_score.assessment_id";
-          $stmt = $db->prepare($bt_scores);
-          $stmt->execute();
-          $bt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          //   // Select NT scores 
+          // $nt_scores = "SELECT count(score), assessment_title, assessment_score.assessment_id
+          //                     FROM assessment_score
+          //                     INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
+          //                     WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' AND score = 'NT'
+          //                     GROUP BY assessment_title, assessment_score.assessment_id
+          //                     ORDER BY assessment_score.assessment_id";
+          // $stmt = $db->prepare($nt_scores);
+          // $stmt->execute();
+          // $nt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+
+          // // Select BT scores 
+          // $bt_scores = "SELECT count(score), assessment_title, assessment_score.assessment_id
+          //                     FROM assessment_score
+          //                     INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
+          //                     WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' AND score = 'BT'
+          //                     GROUP BY assessment_title, assessment_score.assessment_id
+          //                     ORDER BY assessment_score.assessment_id";
+          // $stmt = $db->prepare($bt_scores);
+          // $stmt->execute();
+          // $bt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
       }
    ?> 
   
@@ -178,88 +189,45 @@
         </div>
         <div class="col-9">
           <h2 id="centerform"><?php echo "Class " . $_POST['time'] . " Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>
-           <table class="table table-sm table-bordered table-dark">
-              <thead>
-                <tr>
-                  <th scope="col">Assessment Title</th>
-                  <th scope="col">MT Total</th>
-                  <th scope="col">NT Total</th>
-                  <th scope="col">BT Total</th>
-                </tr>
-              </thead>
-              <tbody>  
-             <?php
+
+            <?php
+              $mt_total = 0;
+              $nt_total = 0;
+              $bt_total = 0;
               for($i = 0; $i < sizeof($assessments); $i++)
               {
-              ?>   
-                <tr>
-                  <td><?php echo $assessments[$i]['assessment_title']; ?></td>
-                  <td>
-                    <?php
-                      if($mt_scores[$i]['assessment_title'] == $assessments[$i]['assessment_title'])
-                      {
-                      if($_POST['time'] == 'AM')
-                      {
-                        echo $mt_scores[$i]['count'] . "/25"; 
-                      }
-                      else
-                      {
-                        echo $mt_scores[$i]['count'] . "/26"; 
-                      }
+                echo $assessments[$i]['title'] . " - ";
+                $mt_temp =0;
+                $nt_temp =0;
+                $bt_temp =0;
+                for($j = 0; $j < sizeof($scores); $i++)
+                {
+                  if($scores[$j]['title'] == $assessments[$i]['title'])
+                  {
+                    if($scores[$j]['score'] == 'MT')
+                    {
+                      $mt_temp += $scores[$j]['score'];
                     }
-                      else
-                      {
-                        echo "-";
-                      } 
-                    
-                    ?>                  
-                  </td>
-                  <td>
-                    <?php
-                      if($nt_scores[$i]['assessment_title'] == $assessments[$i]['assessment_title'])
-                      {
-                        if($_POST['time'] == 'AM')
-                        {
-                          echo $nt_scores[$i]['count'] . "/25"; 
-                        }
-                        else
-                        {
-                          echo $nt_scores[$i]['count'] . "/26"; 
-                        }
-                      }
-                      else
-                      {
-                        echo "-";
-                      }                        
-                    ?>                  
-                  </td>
-                  <td>
-                    <?php
- 
-                      
-                      if($bt_scores[$i]['assessment_title'] == $assessments[$i]['assessment_title'])
-                      {
-                        if($_POST['time'] == 'AM')
-                        {
-                          echo $bt_scores[$i]['count'] . "/25"; 
-                        }
-                        else
-                        {
-                          echo $bt_scores[$i]['count'] . "/26"; 
-                        }
-                      }
-                      else
-                      {
-                        echo "-";
-                      }                        
-                    ?>                  
-                  </td> 
-                </tr>                                 
-              <?php        
+                    if($scores[$j]['score'] == 'NT')
+                    {
+                      $nt_temp += $scores[$j]['score']; 
+                    }
+                    if($scores[$j]['score'] == 'BT')
+                    {
+                      $bt_temp += $scores[$j]['score']; 
+                    }
+                  }
+
                 }
-              ?>         
-            </tbody>
-          </table>  
+
+                echo "MT Total: - " . $mt_temp . "<br>";
+                echo "NT Total: - " . $nt_temp . "<br>";
+                echo "BT Total: - " . $bt_temp . "<br>";
+
+              }
+            ?>
+
+
 
           <?php
               echo 'bt: ' . $bt_scores[0]['assessment_title'] . ' ' . 'ass: ' .  $assessments[3]['assessment_title'];
