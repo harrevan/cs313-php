@@ -13,6 +13,28 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script> 
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js">
+      // Load charts
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['Score', 'Student Count'],
+        ['Work', 8],
+        ['Eat', 2],
+        ['TV', 4],
+        ['Gym', 2],
+        ['Sleep', 8]
+      ]);
+              // Optional; add a title and set the width and height of the chart
+        var options = {'title':'Class Scores', 'width':550, 'height':400};
+
+        // Display the chart inside the <div> element with id="piechart"
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        chart.draw(data, options);
+      }
+    </script>
 
     <link rel="stylesheet" type="text/css" href="assessment.css">
 
@@ -157,85 +179,7 @@
         </div>
         <div class="col-9">
           <h2 id="centerform"><?php echo "Class " . $_POST['time'] . " Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>
-           <table class="table table-sm table-bordered table-dark">
-              <thead>
-                <tr>
-                  <th scope="col">Assessment Title</th>
-                  <th scope="col">MT Total</th>
-                  <th scope="col">NT Total</th>
-                  <th scope="col">BT Total</th>
-                </tr>
-              </thead>
-              <tbody>  
-             <?php
-              for($i = 0; $i < sizeof($scores); $i++)
-              {
-              ?>   
-                <tr>
-                  <td><?php echo $scores[$i]['assessment_title']; ?></td>
-                  <td>
-                    <?php
-                      if($scores[$i]['score'] == 'MT')
-                      {
-                        if($_POST['time'] == 'AM')
-                        {
-                          echo $scores[$i]['count'] . "/25"; 
-                        }
-                        else
-                        {
-                          echo $scores[$i]['count'] . "/26"; 
-                        }
-                      }
-                      else
-                      {
-                        echo "-";
-                      } 
-                    ?>                  
-                  </td>
-                  <td>
-                    <?php
-                      if($scores[$i]['score'] == 'NT')
-                      {
-                        if($_POST['time'] == 'AM')
-                        {
-                          echo $scores[$i]['count'] . "/25"; 
-                        }
-                        else
-                        {
-                          echo $scores[$i]['count'] . "/26"; 
-                        }
-                      }
-                      else
-                      {
-                        echo "-";
-                      }                        
-                    ?>                  
-                  </td>
-                  <td>
-                    <?php
-                      if($scores[$i]['score'] == 'BT')
-                      {
-                        if($_POST['time'] == 'AM')
-                        {
-                          echo $scores[$i]['count'] . "/25"; 
-                        }
-                        else
-                        {
-                          echo $scores[$i]['count'] . "/26"; 
-                        }
-                      }
-                      else
-                      {
-                        echo "-";
-                      }                        
-                    ?>                  
-                  </td> 
-                </tr>                                 
-              <?php        
-                }
-              ?>         
-            </tbody>
-          </table>
+          <div id="piechart"></div>
         </div>
       </div>
     </div> 
