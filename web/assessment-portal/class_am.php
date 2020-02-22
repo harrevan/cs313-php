@@ -112,7 +112,12 @@
         var i;
         for (i = 0; i < 1; i++ ){
                 //var assess_title = <?php //echo json_encode($assessments); ?>;
-
+        var mtArray = <?php echo json_encode($mt_scores); ?>;
+        //console.log(mtArray.length);
+        var ntArray = <?php echo json_encode($nt_scores); ?>;
+        //console.log(ntArray.length);
+        var btArray = <?php echo json_encode($bt_scores); ?>;
+        //console.log(btArray.length);
                 var mt = 0;
                 var nt = 0;
                 var bt = 0;
