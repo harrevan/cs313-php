@@ -95,14 +95,8 @@
           $bt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
       }
    ?> 
-   
-                   
-      
-
-    
-    <script type="text/javascript">
-
-      <?php 
+  
+    <?php 
       $index = 0; 
       for($i = 0; $i < sizeof($assessments); $i++)
       {   
@@ -131,7 +125,11 @@
           {
             $bt = 0;
           }
-    ?>
+    ?>               
+      
+
+    
+    <script type="text/javascript">
 
 
                 var id =  <?php echo $index; ?> 
