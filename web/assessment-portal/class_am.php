@@ -102,16 +102,17 @@
     
     <script type="text/javascript">
       // Load google charts
-
+        var assess_array = <?php echo json_encode($assessments)?>
         var i;
-        for (i = 0; i < 1; i++ ){
+        for (i = 0; i < ; i++ ){
+          console.log(assess_array[i]["assessment_title"]);
                 //var assess_title = <?php //echo json_encode($assessments); ?>;
-        var mtArray = <?php echo json_encode($mt_scores); ?>;
-        console.log(mtArray[3]["count"]);
+        //var mtArray = <?php //echo json_encode($mt_scores); ?>;
+        //console.log(mtArray[3]["count"]);
         //console.log(mtArray.length);
-        var ntArray = <?php echo json_encode($nt_scores); ?>;
+        //var ntArray = <?php //echo json_encode($nt_scores); ?>;
         //console.log(ntArray.length);
-        var btArray = <?php echo json_encode($bt_scores); ?>;
+        //var btArray = <?php //echo json_encode($bt_scores); ?>;
         //console.log(btArray.length);
                 //var mt = 0;
                 //var nt = 0;
@@ -128,13 +129,13 @@
               //  console.log(mt);
                // if(Array.isArray(ntArray) && ntArray.length)
                // {
-                  var nt = ntArray[i]['count'];
+                  //var nt = ntArray[i]['count'];
                // }
                 
               //  console.log(nt);
               //  if(Array.isArray(btArray) && btArray.length)
                // {
-                    var bt = btArray[i]['count'];
+                    //var bt = btArray[i]['count'];
                // }
                 
                // console.log(bt);
