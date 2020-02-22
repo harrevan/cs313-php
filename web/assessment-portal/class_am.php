@@ -105,18 +105,26 @@
                 google.charts.setOnLoadCallback(drawChart);
         var i;
         for (i = 0; i <2; i++ ){
-                var assess_title = <?php echo json_encode($assessments); ?>;
+                //var assess_title = <?php echo json_encode($assessments); ?>;
                 var mtArray = <?php echo json_encode($mt_scores); ?>;
                 var ntArray = <?php echo json_encode($nt_scores); ?>;
                 var btArray = <?php echo json_encode($bt_scores); ?>;
+                var mt = 0;
+                var nt = 0;
+                var bt = 0;
 
-                //var id =  <?php echo $index; ?>; 
-                var assessment_title = assess_title[i]['assessment_title'];
-                var mt = mtArray[i]['count'];
+
+                //var id =  <?php //echo $index; ?>; 
+                //var assessment_title = assess_title[i]['assessment_title'];
+                mt = mtArray[i]['count'];
                 console.log(mt);
-                var nt = ntArray[i]['count'];
+                nt = ntArray[i]['count'];
                 console.log(nt);
-                var bt = btArray[i]['count'];
+                if(bt.length > 0)
+                {
+                    bt = btArray[i]['count'];
+                }
+                
                 console.log(bt);
 
                 //console.log('piechart' + (id-1));
@@ -137,7 +145,7 @@
                 ]);
 
                   // Title and set the width and height of the chart
-                  var options = {"title":assessment_title, "width":400, "height":400};
+                  //var options = {"title":assessment_title, "width":400, "height":400};
 
                   // Display the chart inside the <div> element with id="piechart"
                  // if(id == 0)
