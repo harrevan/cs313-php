@@ -95,9 +95,9 @@
 
                   
 
-                var num = "<?php echo $val; ?>";
+                var num = <?php echo json_encode($val); ?>;
                 console.log(num);
-                console.log("<?php echo $val; ?>");
+                console.log(<?php echo json_encode($val); ?>);
 
                 // Load google charts
                 google.charts.load("current", {"packages":["corechart"]});
