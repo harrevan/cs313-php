@@ -108,7 +108,7 @@
                 var ntArray = <?php echo $nt_scores; ?>;
                 var btArray = <?php echo $bt_scores; ?>;
 
-                var id =  <?php echo $index; ?>; 
+                //var id =  <?php echo $index; ?>; 
                 var assessment_title = '<?php echo $assess_title; ?>';
                 var mt = mtArray[i]['count'];
                 console.log(mt);
