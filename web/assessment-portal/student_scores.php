@@ -166,8 +166,8 @@
           </select>         
         </div>
         <div class="form-group">
-          <label class="input-group-text"><b>Correct Answers:</b></label>
-          <input type="number" value="0" name="answers">  
+          <label class="input-group-text" for="answ_id"><b>Correct Answers:</b></label>
+          <input type="number" id="answ_id" value="0" name="answers">  
         </div>
         <button class="btn btn-primary btn-lg btn-block" type="submit">Enter Score</button>
       </form>
