@@ -16,8 +16,7 @@
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript"> 
       // Load google charts
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
+    
     </script>
 
     <link rel="stylesheet" type="text/css" href="assessment.css">
@@ -187,6 +186,8 @@
           <script type="text/javascript">
                   // Draw the chart and set the chart values
             function drawChart() {
+              google.charts.load('current', {'packages':['corechart']});
+              google.charts.setOnLoadCallback(drawChart);
               var data = google.visualization.arrayToDataTable([
               ['Task', 'Hours per Day'],
               ['Work', 8],
