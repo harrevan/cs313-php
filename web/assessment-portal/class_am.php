@@ -93,6 +93,7 @@
    ?> 
    <body id="home_body">
     <?php 
+      $index
       for($i = 0; $i < sizeof($assessments); $i++)
       {   
           $assess_title = $assessments[$i]['assessment_title'];
@@ -151,7 +152,7 @@
                   var options = {"title":assessment_title, "width":400, "height":400};
 
                   // Display the chart inside the <div> element with id="piechart"
-                  var chart = new google.visualization.PieChart(document.getElementById("piechart"));
+                  var chart = new google.visualization.PieChart(document.body.appendChild(document.getElementById("piechart")));
                   chart.draw(data, options);
                 }
 </script>
