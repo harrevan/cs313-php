@@ -91,18 +91,15 @@
 
                 // Load google charts
                 google.charts.load("current", {"packages":["corechart"]});
-                google.charts.setOnLoadCallback(drawChart);'
+                google.charts.setOnLoadCallback(drawChart);
 
-                '// Draw the chart and set the chart values
+                // Draw the chart and set the chart values
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
-                  ["Task", "Hours per Day"],
-                  ["Work", 8],
-                  ["Friends", 2],
-                  ["Eat", 2],
-                  ["TV", 2],
-                  ["Gym", 2],
-                  ["Sleep", 8]
+                  ["Score", "Count"],
+                  ["MT", <?php echo $mt_scores[0]["count"] ?>],
+                  ["NT", 1],
+                  ["BT", 1]
                 ]);
 
                   // Title and set the width and height of the chart
