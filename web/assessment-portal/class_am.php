@@ -96,13 +96,7 @@
       }
    ?> 
   
-             
-      
-
-    
-    <script type="text/javascript">
-
-          "<?php 
+    <?php 
       $index = 0; 
       for($i = 0; $i < sizeof($assessments); $i++)
       {   
@@ -131,7 +125,11 @@
           {
             $bt = 0;
           }
-    ?>"  
+    ?>               
+      
+
+    
+    <script type="text/javascript">
 
 
                 var id =  <?php echo $index; ?> 
@@ -164,8 +162,8 @@
                   // Display the chart inside the <div> element with id="piechart"
                  // if(id == 0)
                   //{
-                    var chart = new google.visualization.PieChart(document.getElementById("piechart0"));
-                   chart.draw(data, options);
+                   // var chart = new google.visualization.PieChart(document.getElementById("piechart0"));
+                   //chart.draw(data, options);
                   //}
                   // else
                   // {
@@ -175,6 +173,11 @@
                   
                 }
 </script>
+
+<script>
+  var chart = new google.visualization.PieChart(document.getElementById("piechart0"));
+                   chart.draw(data, options);
+</script>  
   <?php
       $index++;
     }
