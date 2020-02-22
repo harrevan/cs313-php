@@ -89,7 +89,7 @@
           // Display charts using Google Charts
           echo '<script type="text/javascript">
 
-                var count = <?php echo $mt_scores[0]["count"];?>;
+                var count = <?php echo $mt_scores[0]["count"]; ?>;
                 console.log(count);
 
                 // Load google charts
