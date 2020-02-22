@@ -96,14 +96,7 @@
       }
    ?> 
    <body id="home_body">
-              
-      
-
-    
-    <script type="text/javascript">
-// Load google charts
-                google.charts.setOnLoadCallback(drawChart);
-          <?php 
+    <?php 
       $index = 0; 
       for($i = 0; $i < sizeof($assessments); $i++)
       {   
@@ -132,7 +125,11 @@
           {
             $bt = 0;
           }
-    ?> 
+    ?>               
+      
+
+    
+    <script type="text/javascript">
 
                 var id =  <?php echo $index; ?> 
                 var assessment_title = '<?php echo $assess_title; ?>';
@@ -145,7 +142,8 @@
                 
                
 
-                
+                // Load google charts
+                google.charts.setOnLoadCallback(drawChart);
 
 
                 // Draw the chart and set the chart values
