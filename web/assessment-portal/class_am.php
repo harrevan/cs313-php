@@ -102,7 +102,7 @@
     
     <script type="text/javascript">
       // Load google charts
-                google.charts.setOnLoadCallback(drawChart);
+               
         var mtArray = <?php echo json_encode($mt_scores); ?>;
         //console.log(mtArray.length);
         var ntArray = <?php echo json_encode($nt_scores); ?>;
@@ -142,7 +142,7 @@
                 //console.log('piechart' + (id-1));
                 //console.log('piechart' + id);
                 
-               
+                google.charts.setOnLoadCallback(drawChart);
 
                 
 
