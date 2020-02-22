@@ -87,7 +87,7 @@
     <div class="container">
       <h2>Enter Student Scores</h2>
       <form action="submit_scores.php" method="post">
-        <div class="form-group input-group mb-3">
+        <div class="input-group mb-3">
           <label class="input-group-text" for="time"><b>Select Class Time:</b> </label>
           <select class="custom-select" id="time" name="time" onchange="this.form.submit()">
             <option value="">Select</option>
