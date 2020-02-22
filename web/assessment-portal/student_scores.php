@@ -58,11 +58,11 @@
         
       }
       
-      //if(isset($_SESSION['assessments']) && !empty($_SESSION['assessments']) && isset($_SESSION['subject']) && !empty($_SESSION['subject']))
-      //{
-       // $select_assessments = $db->query("SELECT assessment_id, assessment_title FROM master_assessment WHERE assessment_period = '{$_SESSION["assessments"]}' AND subject = '{$_SESSION["subject"]}'");
-        //$assessment_rows = $select_assessments->fetchAll(PDO::FETCH_ASSOC);
-      //}
+      if(isset($_SESSION['assessments']) && !empty($_SESSION['assessments']) && isset($_SESSION['subject']) && !empty($_SESSION['subject']))
+      {
+        $select_assessments = $db->query("SELECT assessment_id, assessment_title FROM master_assessment WHERE assessment_period = '{$_SESSION["assessments"]}' AND subject = '{$_SESSION["subject"]}'");
+        $assessment_rows = $select_assessments->fetchAll(PDO::FETCH_ASSOC);
+      }
 
 ?> 
    <body id="home_body">

@@ -1,8 +1,20 @@
 <?php
 	session_start();
-	$_SESSION['time'] = $_POST['time'];
-	$_SESSION['assessments'] = $_POST['assessments'];
-	$_SESSION['subject'] = $_POST['subject'];
+
+	if(isset($_POST['time']))
+	{
+		$_SESSION['time'] = $_POST['time'];
+	}
+
+	if(isset($_POST['assessments']))
+	{
+		$_SESSION['assessments'] = $_POST['assessments'];
+	}
+
+	if(isset($_POST['subject']))
+	{
+		$_SESSION['subject'] = $_POST['subject'];
+	}
 
 	if(isset($_POST['student_name']) && isset($_POST['assessment']) && isset($_POST['score']) && isset($_POST['answers']))
 	{
