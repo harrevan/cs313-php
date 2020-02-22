@@ -66,7 +66,7 @@
                              FROM assessment_score
                              INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
                              WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}'
-                             GROUP BY assessment_title, assessment_score.assessment_id";
+                             GROUP BY assessment_title, score";
          $stmt = $db->prepare($scores);
          $stmt->execute();
          $scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
