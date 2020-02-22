@@ -104,7 +104,7 @@
       // Load google charts
         var assess_array = <?php echo json_encode($assessments); ?>;
         var i;
-        for (i = 0; i < assess_array.length; i++ ){
+        for (i = 0; i < 4; i++ ){
           console.log(assess_array[i]["assessment_title"]);
                 //var assess_title = <?php //echo json_encode($assessments); ?>;
         var mtArray = <?php echo json_encode($mt_scores); ?>;
@@ -117,9 +117,9 @@
                 //var mt = 0;
                 //var nt = 0;
                 //var bt = 0;
-        mt = mtArray[i]["count"];
-        nt = ntArray[i]["count"];
-        bt = btArray[i]["count"];
+       // mt = mtArray[i]["count"];
+        //nt = ntArray[i]["count"];
+        //bt = btArray[i]["count"];
 
                 //var id =  <?php //echo $index; ?>; 
                 //var assessment_title = assess_title[i]['assessment_title'];
@@ -154,9 +154,9 @@
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
                   ["Score", "Count"],
-                  ["MT", mt],
-                  ["NT", nt],
-                  ["BT", bt]
+                  ["MT", mtArray[i]["count"]],
+                  ["NT", ntArray[i]["count"]],
+                  ["BT", btArray[i]["count"]]
                 ]);
 
                   // Title and set the width and height of the chart
