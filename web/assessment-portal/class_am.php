@@ -89,7 +89,7 @@
    ?> 
    <body id="home_body">
     <?php 
-      $mt = $mt_scores[1]['count'];
+      $mt = $mt_scores[0]['count'];
 
     ?>
     <script>
