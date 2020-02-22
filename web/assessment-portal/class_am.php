@@ -132,7 +132,7 @@
                 }
                 
                 console.log(nt);
-                if(btArray.length > 0 && btArray[i]['count'] != null)
+                if(Array.isArray(btArray) && btArray.length)
                 {
                     bt = btArray[i]['count'];
                 }
