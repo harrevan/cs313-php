@@ -116,11 +116,19 @@
 
                 //var id =  <?php //echo $index; ?>; 
                 //var assessment_title = assess_title[i]['assessment_title'];
-                mt = mtArray[i]['count'];
+                if(mtArray.lenth > 0)
+                {
+                  mt = mtArray[i]['count'];
+                }
+                
                 console.log(mt);
-                nt = ntArray[i]['count'];
+                if(ntArray.length > 0)
+                {
+                  nt = ntArray[i]['count'];
+                }
+                
                 console.log(nt);
-                if(bt.length > 0)
+                if(btArray.length > 0)
                 {
                     bt = btArray[i]['count'];
                 }
