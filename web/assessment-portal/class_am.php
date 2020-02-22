@@ -235,17 +235,7 @@
                   </td>
                   <td>
                     <?php
-                      if($bt_scores[$i]['assessment_title'] != $assessments[$i]['assessment_title'])
-                      {
-                        for($j = 0; $j <sizeof($assessments) $j++)
-                        {
-                          if($bt_scores[$i]['assessment_title'] == $assessments[$j]['assessment_title'])
-                          {
-                            $bt_scores[$j] = $bt_scores[$i];
-                          }
-                        }
-
-                      }
+ 
                       
                       if($bt_scores[$i]['assessment_title'] == $assessments[$i]['assessment_title'])
                       {
