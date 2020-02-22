@@ -199,7 +199,7 @@
                 $mt_temp =0;
                 $nt_temp =0;
                 $bt_temp =0;
-                for($j = 0; $j < sizeof($scores); $i++)
+                for($j = 0; $j < sizeof($scores); $j++)
                 {
                   if($scores[$j]['assessment_title'] == $assessments[$i]['assessment_title'])
                   {
