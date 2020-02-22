@@ -121,7 +121,7 @@
                 //var assessment_title = assess_title[i]['assessment_title'];
               //  if(Array.isArray(mtArray) && mtArray.length)
               //  {
-                  console.log(mtArray[i]['count']);
+                  console.log(mtArray[1]["count"]);
               //  }
                 
               //  console.log(mt);
