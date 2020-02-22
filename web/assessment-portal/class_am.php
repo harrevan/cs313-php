@@ -121,19 +121,19 @@
                 //var assessment_title = assess_title[i]['assessment_title'];
               //  if(Array.isArray(mtArray) && mtArray.length)
               //  {
-                  mt = mtArray[i]['count'];
+                  var mt = mtArray[i]['count'];
               //  }
                 
               //  console.log(mt);
                // if(Array.isArray(ntArray) && ntArray.length)
                // {
-                  nt = ntArray[i]['count'];
+                  var nt = ntArray[i]['count'];
                // }
                 
               //  console.log(nt);
               //  if(Array.isArray(btArray) && btArray.length)
                // {
-                    bt = btArray[i]['count'];
+                    var bt = btArray[i]['count'];
                // }
                 
                // console.log(bt);
