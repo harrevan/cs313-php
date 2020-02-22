@@ -96,36 +96,7 @@
       }
    ?> 
    <body id="home_body">
-    <?php 
-      $index = 0; 
-      for($i = 0; $i < sizeof($assessments); $i++)
-      {   
-          $assess_title = $assessments[$i]['assessment_title'];
-          if(!empty($mt_scores[$i]['count']))
-          {
-            $mt = $mt_scores[$i]['count'];
-          }
-          else
-          {
-            $mt = 0;
-          }
-          if(!empty($nt_scores[$i]['count']))
-          {
-            $nt = $nt_scores[$i]['count'];   
-          }
-          else
-          {
-            $nt = 0;
-          }
-          if(!empty($bt_scores[$i]['count']))
-          {     
-            $bt = $bt_scores[$i]['count']; 
-          }
-          else
-          {
-            $bt = 0;
-          }
-    ?>               
+                   
       
 
     
