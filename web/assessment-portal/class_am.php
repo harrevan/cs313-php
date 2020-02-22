@@ -198,7 +198,7 @@
                     <?php
                       if($mt_scores[$i]['assessment_title'] != $assessments[$i]['assessment_title'])
                       {
-                        for($j = 0; $j <sizeof($assessments) $j++)
+                        for($j = 0; $j <sizeof($assessments); $j++)
                         {
                           if($mt_scores[$i]['assessment_title'] == $assessments[$j]['assessment_title'])
                           {
@@ -228,7 +228,7 @@
                     <?php
                       if($nt_scores[$i]['assessment_title'] != $assessments[$i]['assessment_title'])
                       {
-                        for($j = 0; $j <sizeof($assessments) $j++)
+                        for($j = 0; $j <sizeof($assessments); $j++)
                         {
                           if($nt_scores[$i]['assessment_title'] == $assessments[$j]['assessment_title'])
                           {
@@ -257,7 +257,7 @@
                     <?php
                       if($bt_scores[$i]['assessment_title'] != $assessments[$i]['assessment_title'])
                       {
-                        for($j = 0; $j <sizeof($assessments) $j++)
+                        for($j = 0; $j <sizeof($assessments); $j++)
                         {
                           if($bt_scores[$i]['assessment_title'] == $assessments[$j]['assessment_title'])
                           {
