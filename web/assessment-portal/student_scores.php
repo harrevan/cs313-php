@@ -29,37 +29,40 @@
   <?php
       session_start();
 
-  try
-  {
-    $dbUrl = getenv('DATABASE_URL');
+      try
+      {
+        $dbUrl = getenv('DATABASE_URL');
 
-    $dbOpts = parse_url($dbUrl);
+        $dbOpts = parse_url($dbUrl);
 
-    $dbHost = $dbOpts["host"];
-    $dbPort = $dbOpts["port"];
-    $dbUser = $dbOpts["user"];
-    $dbPassword = $dbOpts["pass"];
-    $dbName = ltrim($dbOpts["path"],'/');
+        $dbHost = $dbOpts["host"];
+        $dbPort = $dbOpts["port"];
+        $dbUser = $dbOpts["user"];
+        $dbPassword = $dbOpts["pass"];
+        $dbName = ltrim($dbOpts["path"],'/');
 
-    $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+        $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  }
-  catch (PDOException $ex)
-  {
-    echo 'Error!: ' . $ex->getMessage();
-    die();
-  }
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      }
+      catch (PDOException $ex)
+      {
+        echo 'Error!: ' . $ex->getMessage();
+        die();
+      }
 
-  if(isset($_SESSION["time"]) && !empty($_SESSION['time']))//&& isset($_POST["assessments"]) && isset($_POST["subject"]))
-  {
-    $select_students = $db->query("SELECT student_id, student_name FROM students  WHERE class_time='{$_SESSION["time"]}'");
-    $student_rows = $select_students->fetchAll(PDO::FETCH_ASSOC);
-    //$select_assessments = $db->query("SELECT assessment_id, assessment_title FROM master_assessment WHERE assessment_period = '{$_SESSION["assessments"]}' AND subject = '{$_SESSION["subject"]}'");
-    //$assessment_rows = $select_assessments->fetchAll(PDO::FETCH_ASSOC);
-
-
-  }
+      if(isset($_SESSION['time']) && !empty($_SESSION['time']))//&& isset($_POST["assessments"]) && isset($_POST["subject"]))
+      {
+        $select_students = $db->query("SELECT student_id, student_name FROM students  WHERE class_time='{$_SESSION["time"]}'");
+        $student_rows = $select_students->fetchAll(PDO::FETCH_ASSOC);
+        
+      }
+      
+      if(isset($_SESSION['assessments']) && !empty($_SESSION['assessments']) && isset($_SESSION['subject']) && !empty($_SESSION['subject']))
+      {
+        $select_assessments = $db->query("SELECT assessment_id, assessment_title FROM master_assessment WHERE assessment_period = '{$_SESSION["assessments"]}' AND subject = '{$_SESSION["subject"]}'");
+        $assessment_rows = $select_assessments->fetchAll(PDO::FETCH_ASSOC);
+      }
 
 ?> 
    <body id="home_body">
