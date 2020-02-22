@@ -126,8 +126,8 @@
 
     
     <script>
-                var funcName = "draw" + 0; 
-                var id =  <?php echo $index; ?>; 
+
+                var id =  <?php echo $index; ?> 
                 var assessment_title = '<?php echo $assess_title; ?>';
                 var mt = <?php echo $mt; ?>;
                 var nt = <?php echo $nt; ?>;
@@ -143,9 +143,30 @@
                 google.charts.setOnLoadCallback(drawChart);
 
                 // Draw the chart and set the chart values
-                 var drawChart = new Function(
-                  'return function' + funcName + '(){var data = google.visualization.arrayToDataTable([["Score", "Count"],["MT", mt],["NT", nt],["BT", bt]]); var options = {"title":assessment_title, "width":400, "height":400};var chart = new google.visualization.PieChart(document.getElementById("piechart0"));}'
-                  );
+                function drawChart() {
+                  var data = google.visualization.arrayToDataTable([
+                  ["Score", "Count"],
+                  ["MT", mt],
+                  ["NT", nt],
+                  ["BT", bt]
+                ]);
+
+                  // Title and set the width and height of the chart
+                  var options = {"title":assessment_title, "width":400, "height":400};
+
+                  // Display the chart inside the <div> element with id="piechart"
+                 // if(id == 0)
+                  //{
+                    var chart = new google.visualization.PieChart(document.getElementById("piechart0"));
+                   chart.draw(data, options);
+                  //}
+                  // else
+                  // {
+                  //   var chart = new google.visualization.PieChart(document.getElementById("piechart" + (id-1)).appendChild("piechart" + id));
+                  //  chart.draw(data, options);
+                  // }
+                  
+                }
 </script>
   <?php
       $index++;
