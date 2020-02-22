@@ -18,25 +18,6 @@
       // Load google charts
       google.charts.load('current', {'packages':['corechart']});
       google.charts.setOnLoadCallback(drawChart);
-
-      // Draw the chart and set the chart values
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-        ['Task', 'Hours per Day'],
-        ['Work', 8],
-        ['Eat', 2],
-        ['TV', 4],
-        ['Gym', 2],
-        ['Sleep', 8]
-      ]);
-
-      // Optional; add a title and set the width and height of the chart
-      var options = {'title':'My Average Day', 'width':550, 'height':400};
-
-      // Display the chart inside the <div> element with id="piechart"
-      var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-      chart.draw(data, options);
-      }
     </script>
 
     <link rel="stylesheet" type="text/css" href="assessment.css">
@@ -95,7 +76,7 @@
         //$stmt->execute();
         //$assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Find total # of students by class and assessment with MT score
+        // Find total # of assessments
         if(isset($_POST['assessments']))
         {
 
@@ -105,17 +86,40 @@
         $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 
-        // this will need to be modified to correctly display class data. Exclude student and assessment_title, group by score only to get scores. Maybe where score= x  
-        $scores = "SELECT count(score), assessment_title, score 
-                            FROM assessment_score 
-                            INNER JOIN students ON students.student_id = assessment_score.student_id 
+        // Select MT scores 
+        $mt_scores = "SELECT count(score), assessment_title, assessment_id
+                            FROM assessment_score
                             INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
-                            WHERE class_time = '{$_POST["time"]}' AND subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' 
-                            GROUP BY assessment_title, score";
-        $stmt = $db->prepare($scores);
+                            WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' AND score = 'MT'
+                            GROUP BY assessment_title, assessment_score.assessment_id
+                            ORDER BY assessment_score.assessment_id";
+        $stmt = $db->prepare($mt_scores);
         $stmt->execute();
-        $scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $mt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
 
+        // Select NT scores 
+        $nt_scores = "SELECT count(score), assessment_title, assessment_id
+                            FROM assessment_score
+                            INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
+                            WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' AND score = 'NT'
+                            GROUP BY assessment_title, assessment_score.assessment_id
+                            ORDER BY assessment_score.assessment_id";
+        $stmt = $db->prepare($nt_scores);
+        $stmt->execute();
+        $nt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        // Select BT scores 
+        $bt_scores = "SELECT count(score), assessment_title, assessment_id
+                            FROM assessment_score
+                            INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
+                            WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' AND score = 'BT'
+                            GROUP BY assessment_title, assessment_score.assessment_id
+                            ORDER BY assessment_score.assessment_id";
+        $stmt = $db->prepare($bt_scores);
+        $stmt->execute();
+        $bt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
     ?> 
@@ -182,6 +186,26 @@
         </div>
         <div class="col-9">
           <h2 id="centerform"><?php echo "Class " . $_POST['time'] . " Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>
+          <script type="text/javascript">
+                  // Draw the chart and set the chart values
+            function drawChart() {
+              var data = google.visualization.arrayToDataTable([
+              ['Task', 'Hours per Day'],
+              ['Work', 8],
+              ['Eat', 2],
+              ['TV', 4],
+              ['Gym', 2],
+              ['Sleep', 8]
+            ]);
+
+            // Optional; add a title and set the width and height of the chart
+            var options = {'title':'My Average Day', 'width':550, 'height':400};
+
+            // Display the chart inside the <div> element with id="piechart"
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+            }
+          </script>
           <div id="piechart"></div>
         </div>
       </div>
