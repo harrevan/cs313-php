@@ -95,7 +95,7 @@
 
                   
 
-                var num = ''<?php echo $val ?>'';
+                var num = ''<?php echo $val; ?>'';
                 console.log(num);
                 console.log(45);
 
