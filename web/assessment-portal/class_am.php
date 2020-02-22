@@ -115,7 +115,7 @@
                 </script>'
           ; 
 
-          echo $mt_scores[0]['count'];     
+
       }
   ?> 
    <body id="home_body">
@@ -201,6 +201,7 @@
           <h2 id="centerform"><?php echo "Class " . $_POST['time'] . " Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>
           <div id="piechart"></div>
         </div>
+       <?php echo $mt_scores[0]['count'];?>     
       </div>
     </div> 
   </body>
