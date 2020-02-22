@@ -104,9 +104,9 @@
         var i;
         for (i = 0; i <'<?php echo $num_assessments ?>'; i++ ){
 
-                var mtArray = <?php echo $mt_scores; ?>;
-                var ntArray = <?php echo $nt_scores; ?>;
-                var btArray = <?php echo $bt_scores; ?>;
+                var mtArray = <?php echo json_encode($mt_scores); ?>;
+                var ntArray = <?php echo json_encode($nt_scores); ?>;
+                var btArray = <?php echo json_encode($bt_scores); ?>;
 
                 //var id =  <?php echo $index; ?>; 
                 var assessment_title = '<?php echo $assess_title; ?>';
