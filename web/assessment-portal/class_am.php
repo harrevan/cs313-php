@@ -107,17 +107,19 @@
         for (i = 0; i < assess_array.length; i++ ){
           console.log(assess_array[i]["assessment_title"]);
                 //var assess_title = <?php //echo json_encode($assessments); ?>;
-        //var mtArray = <?php //echo json_encode($mt_scores); ?>;
+        var mtArray = <?php echo json_encode($mt_scores); ?>;
         //console.log(mtArray[3]["count"]);
         //console.log(mtArray.length);
-        //var ntArray = <?php //echo json_encode($nt_scores); ?>;
+        var ntArray = <?php echo json_encode($nt_scores); ?>;
         //console.log(ntArray.length);
-        //var btArray = <?php //echo json_encode($bt_scores); ?>;
+        var btArray = <?php echo json_encode($bt_scores); ?>;
         //console.log(btArray.length);
                 //var mt = 0;
                 //var nt = 0;
                 //var bt = 0;
-
+        mt = mtArray[i]["count"];
+        nt = ntArray[i]["count"];
+        bt = btArray[i]["count"];
 
                 //var id =  <?php //echo $index; ?>; 
                 //var assessment_title = assess_title[i]['assessment_title'];
