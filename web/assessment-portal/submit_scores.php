@@ -16,7 +16,10 @@
 		$_SESSION['subject'] = $_POST['subject'];
 	}
 
-	if(isset($_POST['student_name']) && isset($_POST['assessment']) && isset($_POST['score']) && isset($_POST['answers']))
+	if(isset($_POST['student_name']) && !empty($_SESSION['time'])
+		&& isset($_POST['assessment']) && !empty($_SESSION['assessment'])
+		&& isset($_POST['score']) && !empty($_SESSION['score'])
+		&& isset($_POST['answers']) && !empty($_SESSION['answers']))
 	{
 
 		$student_id = htmlspecialchars($_POST['student_name']);
