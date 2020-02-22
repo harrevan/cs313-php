@@ -91,9 +91,9 @@
 
                 // Load google charts
                 google.charts.load("current", {"packages":["corechart"]});
-                google.charts.setOnLoadCallback(drawChart);
+                google.charts.setOnLoadCallback(drawChart);'
 
-                // Draw the chart and set the chart values
+                '// Draw the chart and set the chart values
                 function drawChart() {
                   var data = google.visualization.arrayToDataTable([
                   ["Task", "Hours per Day"],
