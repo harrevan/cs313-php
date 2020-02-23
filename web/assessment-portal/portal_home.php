@@ -57,13 +57,13 @@
       <!-- The slideshow -->
       <div class="carousel-inner div_back_color">
         <div class="carousel-item active">
-          <img src="kids.png">
+          <img class="d-block w-100" src="kids.png">
         </div>
         <div class="carousel-item">
-          <img src="teaching.png">
+          <img class="d-block w-100" src="teaching.png">
         </div>
         <div class="carousel-item">
-          <img src="coloring.png">
+          <img class="d-block w-100" src="coloring.png">
         </div>
       </div>
 
