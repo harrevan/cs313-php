@@ -30,7 +30,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="class_am.php">
-              Classes
+              Classes/Students
             </a>
           </li>
           <li class="nav-item">

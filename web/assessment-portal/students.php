@@ -38,8 +38,6 @@
 ?>
 
 
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -69,7 +67,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="class_am.php">
-              Classes
+              Classes/Students
             </a>
           </li>
           <li class="nav-item">
@@ -87,7 +85,7 @@
         }
       ?>      
     </h1>
-    <table class="table table-sm table-bordered table-dark">
+    <table class="table table-sm table-bordered table-dark table-striped">
       <thead>
         <tr>
           <th scope="col">Assessment</th>

@@ -112,7 +112,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="class_am.php">
-              Classes
+              Classes/Students
             </a>
           </li>
           <li class="nav-item">
@@ -159,7 +159,7 @@
         </script>  
 
         <br><br>
-        <input type=submit value="See Assessments">
+        <input type=submit value="See Students and Assessments">
       </form>
     </div>  
     <br><br>
@@ -184,7 +184,7 @@
         </div>
         <div class="col-9">
           <h2 id="centerform"><?php echo "Class " . $_POST['time'] . " Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>
-          <table class="table table-sm table-bordered table-dark">
+          <table class="table table-sm table-bordered table-dark table-striped">
             <thead>
               <tr>
                 <th scope="col">Assessment Title</th>
@@ -229,7 +229,7 @@
             ?>
           </tbody>
         </table>
-        <p>*This table displays the number of students that achived a score of Met Target, Near Target, or Below Target per assessment.</p>
+        <p>*This table displays the number of students that achived a score of MT, NT, or BT per assessment.</p>
       </div>
     </div> 
   </body>

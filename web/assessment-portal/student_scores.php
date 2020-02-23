@@ -13,15 +13,6 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
     </script> 
-
-    <script type="text/javascript">
-      function reveal(){
-        if(document.getElementById("hidden") == 'none'){
-          document.getElementById("hidden").style.display = 'block';
-        }
-      }
-    </script>
-
     <link rel="stylesheet" type="text/css" href="assessment.css">
 
     <title>Student Scores</title>
@@ -74,7 +65,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="class_am.php">
-              Classes
+              Classes/Students
             </a>
           </li>
           <li class="nav-item">
