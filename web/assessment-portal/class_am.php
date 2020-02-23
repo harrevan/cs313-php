@@ -162,7 +162,7 @@
         <input type=submit value="See Students and Assessments">
       </form>
     </div>  
-    <br><br>
+    <br>
     <div class="container">
       <div class="row">
         <div class="col-3">
