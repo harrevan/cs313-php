@@ -155,7 +155,7 @@
         </div>
         <div class="input-group mb-3">
           <label class="input-group-text" for="answ_id"><b>Correct Answers:</b></label>
-          <input type="number" class="form-control" id="answ_id" value="0" name="answers">  
+          <input type="number" class="form-control" id="answ_id" value="Enter Score" name="answers">  
         </div>
         <button class="btn btn-primary btn-lg btn-block" type="submit">Enter Score</button>
       </form>
