@@ -18,8 +18,7 @@
 
 	if(isset($_POST['student_name']) && !empty($_POST['time'])
 		&& isset($_POST['assessment']) && !empty($_POST['assessment'])
-		&& isset($_POST['score']) && !empty($_POST['score'])
-		&& isset($_POST['answers']) && !empty($_POST['answers']))
+		&& isset($_POST['score']) && !empty($_POST['score']))
 	{
 		$student_id = htmlspecialchars($_POST['student_name']);
 		$assessment_id = htmlspecialchars($_POST['assessment']);
