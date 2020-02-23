@@ -12,22 +12,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
-    </script> 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type = "text/javascript">
-      google.charts.load("current", {"packages":["corechart"]});
-      
     </script>           
-
     <link rel="stylesheet" type="text/css" href="assessment.css">
 
     <title>Class</title>
   </head>
   <?php
       session_start();
-      if(!isset ($_SESSION["assessment_array"])){
-            $_SESSION["assessment_array"] = array();
-      }
+
       try
       {
           $dbUrl = getenv('DATABASE_URL');
@@ -50,8 +42,12 @@
           die();
       }
 
-      if(isset($_POST['assessments']))
-      {
+      if(isset($_POST['assessments']) && isset($_POST['time']) && isset($_POST['subject']))
+      {   
+          $_SESSION['time'] = $_POST['time'];
+          $_SESSION['assessments'] = $_POST['assessments'];
+          $_SESSION['subject'] = $_POST['subject'];
+       
           $assessments = "SELECT assessment_title 
                           FROM master_assessment  
                           WHERE subject = '{$_POST["subject"]}' 
@@ -135,7 +131,7 @@
           <option value="PM">PM</option>
         </select> 
         <script type="text/javascript">
-          document.getElementById('time').value = "<?php echo $_POST['time'];?>";
+          document.getElementById('time').value = "<?php echo $_SESSION['time'];?>";
         </script>  
 
         <label><b>Select Assessment Unit:</b> </label>
@@ -149,7 +145,7 @@
           <option value="6">Unit 6 Assessments</option>
         </select> 
         <script type="text/javascript">
-          document.getElementById('assessments').value = "<?php echo $_POST['assessments'];?>";
+          document.getElementById('assessments').value = "<?php echo $_SESSION['assessments'];?>";
         </script>  
 
         <label><b>Select Assessment Type:</b> </label>
@@ -159,7 +155,7 @@
           <option value="MATH">Math</option>
         </select> 
         <script type="text/javascript">
-          document.getElementById('subject').value = "<?php echo $_POST['subject'];?>";
+          document.getElementById('subject').value = "<?php echo $_SESSION['subject'];?>";
         </script>  
 
         <br><br>
@@ -188,20 +184,17 @@
         </div>
         <div class="col-9">
           <h2 id="centerform"><?php echo "Class " . $_POST['time'] . " Unit " . $_POST['assessments'] . " " . $_POST['subject'] . " ";?> Assessment Scores</h2>
-           <table class="table table-sm table-bordered table-dark">
-              <thead>
-                <tr>
-                  <th scope="col">Assessment Title</th>
-                  <th scope="col">MT Total</th>
-                  <th scope="col">NT Total</th>
-                  <th scope="col">BT Total</th>
-                </tr>
-              </thead>
-              <tbody>  
+          <table class="table table-sm table-bordered table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Assessment Title</th>
+                <th scope="col">MT Total</th>
+                <th scope="col">NT Total</th>
+                <th scope="col">BT Total</th>
+              </tr>
+            </thead>
+            <tbody>  
             <?php
-              $mt_total = 0;
-              $nt_total = 0;
-              $bt_total = 0;
               for($i = 0; $i < sizeof($assessments); $i++)
               {
                 echo "<tr><td>" . $assessments[$i]['assessment_title'] . "</td>";
@@ -227,16 +220,16 @@
                   }
 
                 }
+                // Disply class totals
                 echo "<td>" . $mt_temp . "</td>";
                 echo "<td>" . $nt_temp . "</td>";
                 echo "<td>" . $bt_temp . "</td></tr>";
 
               }
             ?>
-
-
-
-     
+          </tbody>
+        </table>
+        <p>*This table displays the number of students that achived a score of Met Target, Near Target, or Below Target per assessment.</p>
       </div>
     </div> 
   </body>

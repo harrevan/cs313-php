@@ -85,7 +85,7 @@
     </div>
     <br>
     <div class="container">
-      <h2>Enter Student Scores</h2>
+      <h2>Enter Student Scores</h2><br>
       <form action="submit_scores.php" method="post">
         <div class="input-group mb-3">
           <label class="input-group-text" for="time"><b>Select Class Time:</b> </label>
