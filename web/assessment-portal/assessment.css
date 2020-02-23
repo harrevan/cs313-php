@@ -16,3 +16,7 @@ h1{
 #hidden{
 	display: none;
 }
+.carosel{
+	width:640px;
+	height:360px;
+}
