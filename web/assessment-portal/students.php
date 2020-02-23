@@ -85,7 +85,7 @@
         }
       ?>      
     </h1>
-    <table class="table table-sm table-bordered table-dark table-striped">
+    <table id="stud_table" class="table table-sm table-bordered table-dark table-striped">
       <thead>
         <tr>
           <th scope="col">Assessment</th>
