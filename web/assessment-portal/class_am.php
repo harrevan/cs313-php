@@ -57,7 +57,6 @@
           $stmt->execute();
           $assessments = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-               //Select MT scores 
          $scores = "SELECT count(score), assessment_title, score
                              FROM assessment_score
                              INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
@@ -66,39 +65,6 @@
          $stmt = $db->prepare($scores);
          $stmt->execute();
          $scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-          // // Select MT scores 
-          // $mt_scores = "SELECT count(score), assessment_title, assessment_score.assessment_id
-          //                     FROM assessment_score
-          //                     INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
-          //                     WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' AND score = 'MT'
-          //                     GROUP BY assessment_title, assessment_score.assessment_id
-          //                     ORDER BY assessment_score.assessment_id";
-          // $stmt = $db->prepare($mt_scores);
-          // $stmt->execute();
-          // $mt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-          //   // Select NT scores 
-          // $nt_scores = "SELECT count(score), assessment_title, assessment_score.assessment_id
-          //                     FROM assessment_score
-          //                     INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
-          //                     WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' AND score = 'NT'
-          //                     GROUP BY assessment_title, assessment_score.assessment_id
-          //                     ORDER BY assessment_score.assessment_id";
-          // $stmt = $db->prepare($nt_scores);
-          // $stmt->execute();
-          // $nt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC); 
-
-          // // Select BT scores 
-          // $bt_scores = "SELECT count(score), assessment_title, assessment_score.assessment_id
-          //                     FROM assessment_score
-          //                     INNER JOIN master_assessment ON master_assessment.assessment_id = assessment_score.assessment_id 
-          //                     WHERE subject = '{$_POST["subject"]}' AND assessment_period = '{$_POST["assessments"]}' AND score = 'BT'
-          //                     GROUP BY assessment_title, assessment_score.assessment_id
-          //                     ORDER BY assessment_score.assessment_id";
-          // $stmt = $db->prepare($bt_scores);
-          // $stmt->execute();
-          // $bt_scores = $stmt->fetchAll(PDO::FETCH_ASSOC);
       }
    ?> 
   
@@ -224,7 +190,6 @@
                 echo "<td>" . $mt_temp . "</td>";
                 echo "<td>" . $nt_temp . "</td>";
                 echo "<td>" . $bt_temp . "</td></tr>";
-
               }
             ?>
           </tbody>
