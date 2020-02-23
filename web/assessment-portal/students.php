@@ -76,6 +76,7 @@
         </ul>
       </nav>  
     </div>
+    <br>
     <h1>
       <?php 
         foreach($student as $stud)
@@ -85,27 +86,30 @@
         }
       ?>      
     </h1>
-    <table id="stud_table" class="table table-sm table-bordered table-dark table-striped">
-      <thead>
-        <tr>
-          <th scope="col">Assessment</th>
-          <th scope="col">Score</th>
-          <th scope="col">Correct Answers</th>
-        </tr>
-      </thead>
-      <tbody>
-      <?php
-        for($i = 0; $i < sizeof($assessment_query); $i++) {
-      ?>
-        <tr>
-          <td><?php echo $assessment_query[$i]['assessment_title']; ?></td>
-          <td><?php echo $assessment_query[$i]['score']; ?></td>
-          <td><?php echo $assessment_query[$i]['correct_answers']; ?></td>
-        </tr>
-      <?php    
-            } 
-      ?>
-      </tbody>
-    </table>
+    <br>
+    <div id="shrink">
+      <table id="stud_table" class="table table-sm table-bordered table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Assessment</th>
+            <th scope="col">Score</th>
+            <th scope="col">Correct Answers</th>
+          </tr>
+        </thead>
+        <tbody>
+        <?php
+          for($i = 0; $i < sizeof($assessment_query); $i++) {
+        ?>
+          <tr>
+            <td><?php echo $assessment_query[$i]['assessment_title']; ?></td>
+            <td><?php echo $assessment_query[$i]['score']; ?></td>
+            <td><?php echo $assessment_query[$i]['correct_answers']; ?></td>
+          </tr>
+        <?php    
+              } 
+        ?>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>
